@@ -1,0 +1,131 @@
+@use "mixin" as m;
+
+.works-bg {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--blue);
+
+  p {
+    font-size: min(15vw, 13em);
+    font-weight: 900;
+    letter-spacing: 3vw;
+    white-space: nowrap;
+    color:rgba(#FFF,.5)
+  }
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+} //works-bg
+
+.works-content {
+  position: relative;
+  width: min(95%, 1400px);
+  margin: 0 auto;
+  padding-top: 25vh;
+
+  figure {
+    margin-bottom: 25vh;
+    @media #{m.$minLg} {
+      //1,5,9,13 오른쪽, 2,4,6,8중앙, 3,7,11,15
+      &:nth-child(4n + 1) {
+        margin-left: auto;
+      }
+      &:nth-child(even) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      width: 30%;
+    } //minLg
+    @media #{m.$md} {
+      width: 70%;
+      &:nth-child(odd) {
+        margin-left: auto;
+      }
+    } //md
+    @media #{m.$maxSm} {
+      width: 100%;
+    } //maxLg
+    a {
+      &:hover {
+        div {
+          border-color: var(--green);
+          transform: scale(0.95);
+        }
+      } //a:hover
+      div {
+        overflow: hidden;
+        border: 7px solid #ddd;
+        box-shadow: 0 0 20px rgba(#000, 0.2);
+        transition: all 0.5s;
+        img {
+          width: 100%;
+        } //img
+      } //div
+
+      figcaption {
+        color: #fff;
+        h2 {
+          display: inline-block;
+          position: relative;
+          margin: 15px 0;
+          font-size: 1.5em;
+          font-weight: 600;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 50%;
+            bottom: 0;
+            left: 0;
+            background: var(--green);
+            mix-blend-mode: multiply;
+          } //before
+        } //h2
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          display: flex;
+          br {
+            display: none;
+          }
+          span {
+            font-size: 1.2em;
+            font-weight: 600;
+            animation: rolling 5s infinite linear;
+            @keyframes rolling {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-100%);
+              }
+            } //rolling
+          } //span
+        } //p
+      } //figcaption
+    } //a
+  } //figure
+} //works-content
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  background: rgba(#00fbb9, 0.7);
+  z-index: 6;
+  top: 0;
+  color: #fff;
+  transform: scale(0);
+  transition: transform 0.3s;
+}

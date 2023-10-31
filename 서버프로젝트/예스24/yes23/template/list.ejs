@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{
+      padding:0;
+      margin:0;
+      list-style: none;
+    }
+    header{
+      width:80%;
+      margin: 0 auto;
+    }
+    nav.gnb>ul{
+      display: flex;
+      justify-content: space-between;
+    }
+    nav.gnb>ul>li{
+      text-align: center;
+      padding:20px;
+      flex:1;
+      border:1px solid gray;
+    }
+    nav.gnb>ul>li:hover{
+      background-color: gray;
+    }
+    main{
+      width:80%;
+      margin:0 auto;
+    }
+    main>div.book>figure{
+      float:left;
+    }
+    main>div.book>ul{
+      float: left;
+    }
+    main>div.book>ul>li{
+      padding: 10px;
+    }
+    h2.title{
+      padding: 20px 0px;
+    }
+    figure>img{
+      width:125px;
+    }
+    
+  </style>
+  <title>예스24</title>
+</head>
+<body>
+  <header>
+    <nav class="gnb">
+      <ul>
+        <li onclick="bestSellerCategory('bestSeller','1')">종합</li>
+        <li>실시간</li>
+        <li>일별</li>
+        <li>월별/주별</li>
+        <li>특가</li>
+        <li>스테디셀러</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="book">
+      <h2 class="title">국내도서 종합 베스트</h2>
+      <figure>
+        <img src="https://image.yes24.com/goods/122090360/L" alt="이미지1">
+      </figure>
+      <ul>
+        <li><h4>퓨처 셀프</h4></li>
+        <li><p>벤저민 하디 저/ 최은아 역</p></li>
+        <li><p>17.820원</p></li>
+        <li><p>판매지수</p></li>
+      </ul>
+    </div>
+  </main>
+  <script>
+    function bestSellerCategory(categoryName,page){
+      const url = '/'+categoryName+'/'+ page;
+      fetch(url)
+      .then((response)=>response.json())
+      .then((bestSellerList)=>{
+        const output = `
+          ${bestSellerList.map(book=>
+            `
+            <h2 class="title"></h2>
+            <figure>
+              <img src="https://image.yes24.com/goods/122090360/L" alt="이미지1">
+            </figure>
+            <ul>
+              <li><h4>${book.bname}</h4></li>
+              <li><p>${book.author}${book.translator}</p></li>
+              <li>${book.price}</li>
+              <li><p>판매지수</p></li>
+            </ul>
+            `
+            )}
+          `;
+          document.querySelector(".book").innerHTML = output
+      })
+      .catch()
+    }
+  </script>
+</body>
+</html>

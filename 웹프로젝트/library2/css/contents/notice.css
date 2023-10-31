@@ -1,0 +1,93 @@
+main section.notice_wrap {
+  min-height: 500px;
+  background-color: #f3f3f3;
+  padding-top: 70px;
+  box-sizing: border-box;
+}
+main section.notice_wrap div.inner {
+  display: flex;
+}
+main section.notice_wrap div.inner article.notice_left {
+  width: 50%;
+}
+main section.notice_wrap div.inner article.notice_left div.command_box ul li {
+  border-bottom: 1px solid #c9c9c9;
+}
+main section.notice_wrap div.inner article.notice_left div.command_box ul li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+main section.notice_wrap div.inner article.notice_left div.command_box ul li a span {
+  display: inline-block;
+  font-weight: 500;
+}
+main section.notice_wrap div.inner article.notice_left div.command_box ul li a small {
+  color: rgba(0, 0, 0, 0.8);
+}
+main section.notice_wrap div.inner article.edu_right {
+  width: 50%;
+}
+main section.notice_wrap div.inner article.edu_right .command_box {
+  border: 1px solid #c9c9c9;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul {
+  height: 285px;
+  background-color: #fff;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li {
+  padding: 20px 0px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c9c9c9;
+  display: flex;
+  height: 50%;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li span {
+  display: block;
+  border-right: solid 1px #c9c9c9;
+  padding: 0px 15px;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li span strong {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 3em;
+  color: #636363;
+  font-weight: bold;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li span b {
+  color: #636363;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li dl {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li dl dt {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+main section.notice_wrap div.inner article.edu_right .command_box ul li dl dd {
+  display: block;
+  margin-bottom: 10px;
+  color: #636363;
+}
+
+@media screen and (max-width:768px) {
+  main section.notice_wrap {
+    padding-top: 30px;
+  }
+  main section.notice_wrap div.inner {
+    flex-wrap: wrap;
+  }
+  main section.notice_wrap div.inner article.notice_left {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  main section.notice_wrap div.inner article.edu_right {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 50px;
+  }
+}/*# sourceMappingURL=notice.css.map */

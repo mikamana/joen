@@ -1,0 +1,115 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--navy);
+  background-image: url("../../img/check-pattern.png");
+  background-size: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width:1000px) {
+  header {
+    height: 80px;
+  }
+}
+@media screen and (max-width:1000px) {
+  header {
+    height: 60px;
+  }
+}
+header div.center {
+  width: 95%;
+  margin: 0 auto;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header div.center h1.logo {
+  height: 50%;
+}
+header div.center h1.logo a {
+  display: flex;
+  height: 100%;
+  perspective: 1000px;
+}
+header div.center h1.logo a img {
+  height: 100%;
+  margin-right: 20px;
+  transition: all 1s;
+}
+header div.center h1.logo:hover img:first-of-type {
+  transform: rotateY(360deg);
+}
+header div.center h1.logo:hover img:last-of-type {
+  transform: rotateX(360deg);
+}
+header div.center nav.gnb {
+  position: relative;
+}
+header div.center nav.gnb div.menu-list {
+  position: absolute;
+  right: 120%;
+  top: 0;
+  display: inline-block;
+}
+header div.center nav.gnb div.menu-list ul {
+  display: none;
+  position: absolute;
+  padding: 15px;
+  background-color: #000;
+  left: 50%;
+  top: 30px;
+  transform: translate(-50%);
+  border-radius: 5px;
+}
+header div.center nav.gnb div.menu-list ul.active {
+  display: block;
+}
+header div.center nav.gnb div.menu-list ul li {
+  margin: 3px 0;
+  white-space: nowrap;
+}
+header div.center nav.gnb div.menu-list ul li a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+header div.center nav.gnb div.menu-list button.toggle-btn:active {
+  color: var(--sky);
+}
+header div.center nav.gnb div.menu-list button.toggle-btn i {
+  font-size: 1.4em;
+}
+header div.center nav.gnb > a.gotosearch {
+  transition: all 0.3s;
+  font-weight: 600;
+}
+header div.center nav.gnb > a.gotosearch:hover {
+  color: var(--green);
+}
+
+button.top_btn {
+  position: fixed;
+  z-index: 90;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--sky);
+  transition: all 0.8s;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+@media (hover: hover) {
+  button.top_btn:hover {
+    background-color: var(--green);
+  }
+}
+button.top_btn.active {
+  opacity: 1;
+  pointer-events: all;
+}/*# sourceMappingURL=header.css.map */

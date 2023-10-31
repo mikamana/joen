@@ -1,0 +1,13 @@
+body {
+    font-family: "Noto Sans KR", "Roboto", "sans-serif";
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+div.inner {
+    width: min(95%, 1200px);
+    // 모바일 사용자 편리성을 위해 양 옆의 간격을 조금 두어 터치가 잘 되게끔 만들어주고, PC화면에서는 1200이상 커지지않게 만들어주었다.
+    margin: 0 auto;
+    // border: 1px solid #c9c9c9;
+}

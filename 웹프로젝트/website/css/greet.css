@@ -1,0 +1,62 @@
+section.greet_section p {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.emphasis {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 33px;
+}
+
+.emphasis em.point {
+  color: var(--point-color);
+}
+
+p.subinfo {
+  line-height: 30px;
+}
+
+
+section.greet_section figure {
+  width: 850px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+section.greet_section div {
+  width: 49%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 5px solid var(--main-color);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+}
+
+
+section.greet_section div img {
+  width: 100%;
+}
+
+/* motion */
+
+section.greet_section>* {
+  opacity: 0;
+  transition: all 1s;
+}
+
+section.greet_section>*:nth-child(odd) {
+  /* 가상 클래스 앞에 *은 생략해도된다. */
+  transform: translateX(-100px);
+}
+
+section.greet_section>*:nth-child(even) {
+  /* 가상 클래스 앞에 *은 생략해도된다. */
+  transform: translateX(100px);
+}
+
+section.greet_section>*.active {
+  opacity: 1;
+  transform: translateX(0);
+}

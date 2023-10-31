@@ -1,0 +1,109 @@
+main.contents_wrap {
+  min-height: 1800px;
+  width: 93%;
+  margin: 0 auto;
+}
+main.contents_wrap section.contents h2.sign_title {
+  text-align: center;
+  margin-top: 105px;
+  margin-bottom: 80px;
+  font-weight: 700;
+  font-size: 2.875rem;
+}
+main.contents_wrap section.contents ul.state {
+  width: 430px;
+  margin: 0px auto;
+  margin-bottom: 110px;
+  display: flex;
+  justify-content: space-between;
+}
+main.contents_wrap section.contents ul.state li {
+  font-size: 1.2em;
+}
+main.contents_wrap section.contents ul.state li:not(:last-child)::after {
+  content: "\f054";
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 18px;
+}
+main.contents_wrap section.contents ul.state li:nth-child(2) {
+  font-weight: 600;
+}
+main.contents_wrap section.contents div.info {
+  width: 550px;
+  margin-bottom: 100px;
+  margin: 0px auto;
+}
+main.contents_wrap section.contents div.info h3.info_title {
+  font-size: 1.1em;
+}
+main.contents_wrap section.contents div.info h3.info_title span {
+  color: #cd395c;
+  font-size: 0.9em;
+}
+main.contents_wrap section.contents form.input_wrap > * {
+  width: 565px;
+  margin: 30px auto;
+}
+main.contents_wrap section.contents form.input_wrap > *.subtitle_info {
+  font-weight: 600;
+}
+main.contents_wrap section.contents form.input_wrap > * dt {
+  margin-bottom: 13px;
+}
+main.contents_wrap section.contents form.input_wrap > * dt span {
+  color: #cd395c;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 7px;
+  margin-right: 5px;
+}
+main.contents_wrap section.contents form.input_wrap > * dd input {
+  width: 550px;
+  height: 50px;
+  border: solid 1px #c9c9c9;
+  box-sizing: border-box;
+}
+main.contents_wrap section.contents form.input_wrap > * dd.email_input {
+  width: 550px;
+  display: flex;
+  align-items: center;
+}
+main.contents_wrap section.contents form.input_wrap > * dd.email_input select {
+  height: 50px;
+}
+main.contents_wrap section.contents form.input_wrap > * dd.ads_box {
+  display: flex;
+}
+main.contents_wrap section.contents form.input_wrap > * dd.ads_box input {
+  margin-bottom: 5px;
+}
+main.contents_wrap section.contents form.input_wrap > * dd input.ads_input {
+  width: 370px;
+}
+main.contents_wrap section.contents form.input_wrap > * dd button.address_btn {
+  width: 180px;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+}
+main.contents_wrap section.contents div.button_wrap {
+  margin: 0 auto;
+  width: 550px;
+  display: flex;
+}
+main.contents_wrap section.contents div.button_wrap > * {
+  width: 50%;
+  height: 65px;
+  border: none;
+  text-align: center;
+  line-height: 65px;
+}
+main.contents_wrap section.contents div.button_wrap > *.prev_btn {
+  background-color: #dcdcdc;
+}
+main.contents_wrap section.contents div.button_wrap > *.next_btn {
+  background-color: #000;
+  color: #fff;
+}/*# sourceMappingURL=contents.css.map */

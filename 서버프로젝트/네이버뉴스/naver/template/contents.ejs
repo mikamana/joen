@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버뉴스</title>
+</head>
+
+<body>
+    <div class="contents">
+        <figure>
+            <img src="<%= newsContentList.url %>" alt="이미지">
+        </figure>
+        <p>
+            <%= newsContentList.info %>
+        </p>
+        <button class="commant_create_btn" type="button">댓글 생성</button>
+        <div class="form_commant" action="/reply" method="post" style="display:none;">
+            <label for="name">이름 :</label>
+            <input class="reply_name" type="text" name="name">
+            <label for="content">내용 :</label>
+            <input class="reply_info" type="text" name="content">
+            <button type="button" onclick="regReply('<%= newsContentList.nid %>')">댓글 등록</button>
+        </div>
+    </div>
+    <hr>
+    <div class="commant">
+        <ul class="commant_list">
+        </ul>
+    </div>
+    <script>
+        document.querySelector(".commant_create_btn").addEventListener('click', e => {
+
+            const form = document.querySelector(".form_commant")
+            const display = form.style.display
+
+            if (display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+
+        })
+
+
+        replyList('<%= newsContentList.nid %>');
+        function replyList(nid) { // 맨처음 호출되는 리스트 출력함수
+
+            //get방식으로 nid값을 넘긴 후 json타입으로 리스트 가져오기
+            //동적 HTML으로 코드 출력
+
+            fetch('/reply/' + nid)
+                .then((response) => response.json())
+                .then((data) => {
+                    const output = `
+                    ${data.map(reply =>
+                        `<li>
+                            <p>${reply.name}</p>
+                            <p>${reply.replyContent}</p>
+                        </li>`).join('\n')}
+                    `;
+                    document.querySelector(".commant_list").innerHTML = output;
+                })
+                .catch()
+                .finally()
+        }
+
+        function regReply(nid) {
+            const replyContent = document.querySelector('.reply_info').value;
+            const name = document.querySelector(".reply_name").value;
+            fetch("/reply", {
+                method: "post",
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ nid: nid, replyContent: replyContent, name: name })
+            }).then((response) => {
+                if (response.status === 201) {
+                    window.location.reload() //reply 재호출
+                }
+            }).catch()
+                .finally()
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

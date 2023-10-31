@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common/main.css">
+    <link rel="stylesheet" href="./css/coupon/coupon.css">
+    <link rel="stylesheet" href="./css/header/header_gnb.css">
+    <link rel="stylesheet" href="./css/header/header_logo.css">
+    <link rel="stylesheet" href="./css/contents/contents.css">
+    <link rel="stylesheet" href="./css/footer/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://kit.fontawesome.com/8d9a711cad.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/form2.js"></script>
+    <title>회원가입 페이지</title>
+</head>
+
+<body>
+    <aside>
+        <div class="sidemenu">
+            <figure>
+                <img src="./img/aside/Ellipse1.svg" alt="고객센터시간아이콘">
+            </figure>
+            <figure>
+                <img src="./img/aside/Ellipse2.svg" alt="카톡바로가기아이콘">
+            </figure>
+            <figure>
+                <img src="./img/aside/Ellipse3.svg" alt="상단바로가기아이콘">
+            </figure>
+        </div>
+    </aside>
+    <section class="coupon_wrap">
+        <div class="coupon_box">
+            <p>[9월 EVENT] 신규가입 시 5천원, 1만원, 3만원 쿠폰 증정</p>
+            <img src="./img/coupon/coupon.svg" alt="쿠폰하트아이콘">
+        </div>
+    </section>
+    <header>
+        <div class="logo_wrap">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="./img/header/logo.png" alt="로고">
+                </a>
+            </h1>
+            <p>
+                <input type="text" placeholder="근사한 테이블의 완성은 커트러리 10% SALE">
+                <a href="#">
+                    <img src="./img/header/search_icon.png" alt="검색아이콘">
+                </a>
+            </p>
+            <nav class="loginmenu">
+                <ul>
+                    <li>
+                        <a href="#">로그인</a>
+                    </li>
+                    <li>
+                        <a href="#">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="#">장바구니(0)</a>
+                    </li>
+                    <li>
+                        <a href="#">마이페이지</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="mobilemenu">
+                <i class="fa-solid fa-bars"></i>
+                <ul>
+                    <li>
+                        <a href="#">로그인</a>
+                    </li>
+                    <li>
+                        <a href="#">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="#">장바구니(0)</a>
+                    </li>
+                    <li>
+                        <a href="#">마이페이지</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="gnb_inner">
+            <div class="gnb_wrap">
+                <nav class="gnb">
+                    <ul class="gnb_list">
+                        <li>
+                            <a href="#">ALL</a>
+                            <ul class="submenu_list"></ul>
+                        </li>
+                        <li>
+                            <a href="#">아트</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">X+Q 아트</a>
+                                </li>
+                                <li>
+                                    <a href="#">PL 갤러리</a>
+                                </li>
+                                <li>
+                                    <a href="#">테토</a>
+                                </li>
+                                <li>
+                                    <a href="#">위컬렉트</a>
+                                </li>
+                                <li>
+                                    <a href="#">포스터&월아트</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">가구</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">테이블</a>
+                                </li>
+                                <li>
+                                    <a href="#">소파</a>
+                                </li>
+                                <li>
+                                    <a href="#">체어</a>
+                                </li>
+                                <li>
+                                    <a href="#">스토리지&트롤리</a>
+                                </li>
+                                <li>
+                                    <a href="#">아웃도어</a>
+                                </li>
+                                <li>
+                                    <a href="#">금고</a>
+                                </li>
+                                <li>
+                                    <a href="#">베드&데이베드</a>
+                                </li>
+                                <li>
+                                    <a href="#">헹거&파티션</a>
+                                </li>
+                                <li>
+                                    <a href="#">실내용난로</a>
+                                </li>
+                                <li>
+                                    <a href="#">etc.</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">조명</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">펜던트램프</a>
+                                </li>
+                                <li>
+                                    <a href="#">테이블램프</a>
+                                </li>
+                                <li>
+                                    <a href="#">플로어램프</a>
+                                </li>
+                                <li>
+                                    <a href="#">포터블램프</a>
+                                </li>
+                                <li>
+                                    <a href="#">월램프</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">패브릭</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">카펫&러그</a>
+                                </li>
+                                <li>
+                                    <a href="#">발매트</a>
+                                </li>
+                                <li>
+                                    <a href="#">쿠션&방석</a>
+                                </li>
+                                <li>
+                                    <a href="#">베딩</a>
+                                </li>
+                                <li>
+                                    <a href="#">블랭킷</a>
+                                </li>
+                                <li>
+                                    <a href="#">etc.</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">리빙</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">홈데코</a>
+                                </li>
+                                <li>
+                                    <a href="#">거울</a>
+                                </li>
+                                <li>
+                                    <a href="#">시계</a>
+                                </li>
+                                <li>
+                                    <a href="#">홈케어</a>
+                                </li>
+                                <li>
+                                    <a href="#">수납&정리</a>
+                                </li>
+                                <li>
+                                    <a href="#">홈프래그런스</a>
+                                </li>
+                                <li>
+                                    <a href="#">욕실용품</a>
+                                </li>
+                                <li>
+                                    <a href="#">가전제품</a>
+                                </li>
+                                <li>
+                                    <a href="#">생활용품</a>
+                                </li>
+                                <li>
+                                    <a href="#">문구</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">키친</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">플레이트&볼</a>
+                                </li>
+                                <li>
+                                    <a href="#">커틀러리</a>
+                                </li>
+                                <li>
+                                    <a href="#">텀블러</a>
+                                </li>
+                                <li>
+                                    <a href="#">글라스 & 컵</a>
+                                </li>
+                                <li>
+                                    <a href="#">와인용품</a>
+                                </li>
+                                <li>
+                                    <a href="#">테이블매트&코스터</a>
+                                </li>
+                                <li>
+                                    <a href="#">쿡웨어</a>
+                                </li>
+                                <li>
+                                    <a href="#">키친 툴</a>
+                                </li>
+                                <li>
+                                    <a href="#">주방가전</a>
+                                </li>
+                                <li>
+                                    <a href="#">주방용품</a>
+                                </li>
+                                <li>
+                                    <a href="#">커피&티</a>
+                                </li>
+                                <li>
+                                    <a href="#">F&B</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">라이프</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">뷰티</a>
+                                </li>
+                                <li>
+                                    <a href="#">스포츠 & 레저</a>
+                                </li>
+                                <li>
+                                    <a href="#">건강 가전</a>
+                                </li>
+                                <li>
+                                    <a href="#">스타일</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">뮤직</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">하이엔드 오디오</a>
+                                </li>
+                                <li>
+                                    <a href="#">블루투스 오디오</a>
+                                </li>
+                                <li>
+                                    <a href="#">유무선 이어폰</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">반려동물</a>
+                            <ul class="submenu_list">
+                                <li>
+                                    <a href="#">하우스 & 베드</a>
+                                </li>
+                                <li>
+                                    <a href="#">패션 & 하네스</a>
+                                </li>
+                                <li>
+                                    <a href="#">토이</a>
+                                </li>
+                                <li>
+                                    <a href="#">식기 & 푸드</a>
+                                </li>
+                                <li>
+                                    <a href="#">목욕용품</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">SALE</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="gnb_mobile">
+                    <ul>
+                        <span>더보기<i class="fa-solid fa-plus"></i></span>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="brandmenu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                EVENT
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                BRAND
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                MD’S CHOICE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                CONTENTS
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+        <main class="contents_wrap">
+            <section class="contents">
+                <h2 class="sign_title">
+                    회원가입
+                </h2>
+                <ul class="state">
+                    <li>
+                        1. 본인인증
+                    </li>
+                    <li>
+                        2. 정보입력
+                    </li>
+                    <li>
+                        3. 가입완료
+                    </li>
+                </ul>
+                <div class="info">
+                    <h3 class="info_title">
+                        정보입력 <span>*표시는 반드시 입력하셔야 하는 항목입니다.</span>
+                    </h3>
+                </div>
+                <form name="fmField" class="input_wrap">
+                    <dl>
+                        <dt><label for="name">이름*</label></dt>
+                        <dd><input class="name" name="name" type="text"></dd>
+                        <dd><span class="err_name"></span></dd>
+                    </dl>
+                    <dl>
+                        <dt><label for="id">아이디*</label><span>4~12글자까지만 입력 가능합니다.</span><button type="button"
+                                class="id_btn">아이디 중복확인</button></dt>
+                        <dd><input class="id" name="id" type="text"></dd>
+                        <dd><span class="err_id"></span></dd>
+                    </dl>
+                    <dl>
+                        <dt><label for="password">비밀번호*</label><span>4~12글자까지만 입력 가능합니다.</span></dt>
+                        <dd><input class="password" name="password" type="text"></dd>
+                        <dd><span class="err_password"></span></dd>
+                    </dl>
+                    <dl>
+                        <dt><label for="password_check">비밀번호 확인*</label></dt>
+                        <dd><input class="password_check" name="password_check" type="text"></dd>
+                        <dd><span class="err_password_check"></span></dd>
+                    </dl>
+                    <dl>
+                        <dt><label for="birthday">생년월일*</label><span>ex.19700101 ~ 8자리로 입력</span></dt>
+                        <dd><input class="birthday" name="birthday" type="text"></dd>
+                        <dd><span class="err_birthday"></span></dd>
+
+                    </dl>
+                    <dl>
+                        <dt>주소*</dt>
+                        <dd class="ads_box">
+                            <input name="address" class="ads_input" type="text">
+                            <button class="address_btn">
+                                우편번호 검색
+                            </button>
+                        </dd>
+                        <dd class="ads_box">
+                            <input class="address_road" name="address" type="text">
+                        </dd>
+                        <dd class="ads_box">
+                            <input class="address_jibun" name="address" type="text">
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>이메일*</dt>
+                        <dd class="email_input">
+                            <input class="email" name="email" type="text"><span>@</span><input class="email_checked"
+                                type="text">
+                            <select class="email_select" name="email" id="email">
+                                <option class="self" value="self">직접입력</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="google.com">google.com</option>
+                            </select>
+                        </dd>
+                        <dd><span class="err_email"></span></dd>
+
+                    </dl>
+                    <p>
+                        <input class="checkbox1" type="checkbox" name="checkbox"><span>정보/이벤트 메일 수신에 동의합니다.</span>
+                        <span class="err_checked1"></span>
+                    </p>
+                    <dl>
+                        <dt>휴대폰번호*<span>'-'없이 숫자만 입력</span></dt>
+                        <dd><input class="phone" name="phone" type="text"></dd>
+                        <dd><span class="err_phone"></span></dd>
+                    </dl>
+                    <p>
+                        <input class="checkbox2" type="checkbox" name="checkbox">정보/이벤트 메일 수신에 동의합니다.
+                        <span class="err_checked2"></span>
+                    </p>
+                    <h3 class="subtitle_info">부가정보</h3>
+                    <dl>
+                        <dt>
+                            추천인 아이디
+                        </dt>
+                        <dd>
+                            <input class="recommand" type="text">
+                        </dd>
+                    </dl>
+                    <div class="button_wrap">
+                        <!-- <a href="#" class="prev_link">이전으로</a>
+                        <a href="#" class="next_link">회원가입</a> -->
+                        <button class="prev_btn">이전으로</button>
+                        <button class="next_btn">회원가입</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="footer_inner">
+            <h2 class="ft_logo">
+                <a href="#">
+                    <img src="./img/footer/ft_logo_img.svg" alt="푸터로고이미지">
+                </a>
+            </h2>
+            <nav class="ft_gnb">
+                <ul>
+                    <li>
+                        <a href="#">
+                            회사소개
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            개인정보처리방침
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            이용약관
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            입점/제휴문의
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            1:1문의
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <address>
+                <p>
+                    <span>(주)노블레스미디어인터내셔날</span><span>대표이사:명제열</span>
+                    <span>서울특별시 강남구 선릉로162길 13 (노블레스빌딩)</span>
+                </p>
+                <p>
+                    <span>통신판매업신고번호 : 강남-8889</span>
+                    <span>사업자등록번호 : 120-81-48160</span>
+                    <span>개인정보 관리 책임자 : 이윤정</span>
+                </p>
+            </address>
+            <ul class="ft_sns">
+                <li>
+                    <a href="#">
+                        <img src="./img/footer/ft_insta_icon.svg" alt="카카오톡아이콘">
+                        <span>INSTAGRAM</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/footer/ft_kakao_icon.svg" alt="카카오톡아이콘">
+                        <span>KAKAO</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright"></p>
+            <div class="ft_service">
+                <p class="ft_callservice">
+                    <span>고객센터</span>
+                    <span>070-8855-8808</span>
+                </p>
+                <p class="ft_hour">
+                    <span>운영시간 : 월-금 10:30 ~ 18:30 / 점심시간 12:00 ~ 13:00<br>(점심시간, 주말, 공휴일 제외)</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

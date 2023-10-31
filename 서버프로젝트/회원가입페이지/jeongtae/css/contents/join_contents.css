@@ -1,0 +1,16 @@
+section.join_wrap {
+  width: min(95%, 1200px);
+  margin: 0 auto;
+  padding-top: 120px;
+  min-height: 500px;
+  box-sizing: border-box;
+}
+section.join_wrap h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+section.join_wrap p {
+  text-align: center;
+}/*# sourceMappingURL=join_contents.css.map */

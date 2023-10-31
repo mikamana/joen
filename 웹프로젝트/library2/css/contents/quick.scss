@@ -1,0 +1,133 @@
+@use "../common/mixin.scss" as m;
+
+section.quick_menu_wrap {
+    background-color: #fff;
+    width: min(95%, 1200px);
+    margin: 0 auto;
+    margin-top: -75px;
+    box-shadow: 0 4px 10px -4px rgb(93, 93, 93);
+    position: relative;
+    z-index: 3;
+    nav.quick_menu {
+        ul {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                border-right: 1px solid #c9c9c9;
+                // border-right: none;
+                flex: 1;
+                &:hover a {
+                    background-color: #fffaf2;
+                    transform: translateY(-25%);
+                }
+                &:hover {
+                    background-color: #fffaf2;
+                }
+                &:last-child {
+                    border-right: 1px solid #c9c9c9;
+                }
+                &:nth-of-type(2) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i02.png");
+                        }
+                    }
+                }
+                &:nth-of-type(3) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i03.png");
+                        }
+                    }
+                }
+                &:nth-of-type(4) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i04.png");
+                        }
+                    }
+                }
+                &:nth-of-type(5) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i05.png");
+                        }
+                    }
+                }
+                &:nth-of-type(6) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i06.png");
+                        }
+                    }
+                }
+                &:nth-of-type(7) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i07.png");
+                        }
+                    }
+                }
+                &:nth-of-type(8) {
+                    span {
+                        &::before {
+                            content: url("../../img/quick/quick_i08.png");
+                        }
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 35px 25px;
+                    box-sizing: border-box;
+                    text-align: center;
+                    transition: all 0.4s;
+                    word-break: keep-all;
+                    // word-wrap: break-word;
+
+                    span {
+                        display: block;
+                        font-size: 0.9em;
+                        font-weight: 500;
+                        // word-wrap: break-word;
+                        text-align: center;
+                        &::before {
+                            content: url("../../img/quick/quick_i01.png");
+                            display: block;
+                            text-align: center;
+                            box-sizing: border-box;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{m.$tablet} {
+    section.quick_menu_wrap {
+        font-size: 12px;
+        margin-top: 0px;
+        nav.quick_menu {
+            ul {
+                li {
+                    border: 1px solid #c9c9c9;
+                    border-right: none;
+                    border-top: none;
+                    width: 25%;
+                    flex: none;
+                    // background-color: red;
+                    box-sizing: border-box;
+                    a {
+                        width: 100%;
+                        padding: 15px 20px;
+                        span {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

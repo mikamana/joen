@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    h1 {
+      background-color: #3f63bf;
+      text-align: center;
+      padding: 10px 0px;
+      color: #FFF;
+    }
+
+    div.gnb_wrap {
+      border-bottom: 1px solid #c9c9c9;
+      height: 80px;
+    }
+
+    nav.gnb {
+      width: min(95%, 1200px);
+      height: 100%;
+      margin: 0 auto;
+
+    }
+
+    nav.gnb>ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      list-style: none;
+      height: 100%;
+    }
+
+    nav.gnb>ul>li {
+      height: 100%;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c9c9c9;
+      text-align: center;
+    }
+
+    nav.gnb>ul>li:hover {
+      background-color: #c9c9c9;
+    }
+
+    main>section.news_wrap {
+      width: min(1200px, 95%);
+      box-sizing: border-box;
+      margin: 0 auto;
+      min-height: 800px;
+    }
+
+    main>section.news_wrap>div.news_title_btn {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    main>section.news_wrap>div.news_title_btn>h2 {
+      padding: 20px;
+
+    }
+
+    main>section.news_wrap>div.news_title_btn>h2>span {
+      color: #3f63bf;
+    }
+
+    ul.news_list {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    ul.news_list>li {
+      width: 31%;
+      border: solid 1px #c9c9c9;
+      margin-bottom: 20px;
+
+    }
+
+    ul.news_list>li>div>h3 {
+      padding: 10px;
+      background-color: #c9c9c9;
+    }
+
+    ul.news_sublist>li {
+      display: flex;
+      padding: 20px;
+      border-bottom: 1px solid #c9c9c9;
+      justify-content: space-evenly;
+    }
+
+    ul.news_sublist>li>.news_num {
+      margin-right: 5px;
+
+    }
+
+    ul.news_sublist>li>.news_info {
+      width: 60%;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      word-break: keep-all;
+      /* 문단으로 끊어져서 줄바꿈 됨 */
+    }
+  </style>
+  <title>네이버뉴스</title>
+</head>
+
+<body>
+  <header>
+    <h1>
+      네이버 뉴스
+    </h1>
+    <hr>
+    <div class="gnb_wrap">
+      <nav class="gnb">
+        <ul>
+          <li>
+            정치
+          </li>
+          <li>
+            경제
+          </li>
+          <li>
+            생활/문화
+          </li>
+          <li>
+            IT/과학
+          </li>
+          <li>
+            세계
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="news_wrap">
+      <div class="news_title_btn">
+        <h2>
+          언론사별 <span>랭킹뉴스</span>
+        </h2>
+        <button class="news_create_btn" type="button">뉴스생성</button>
+      </div>
+      <form style="padding: 10px 0px; border-bottom:  1px solid #c9c9c9; display:none;" action="/news" method="post"
+        class="news_form">
+        <label for="channel">채널선택</label>
+        <select name="channel" id="chan">
+          <option value="매일경제">매일경제</option>
+          <option value="연합뉴스">연합뉴스</option>
+          <option value="채널A">채널A</option>
+          <option value="국민일보">국민일보</option>
+          <option value="중앙일보">중앙일보</option>
+          <option value="한겨레">한겨레</option>
+        </select>
+        <label for="info">내용 :</label>
+        <input type="text" placeholder="내용을 입력하세요" name="info" style="width:35%; height:30px;">
+        <label for="url"> 이미지경로 :</label>
+        <input type="text" placeholder="이미지 경로를 입력하세요" name="url" style="width:40%; height:30px;">
+        <button type="submit">뉴스등록</button>
+      </form>
+      <ul class="news_list">
+        <li>
+          <div>
+            <h3>매일경제</h3>
+            <ul class="news_sublist">
+              <% everydayList.forEach((everyday)=> { %>
+                <li>
+                  <span class="news_num" style="font-size: 18px; font-weight: bold;">
+                    <%= everyday.num %>
+                  </span>
+                  <a href="/news/<%= everyday.nid %>" class="news_info">
+                    <%= everyday.info %>
+                  </a>
+                  <img src="<%= everyday.url %>" alt="s" style="width:100px;">
+                </li>
+                <% }) %>
+
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>연합뉴스</h3>
+            <ul class="news_sublist">
+              <% combineList.forEach((combine)=> { %>
+                <li>
+                  <span class="news_num" style="font-size: 18px; font-weight: bold;">
+                    <%= combine.numTwo %>
+                  </span>
+                  <a href="/news/<%= combine.nid %>" class="news_info">
+                    <%= combine.info %>
+                  </a>
+                  <img src="<%= combine.url %>" alt="s" style="width:100px;">
+                </li>
+                <% }) %>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>채널A</h3>
+            <ul class="news_sublist">
+              <% chaAList.forEach((cha)=> { %>
+                <li>
+                  <span class="news_num" style="font-size: 18px; font-weight: bold;">
+                    <%= cha.numThree %>
+                  </span>
+                  <a href="/news/<%= cha.nid %>" class="news_info">
+                    <%= cha.info %>
+                  </a>
+                  <img src="<%= cha.url %>" alt="s" style="width:100px;">
+                </li>
+                <% }) %>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>국민일보</h3>
+            <ul class="news_sublist">
+              <% peopleList.forEach((pp)=> { %>
+                <li>
+                  <span class="news_num" style="font-size: 18px; font-weight: bold;">
+                    <%= pp.numFour %>
+                  </span>
+                  <a href="/news/<%= pp.nid %>" class="news_info">
+                    <%= pp.info %>
+                  </a>
+                  <img src="<%= pp.url %>" alt="s" style="width:100px;">
+                </li>
+                <% }) %>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>중앙일보</h3>
+            <ul class="news_sublist">
+              <% centerList.forEach((center)=> { %>
+                <li>
+                  <span class="news_num" style="font-size: 18px; font-weight: bold;">
+                    <%= center.numFive %>
+                  </span>
+                  <a href="/news/<%= center.nid %>" class="news_info">
+                    <%= center.info %>
+                  </a>
+                  <img src="<%= center.url %>" alt="s" style="width:100px;">
+                </li>
+                <% }) %>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>한겨례</h3>
+            <ul class="news_sublist">
+              <% HangList.forEach((hang)=> { %>
+                <li>
+                  <span class="news_num" style="font-size: 18px; font-weight: bold;">
+                    <%= hang.numFive %>
+                  </span>
+                  <a href="/news/<%= hang.nid %>" class="news_info">
+                    <%= hang.info %>
+                  </a>
+                  <img src="<%= hang.url %>" alt="s" style="width:100px;">
+                </li>
+                <% }) %>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    document.querySelector(".news_create_btn").addEventListener("click", e => {
+
+      const form = document.querySelector(".news_form");
+      const display = form.style.display;
+
+      if (display === "none") {
+        form.style.display = 'block';
+      } else {
+        form.style.display = 'none';
+      }
+
+    })
+
+    // document.querySelector(".news_form").addEventListener("submit", e => {
+
+    //   let index;
+    //   document.querySelector(".news_num").insertAdjacentHTML('beforeend', ++index);
+
+    // })
+  </script>
+</body>
+
+</html>

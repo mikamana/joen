@@ -1,0 +1,137 @@
+@use "../mixin.scss" as m;
+
+.home-visual {
+  height: min(70vh, 450px);
+  @include m.box-shadow;
+  background-color: var(--navy);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5vh;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+  &::before {
+    content: "";
+    @include m.pos-center;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: 1px solid rgba(#fff, 0.3);
+    z-index: 11;
+    pointer-events: none;
+  }
+  div.swiper-wrapper {
+    height: 100%;
+    figure.swiper-slide {
+      height: 100%; //높이 지정되어있음
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      &.swiper-slide-active img {
+        transform: scale(1);
+      }
+      &:hover img {
+        filter: brightness(80%);
+      } //hover>img
+      img {
+        transition:
+          transform 10s linear,
+          filter 1s;
+        overflow: hidden;
+        @include m.cover;
+        filter: brightness(60%);
+        transform: scale(1.1);
+      } //img
+      figcaption.text_box {
+        width: 90%;
+        // width:min(90%, 500px);
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        > * {
+          margin-bottom: 15px;
+        }
+        small.original_title {
+          display: block;
+          font-weight: 600;
+        }
+        h6.title {
+          font-size: min(8vw, 5em);
+          white-space: nowrap; //줄바꿈 X
+          overflow: hidden;
+          line-height: 1.2em;
+          font-weight: 600;
+          @media #{m.$max-xlg} {
+            /* text-overflow: ellipsis; // 생략글
+            white-space: wrap; */
+            @include m.ellipsis;
+          } // 1400이하
+        }
+        p.overview {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 500px;
+          height: 100px;
+        }
+        button {
+          i {
+            margin-right: 5px;
+          }
+          &.play_btn {
+            margin-right: 5px;
+            @include m.button(#fff, #fff, rgba(#fff, 0.3), #000, #fff, rgba(#fff, 0.8));
+          }
+          &.detail_btn {
+            @include m.button(#fff, #fff, rgba(#000, 0.3), #fff, #000, rgba(#000, 0.8));
+          }
+        }
+      }
+    }
+  }
+  button.wheel_btn {
+    display: block;
+    position: absolute;
+    z-index: 12;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(#fff, 0.3);
+    left: calc(50% - 20px);
+    bottom: 20px;
+    border: 1px solid rgba(#fff, 0.3);
+    box-sizing: border-box;
+
+    i {
+      animation: jump 0.5s infinite alternate;
+      color: rgba(#fff, 0.7);
+    }
+
+    &::before {
+      content: "";
+      @include m.pos-center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(#fff, 0.3);
+      border-radius: 50%;
+      transition: all 0.1s;
+    }
+    &:hover {
+      color: #000;
+      &::before {
+        background-color: #fff;
+      }
+      i::before {
+        color: #000;
+      }
+    }
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}

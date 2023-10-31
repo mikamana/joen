@@ -1,0 +1,55 @@
+section.todo div.todo_wrap {
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+section.todo div.todo_wrap ul.todo_list {
+  display: flex;
+  justify-content: space-around;
+}
+section.todo div.todo_wrap ul.todo_list > li > p:first-child {
+  font-size: min(1.8vw, 2em);
+  margin-bottom: 50px;
+}
+section.todo div.todo_wrap div.do_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.todo div.todo_wrap div.do_wrap ul.result {
+  text-align: center;
+  font-size: min(1.8vw, 2em);
+  margin-top: 50px;
+  min-height: 300px;
+}
+section.todo div.todo_wrap div.do_wrap div.btn_wrap {
+  width: 100%;
+  height: 100px;
+}
+section.todo div.todo_wrap div.do_wrap div.btn_wrap button.start_btn {
+  top: 0;
+  background: none;
+  border: none;
+  font-size: min(1.85vw, 2em);
+  font-family: "Nanum Pen Script";
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+section.todo div.todo_wrap div.do_wrap div.btn_wrap div.range {
+  display: flex;
+  justify-content: center;
+}
+section.todo div.todo_wrap div.do_wrap div.btn_wrap div.range > p {
+  padding: 0 30px;
+  box-sizing: border-box;
+  font-size: min(1.5vw, 2em);
+}
+section.todo div.todo_wrap div.do_wrap div.btn_wrap div.range button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: min(1.5vw, 2em);
+  font-family: "Nanum Pen Script";
+  padding: 0 30px;
+}/*# sourceMappingURL=index.css.map */

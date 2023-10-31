@@ -1,0 +1,117 @@
+@use "../common/mixin.scss" as m;
+
+main.contents_wrap {
+    min-height: 1800px;
+    width: 93%;
+    margin: 0 auto;
+    section.contents {
+        h2.sign_title {
+            text-align: center;
+            margin-top: 105px;
+            margin-bottom: 80px;
+            font-weight: 700;
+            font-size: 2.875rem;
+        }
+        ul.state {
+            width: 430px;
+            margin: 0px auto;
+            margin-bottom: 110px;
+            display: flex;
+            justify-content: space-between;
+            li {
+                font-size: 1.2em;
+                &:not(:last-child)::after {
+                    content: "\f054";
+                    display: inline-block;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    margin-left: 18px;
+                }
+                &:nth-child(2) {
+                    font-weight: 600;
+                }
+            }
+        }
+        div.info {
+            width: 550px;
+            margin-bottom: 100px;
+            margin: 0px auto;
+            h3.info_title {
+                font-size: 1.1em;
+                span {
+                    color: #cd395c;
+                    font-size: 0.9em;
+                }
+            }
+        }
+        form.input_wrap {
+            > * {
+                width: 565px;
+                margin: 30px auto;
+                &.subtitle_info {
+                    font-weight: 600;
+                }
+                dt {
+                    margin-bottom: 13px;
+                    span {
+                        color: #cd395c;
+                        display: inline-block;
+                        font-size: 0.8em;
+                        margin-left: 7px;
+                        margin-right: 5px;
+                    }
+                }
+                dd {
+                    input {
+                        width: 550px;
+                        height: 50px;
+                        border: solid 1px #c9c9c9;
+                        box-sizing: border-box;
+                    }
+                    &.email_input {
+                        width: 550px;
+                        display: flex;
+                        align-items: center;
+                        select {
+                            height: 50px;
+                        }
+                    }
+                    &.ads_box {
+                        display: flex;
+                        input {
+                            margin-bottom: 5px;
+                        }
+                    }
+                    input.ads_input {
+                        width: 370px;
+                    }
+                    button.address_btn {
+                        width: 180px;
+                        height: 50px;
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+        } //input_wrap
+        div.button_wrap {
+            margin: 0 auto;
+            width: 550px;
+            display: flex;
+            > * {
+                width: 50%;
+                height: 65px;
+                border: none;
+                text-align: center;
+                line-height: 65px;
+                &.prev_btn {
+                    background-color: #dcdcdc;
+                }
+                &.next_btn {
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

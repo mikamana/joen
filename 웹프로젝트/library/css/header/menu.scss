@@ -1,0 +1,162 @@
+@use "../common/mixin.scss" as m;
+
+div.menu_all_wrap {
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    overflow: auto;
+    z-index: 10;
+    width: 100%;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.1);
+    div.inner {
+        div.menu_home_wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a.menu_home_btn {
+                display: none;
+            }
+            a.menu_close_btn {
+                width: 100%;
+                display: block;
+                text-align: right;
+                padding: 15px;
+                box-sizing: border-box;
+                img {
+                    width: 40px;
+                }
+            }
+        }
+        div.m_login_menu {
+            display: none;
+        }
+        nav.menu_nav {
+            > ul {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                > li {
+                    width: 18%;
+                    > a {
+                        display: block;
+                        text-align: center;
+                        margin-bottom: 10px;
+                        font-size: 1.7em;
+                        border-bottom: 2px solid #000;
+                        padding: 15px 0px;
+                        transition: color 0.2s;
+                        &:hover {
+                            background-color: #c72d09;
+                            color: #fff;
+                        }
+                        &.on .submenu_list {
+                            display: block;
+                        }
+                    }
+                    ul.submenu_list {
+                        li {
+                            a {
+                                display: block;
+                                padding: 15px;
+                                box-sizing: border-box;
+                                transition: all 0.2s;
+                                position: relative;
+                                &:hover {
+                                    color: #c72d09;
+                                }
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    transform: scale(0, 1);
+                                    transition: 0.4s ease-out;
+                                    width: 100%;
+                                    height: 2px;
+                                    position: absolute;
+                                    bottom: 0px;
+                                    background-color: #c72d09;
+                                }
+                                &.active::after {
+                                    transform: scale(1, 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{m.$notebook} {
+    div.menu_all_wrap {
+        width: 320px;
+        height: 100%;
+        right: 0px;
+        div.inner {
+            width: 100%;
+            div.menu_home_wrap {
+                a.menu_home_btn {
+                    display: block;
+                    width: 35px;
+                    margin-left: 10px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                a.menu_close_btn {
+                    width: 30px;
+                    margin-right: 25px;
+                    img {
+                        width: 30px;
+                    }
+                }
+            }
+            div.m_login_menu {
+                width: 100%;
+                background-color: #c72d09;
+                display: flex;
+                justify-content: space-between;
+                a {
+                    display: block;
+                    border: 1px solid rgba(#000, 0.2);
+                    padding: 24px 15px 24px 15px;
+                    box-sizing: border-box;
+                    color: #fff;
+                }
+            }
+
+            nav.menu_nav {
+                > ul {
+                    > li {
+                        width: 100%;
+                        > a {
+                            text-align: left;
+                            padding-left: 20px;
+                            border-bottom: 1px solid #c9c9c9;
+                            font-size: 1em;
+                            font-weight: 500;
+                            margin-bottom: 0px;
+                        }
+                        ul.submenu_list {
+                            background-color: #f5f5f5;
+                            &.sub_on {
+                                display: block;
+                            }
+                            li {
+                                a {
+                                    font-size: 0.85em;
+                                    padding-left: 30px;
+                                    &::after {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

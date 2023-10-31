@@ -1,0 +1,27 @@
+body {
+  font-size: 14px;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  color: #555;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+:root {
+  --main-color: #a99783;
+  --dark-color: #181616;
+  --sub-color: #9a774f;
+  --point-color: #F80;
+  /* :root는 html의 가상선택자를 가리킨다.(우선순위높음) */
+  /* --theme-color: #a99732; */
+  /* -- 를 붙이면 자식요소들이 변수를 가지고 --theme 라는 변수를 사용할 수 있다. */
+}
+
+/* h1 {
+  color: var(--theme-color)
+    root에 있는 테마컬러를 변수로 가져와서 사용했다.
+} */
+
+.serif {
+  font-family: 'Nanum Myeongjo', serif;
+}

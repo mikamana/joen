@@ -1,0 +1,20 @@
+@use "./mixin" as m;
+
+:root {
+    //변수로 가져다쓸 브랜드 컬러 지정
+    --main: #1d2026;
+    --sub: #011126;
+    --point: #8c6456;
+    --bg: #d9d8c7;
+    --plus: #d9a282;
+}
+
+body {
+    font-family: "Nanum Pen Script", "Noto Sans KR", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 20px;
+    background-color: var(--main);
+    @include m.scrollbar;
+}

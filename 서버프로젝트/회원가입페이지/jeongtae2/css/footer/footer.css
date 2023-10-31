@@ -1,0 +1,113 @@
+footer {
+  background-color: #000;
+  min-height: 250px;
+}
+footer .footer_inner {
+  width: 93%;
+  margin: 0px auto;
+  padding-top: 65px;
+  box-sizing: border-box;
+  position: relative;
+}
+footer .footer_inner h2.ft_logo {
+  width: 275px;
+  float: left;
+  margin-right: 100px;
+}
+footer .footer_inner h2.ft_logo a img {
+  width: 275px;
+}
+footer .footer_inner nav.ft_gnb {
+  height: 30px;
+  line-height: 150%;
+}
+footer .footer_inner nav.ft_gnb ul {
+  display: flex;
+}
+footer .footer_inner nav.ft_gnb ul li {
+  margin-right: 20px;
+}
+footer .footer_inner nav.ft_gnb ul li a {
+  display: block;
+  color: #fff;
+}
+footer .footer_inner address {
+  display: block;
+  width: 800px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+footer .footer_inner address p {
+  margin-bottom: 8px;
+}
+footer .footer_inner address p span {
+  margin: 0px 10px;
+  font-size: 0.9em;
+  position: relative;
+}
+footer .footer_inner address p span:not(:nth-child(3n+3))::after {
+  content: "";
+  width: 1px;
+  height: 10px;
+  border-right: solid 1px #666666;
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 10px;
+}
+footer .footer_inner ul.ft_sns {
+  display: flex;
+}
+footer .footer_inner ul.ft_sns li {
+  margin-right: 10px;
+}
+footer .footer_inner ul.ft_sns li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+footer .footer_inner ul.ft_sns li a span {
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+footer .footer_inner p.copyright {
+  margin-top: 33px;
+  margin-left: 13px;
+  color: #fff;
+  font-size: 0.9em;
+}
+footer .footer_inner div.ft_service {
+  width: 500px;
+  height: 110px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  text-align: right;
+  color: #fff;
+}
+footer .footer_inner div.ft_service p.ft_callservice {
+  position: relative;
+  margin-bottom: 20px;
+}
+footer .footer_inner div.ft_service p.ft_callservice span {
+  margin-right: 10px;
+}
+footer .footer_inner div.ft_service p.ft_callservice span:last-child {
+  font-weight: 600;
+}
+footer .footer_inner div.ft_service p.ft_callservice span:first-child::after {
+  content: "";
+  width: 1px;
+  height: 10px;
+  position: absolute;
+  right: 132px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: 1px solid #c9c9c9;
+}
+footer .footer_inner div.ft_service p.ft_hour {
+  color: #858585;
+}/*# sourceMappingURL=footer.css.map */

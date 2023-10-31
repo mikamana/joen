@@ -1,0 +1,137 @@
+@use "../mixin.scss" as m;
+
+button.modal-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  opacity: 0.7;
+  display: block;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+section.video-modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 101;
+  left: 0;
+  top: 0;
+  display: none;
+  img.youtube-ratio {
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0;
+    @include m.pos-center;
+    //이미지 크기가 유튜브 동영상 크기와 같도록 만들고, 이미지 크기에 비례해서 자동으로 가로세로 변경되게끔 작업해주는 방식
+  }
+  iframe {
+    @include m.pos-center;
+  } // iframe을 youtube 이미지와 동일한 크기비율로 맞춰주는 작업
+}
+
+section.person-modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 101;
+  background-color: rgba(#000, 0.8);
+  overflow: auto;
+  @include m.scrollbar;
+  .center {
+    width: min(90%, 600px);
+    min-height: 1000px;
+    margin: 10vh auto;
+    text-align: center;
+    img.person-photo {
+      width: min(60%, 400px);
+      margin: 0 auto;
+      margin-bottom: 30px;
+      border: 5px solid #eee;
+    } //person-photo
+    h4 {
+      text-align: left;
+      color: var(--green);
+      font-style: italic;
+      text-transform: uppercase;
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--green);
+    }
+    ul {
+      // max-height: 300px;
+      //300이상 늘어나지않음
+      overflow: hidden;
+      padding: 10px;
+      background-color: rgba(#fff, 0.1);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      height: 200px;
+
+      li {
+        padding: 5px;
+        border-bottom: 1px dotted rgba(#fff, 0.5);
+      } //li
+    } //ul
+    ul.profile {
+      li {
+        &:not(:last-child) {
+          @include m.ellipsis;
+        }
+        small {
+          opacity: 0.7;
+          margin-right: 6px;
+        }
+        em {
+          font-style: italic;
+        }
+      }
+    }
+    ul.filmography {
+      li {
+        time {
+          opacity: 0.7;
+          margin-right: 10px;
+          font-style: italic;
+        }
+        a {
+          em {
+            font-style: 1.1em;
+          }
+          small {
+            font-style: italic;
+          }
+          &:hover {
+            color: var(--green);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .more-btn {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: #fff;
+    transition: all 0.5s;
+    .close {
+      display: none;
+    }
+    &.active {
+      .close {
+        display: block;
+      }
+      .open {
+        display: none;
+      }
+    }
+  }
+}

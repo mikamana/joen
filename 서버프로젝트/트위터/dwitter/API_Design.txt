@@ -1,0 +1,18 @@
+1. GET :  /dwitter - ALL Dwitter List 
+2. POST : /dwitter - tweet create
+3. GET : /dwitter?id=자신의아이디 - My Dwitter List
+   GET : /dwitter/:id
+4. PUT : /dwitter/:id - MY Dwitter update
+5. Delete : /dwitter/:id - My Dwitter Delete
+
+
+// ALL Tweets 누르면 모든 Tweets가 보임
+// My Tweets 누르면 내 Tweets가 보임
+// POST 누르면 트위터 추가
+// 편집 누르면 트위터 편집
+// 삭제 누르면 트위터 삭제
+
+
+  
+http://localhost:8080/dwitter
+

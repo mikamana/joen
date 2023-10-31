@@ -1,0 +1,120 @@
+@use "../mixin.scss" as m;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--navy);
+  background-image: url("../../img/check-pattern.png");
+  background-size: 20px;
+  @include m.box-shadow;
+  @media #{m.$min-lg} {
+    height: 80px;
+  } //1000이상
+  @media #{m.$max-lg} {
+    height: 60px;
+  } //1000이하
+  div.center {
+    width: 95%;
+    margin: 0 auto;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1.logo {
+      height: 50%;
+      a {
+        display: flex;
+        height: 100%; // inherit는 부모의 height 값안에 숫자 그대로를 가져옴 즉 50%를 가져와서 사용!
+        perspective: 1000px;
+        img {
+          height: 100%;
+          margin-right: 20px;
+          transition: all 1s;
+        }
+      }
+      &:hover {
+        img:first-of-type {
+          transform: rotateY(360deg);
+        }
+        img:last-of-type {
+          transform: rotateX(360deg);
+        }
+      } //h1:hover
+    }
+    nav.gnb {
+      position: relative;
+      div.menu-list {
+        position: absolute;
+        right: 120%;
+        top: 0;
+        display: inline-block;
+        ul {
+          display: none;
+          position: absolute;
+          padding: 15px;
+          background-color: #000;
+          left: 50%;
+          top: 30px;
+          transform: translate(-50%);
+          border-radius: 5px;
+          &.active {
+            display: block;
+          }
+          li {
+            margin: 3px 0;
+            white-space: nowrap;
+            a {
+              &:hover {
+                color: var(--green);
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        button.toggle-btn {
+          &:active {
+            color: var(--sky);
+          }
+          //모바일에 hover가 적용안되는 문제로 active사용
+          i {
+            font-size: 1.4em;
+          }
+        }
+      }
+      > a.gotosearch {
+        transition: all 0.3s;
+        font-weight: 600;
+        &:hover {
+          color: var(--green);
+        }
+      }
+    }
+  }
+}
+
+button.top_btn {
+  position: fixed;
+  z-index: 90;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--sky);
+  transition: all 0.8s;
+  opacity: 0;
+  pointer-events: none;
+  @include m.box-shadow;
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--green);
+    }
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

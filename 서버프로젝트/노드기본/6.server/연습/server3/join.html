@@ -1,0 +1,44 @@
+<form name="fmField" action="/join" method="post">
+  <dl>
+      <dt><label for="name">이름*</label></dt>
+      <dd><input class="name" name="name" type="text"></dd>
+      <dd><span class="err_name"></span></dd>
+  </dl>
+  <dl>
+      <dt><label for="id">아이디*</label><span>4~12글자까지만 입력 가능합니다.</span><button type="button" class="id_btn">아이디 중복확인</button></dt>
+      <dd><input class="id" name="id" type="text"></dd>
+      <dd><span class="err_id"></span></dd>
+  </dl>
+  <dl>
+      <dt><label for="password">비밀번호*</label><span>4~12글자까지만 입력 가능합니다.</span></dt>
+      <dd><input class="password" name="password" type="text"></dd>
+      <dd><span class="err_password"></span></dd>
+  </dl>
+  <dl>
+      <dt><label for="password_check">비밀번호 확인*</label></dt>
+      <dd><input class="password_check" name="password_check" type="text"></dd>
+      <dd><span class="err_password_check"></span></dd>
+  </dl>
+  <dl>
+      <dt>주소*</dt>
+      <dd class="ads_box">
+          <input name="address" class="ads_input" type="text">
+          <button type="button" class="address_btn">
+              우편번호 검색
+          </button>
+      </dd>
+      <dd class="ads_box">
+          <input class="address_road" name="address" type="text">
+      </dd>
+      <dd class="ads_box">
+          <input class="address_jibun" name="address" type="text">
+      </dd>
+  </dl>
+  <div class="button_wrap">
+      <!-- <a href="#" class="prev_link">이전으로</a>
+      <a href="#" class="next_link">회원가입</a> -->
+      <a href="http://localhost:8080">이전으로</a>
+      <!-- <button class="prev_btn">이전으로</button> -->
+      <button type="submit" class="next_btn">회원가입</button>
+  </div>
+</form>

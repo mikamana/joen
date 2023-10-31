@@ -1,0 +1,20 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.pBox{
+  margin: 0 10px;
+  width: 250px;
+  height: 300px;
+}
+table,tr,td,th{
+  border:1px solid black;
+  border-collapse: collapse;
+}
+th,td,th{
+  text-align: center;
+  width: 120px;
+  height: 120px;
+}

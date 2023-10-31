@@ -1,0 +1,38 @@
+@use "../mixin.scss" as m;
+
+figure.slide {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  width: 100%;
+  //mask기능구현
+  -webkit-mask-image: url("../../img/mask.png");
+  -webkit-mask-size: 100% 100%;
+  mask-image: url("../../img/mask.png");
+  mask-size: 100% 100%;
+  overflow: hidden;
+
+  //벤더 프리픽스 : 표준화가 되지않은 속성(비표준속성)에 대해 모든 브라우저가 사용할 수 있게끔 작업
+  @media #{m.$min-lg} {
+    height: 40vh;
+    filter: brightness(30%);
+  }
+  @media #{m.$max-lg} {
+    height: 50vh;
+    filter: brightness(70%);
+  }
+  img {
+    position: absolute;
+    transform: scale(1.1);
+    opacity: 0;
+    transition:
+      transform 10s linear,
+      opacity 1s;
+    &.active {
+      opacity: 1;
+      transform: scale(1);
+      object-fit: cover;
+    }
+    @include m.cover;
+  }
+}

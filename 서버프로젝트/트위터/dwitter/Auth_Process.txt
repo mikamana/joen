@@ -1,0 +1,38 @@
+로그인 인증 절차
+
+Client ----------<<로그인>>-----------> Server[id,password] ---<<id>>-----------------> DB(MySQL)
+                                        bcrypt.compare()    <---<<password>>----------- DB(MySQL)
+                                        --- <<result : true>>---
+          <-----------------------------res[[JWT 생성 + 쿠키 탑승]]
+                                        JWT : Header/Payload/Signiture
+                                        npm i jsonwebtoken, npm i cookie-parser
+
+
+새로운 요청 + 쿠키 (JWT) -------------> req.cookies(JWT) 가져옴
+서버에서 JWT키를 생성해서 클라이언트에게 쿠키에 실어서 데이터 전달
+JSON WEB TOKEN 을 생성해서 쿠키에 탑승시켜 response 파일데이터 파싱 후 res로 응답보냄
+
+세션으로 작업하면 서버가 꺼지면 초기화되기때문에 비효율적이다.
+
+로그아웃 하기 전까지 처리됌
+
+해당 내용은 모든 서버에 적용되는 로직이다.
+
+-- cookie-parser 데이터 받을 때 사용
+쿠키는 크롬 브라우저안에서 공유된다.
+
+sign 함수는 JWT를 생성하고 서명하는 함수이다.
+Header : 
+payload: string | Buffer | object --> 토큰에 들어가는 정보 > JWT의 내용 또는 클레임(claim)을 나타내는 매개변수이다.
+이 값은 문자열, Buffer, 또는 JavaScript 객체가 된다. JWT 내용은 클라이언트 및 서버 간의 정보 교환에 사용된다.
+Signiture: secret code --> JWT를 서명할 때 사용되는 비밀 키 또는 개인 키이다. 이 비밀 키는 JWT를 생성한 서버에서만 알고 있어야 한다.
+options (선택적) : algorithm: JWT 서명 알고리즘을 지정한다. 일반적으로 "HS256" 또는 "RS256"와 같은 값이 사용된다.
+                   expiresIn: JWT의 만료 시간을 설정한다. 예를 들어, "1h"는 JWT가 1시간 후에 만료되도록 지정한다.
+                   issuer: JWT를 발급한 엔터티를 나타내는 문자열이다.
+                   subject: JWT의 주체(claim)를 나타내는 문자열이다.
+
+-- 일반적인 세션으로도 사용 가능하다, 교육은 node안에서 token방식을 이용해서 작업했다.
+
+
+
+

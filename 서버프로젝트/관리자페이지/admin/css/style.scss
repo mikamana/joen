@@ -1,0 +1,100 @@
+div.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+header {
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+  }
+  nav.gnb {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      li {
+        font-size: 1.5em;
+        font-weight: 600;
+        padding: 20px;
+        color: #fff;
+        background-color: rgb(42, 42, 42);
+      }
+    }
+  }
+} // header
+
+main.main {
+  div.function_wrap {
+    display: flex;
+    align-items: center;
+    > * {
+      border: 1px solid gray;
+      padding: 20px;
+      display: block;
+      border-collapse: collapse;
+    }
+    p.count_all {
+      border-bottom: 1px solid #c9c9c9;
+      border-collapse: collapse;
+    }
+  }
+  form.unregister_form {
+    border: 1px solid gray;
+    padding: 20px;
+    border-collapse: collapse;
+    display: none;
+    > p {
+      margin-bottom: 10px;
+    }
+  }
+  form.retire_form {
+    border: 1px solid gray;
+    padding: 20px;
+    border-collapse: collapse;
+    display: none;
+    > p {
+      margin-bottom: 10px;
+    }
+  }
+  form.update_form {
+    padding: 20px;
+    display: none;
+  }
+  form.product_form {
+    padding: 20px;
+    display: none;
+    > * {
+      padding: 20px;
+    }
+  }
+  form.prd_update_form {
+    padding: 20px;
+    display: none;
+  }
+  form.prd_delete_form {
+    padding: 20px;
+    display: none;
+  }
+  table.all_table {
+    width: 100%;
+    min-height: 700px;
+    border: 1px solid gray;
+    thead {
+      th {
+        border: 1px solid #c9c9c9;
+      }
+    }
+    tbody {
+      td {
+        border: 1px solid #c9c9c9;
+        text-align: center;
+        line-height: 150%;
+      }
+    }
+  }
+}

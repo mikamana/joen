@@ -1,0 +1,78 @@
+form.online_form div label {
+  width: 20%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+
+form.online_form div {
+  display: flex;
+  border: 1px solid #c44d4d;
+  margin-top: -1px;
+}
+
+form.online_form div p *:not(input[type=tel]) {
+  width: 100%;
+  padding: 5px;
+}
+
+form.online_form>p {
+  padding: 7px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+form.online_form>p button {
+  padding: 5px 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #FFF;
+
+}
+
+form.online_form>p button[type=submit] {
+  background-color: var(--sub-color);
+}
+
+form.online_form>p button[type=submit]:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+form.online_form>p button[type=reset] {
+  background-color: var(--dark-color);
+}
+
+form.online_form div>p {
+  flex: 1;
+  padding: 7px;
+}
+
+form.online_form div p * {
+  padding: 5px;
+}
+
+form.online_form div p *:focus {
+  background-color: var(--dark-color);
+  color: #FFF;
+
+}
+
+form.online_form div p.tel {
+  display: flex;
+}
+
+form.online_form div p.tel input {
+  flex: 1;
+}
+
+form.online_form div p.tel input:nth-child(2) {
+  margin: 0px 5px;
+}
+
+section.online form>div>p textarea {
+  height: 200px;
+  resize: vertical;
+}

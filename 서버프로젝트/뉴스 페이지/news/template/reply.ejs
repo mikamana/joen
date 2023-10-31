@@ -1,0 +1,62 @@
+  <p>댓글 </p>
+  <hr>
+  <div id="btnRegReply">
+    <textarea name="replyContent" id="replyContent" style="width:80%" cols="30" rows="10"></textarea>
+    <button type="button" id="btnRegReply" onclick="regReply('<%= newsContent.nid %>')">등록완료</button>
+  </div>
+  <ul id="replyList">
+    
+  </ul>
+  <script>
+    replyList('<%= newsContent.nid %>');
+    function replyList(nid){ // 맨처음 호출되는 리스트 출력함수
+
+      //get방식으로 nid값을 넘긴 후 json타입으로 리스트 가져오기
+      //동적 HTML으로 코드 출력
+
+      fetch('/reply/'+nid)
+      .then((response)=>response.json())
+      .then((data)=>{
+        const output = `${data.map(reply=>`<li>${reply.content}<button type="button" onclick="deleteReply(${reply.rid},<%= newsContent.nid %>)">삭제</button></li>`).join('\n')}`;
+        document.querySelector("#replyList").innerHTML = output;
+      })
+      .catch()
+      .finally()
+    }
+
+    function regReply(nid){
+      const replyContent = document.querySelector("#replyContent").value;
+      fetch("/reply",
+      {
+        method:"POST",
+        headers : {'content-type':'application/json'},
+        body:JSON.stringify({content:replyContent,nid:nid}),
+      })
+      .then((response)=>{
+        if(response.status === 201){
+          window.location.reload() //reply 재호출
+        }
+      })
+      .catch()
+      .finally()
+    }
+
+    function deleteReply(rid,nid){
+      fetch("/reply",{
+        method:"delete",
+        headers : {'content-type':'application/json'},
+        body:JSON.stringify({rid:rid, nid:nid})
+        })
+        .then((response)=>{
+          if(response.status === 204){
+            alert("33")
+            window.location.reload() //reply 재호출
+          }
+        })
+        .catch()
+        .finally()
+    }
+
+  </script>
+
+

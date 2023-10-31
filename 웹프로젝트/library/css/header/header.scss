@@ -1,0 +1,150 @@
+@use "../common/mixin.scss" as m;
+
+header {
+    section.logo_wrap {
+        div.inner {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1 {
+                width: 174px;
+                a {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            nav.login_menu {
+                height: 100%;
+                ul {
+                    height: 100%;
+                    display: flex;
+                    li {
+                        height: 100%;
+                        width: 70px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #c9c9c9;
+                        a {
+                            font-size: 0.9em;
+                        }
+                        &:first-child {
+                            border-right: none;
+                        }
+                        &:nth-child(2) {
+                            border-right: none;
+                        }
+                        box-sizing: border-box;
+                        .lang {
+                            color: rgba(#000, 0.7);
+                        }
+                        .login {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    section.menu_wrap {
+        height: 50px;
+        background-color: rgba(#24201e, 0.2);
+        box-shadow: 1px 3px 3px rgba(#000, 0.4);
+        position: absolute;
+        width: 100%;
+        div.inner {
+            height: inherit;
+            nav.gnb_menu {
+                height: inherit;
+                > ul {
+                    height: inherit;
+                    display: flex;
+                    align-items: center;
+                    > li {
+                        height: inherit;
+                        width: 20%;
+                        > a {
+                            height: inherit;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #fff;
+                            font-size: 1.2em;
+                            font-weight: 700;
+                            // &:hover {
+                            //     background-color: #fff;
+                            //     border-bottom: 5px solid #c92c06;
+                            //     color: #c92c06;
+                            //     box-sizing: border-box;
+                            // }
+                        }
+                        ul.submenu_list {
+                            // background-color: red;
+                            width: 100%;
+                            display: none;
+                            li {
+                                width: 100%;
+                                border-bottom: solid 1px #c9c9c9;
+                                background-color: #fff;
+
+                                a {
+                                    display: block;
+                                    padding: 10px;
+                                    font-size: 0.8em;
+                                    &:hover {
+                                        color: #c92c06;
+                                    }
+                                }
+                            }
+                        }
+                        &.active > a {
+                            background-color: #fff;
+                            border-bottom: 5px solid #c92c06;
+                            color: #c92c06;
+                            box-sizing: border-box;
+                        }
+                        &.active ul.submenu_list {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media #{m.$notebook} {
+    section.menu_wrap {
+        display: none;
+    }
+}
+@media #{m.$tablet} {
+    header {
+        section.logo_wrap {
+            div.inner {
+                height: 60px;
+                h1 {
+                    width: 120px;
+                    a {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                nav.login_menu {
+                    ul {
+                        li:not(:last-child) {
+                            display: none;
+                        }
+                        li:last-child {
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

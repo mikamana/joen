@@ -1,0 +1,62 @@
+section.sub_area>p {
+  text-align: center;
+  padding: 10px 0px;
+  margin: 20px auto;
+  line-height: 1.5em;
+}
+
+section.sub_area img {
+  width: 80%;
+  margin: 50px auto;
+}
+
+
+section.sub_area figure {
+  width: 90%;
+  margin: 50px auto;
+}
+
+section.sub_area img {
+  width: 100%;
+}
+
+
+/* motion */
+
+section.sub_area p {
+  opacity: 0;
+  transition: all 1s;
+
+}
+
+
+section.sub_area p:first-child {
+
+  transform: translateX(-100px);
+
+}
+
+section.sub_area p:nth-child(2) {
+
+  transform: translateX(100px);
+
+}
+
+
+section.sub_area p.active {
+  /* 가상클래스가 우선순위가 높아 transform이 적용되지않았다. */
+  opacity: 1;
+  transform: translateX(0);
+
+}
+
+section.sub_area figure img {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s;
+}
+
+section.sub_area figure.active img {
+  opacity: 1;
+  transform: scale(1);
+}

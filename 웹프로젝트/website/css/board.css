@@ -1,0 +1,58 @@
+section.board table {
+  width: 100%;
+  margin-top: 30px;
+  /* table-layout: fixed; */
+  /* 테이블레이아웃 고정시키는 속성 */
+}
+
+
+section.board table th {
+  background-color: var(--dark-color);
+  color: #FFF;
+}
+
+section.board table tr:nth-child(even) {
+  background-color: #EEE;
+}
+
+section.board table th,
+td {
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+section.board table td:nth-child(1),
+section.board table td:nth-child(5) {
+  width: 70px;
+}
+
+
+section.board table td:nth-child(2) {
+  text-align: left;
+  width: 50%;
+}
+
+/* 테이블에 넓이를 줄때 하나는 빼놓고 주어야한다. */
+
+
+section.board form {
+  margin-top: 30px;
+  text-align: center;
+}
+
+section.board form * {
+  height: 30px;
+  padding: 0 10px;
+}
+
+section.board form button {
+  background-color: var(--dark-color);
+  color: #FFF;
+}
+
+section.board form button:hover {
+  background-color: var(--point-color);
+
+}

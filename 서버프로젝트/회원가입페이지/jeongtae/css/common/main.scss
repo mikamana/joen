@@ -1,0 +1,14 @@
+@use "../common/mixin.scss" as m;
+
+aside {
+    position: fixed;
+    width: 100px;
+    right: 0px;
+    bottom: 20px;
+    z-index: 10;
+    figure {
+        margin-bottom: 5px;
+        img {
+        }
+    }
+}

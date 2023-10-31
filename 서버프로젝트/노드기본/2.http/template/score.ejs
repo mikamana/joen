@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>score</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+          <td>번호</td>
+          <td>과목명</td>
+          <td>등급</td>
+        </tr>
+        <%  let index = 1;
+          scoreList.forEach(v=>{ %>
+          <tr>
+            <td><%= index++ %></td>
+            <td><%= v.name%></td>
+            <td><%= v.grade%></td>
+          </tr>
+        <% })%>
+    </table>
+</body>
+</html>

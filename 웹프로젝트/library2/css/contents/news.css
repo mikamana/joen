@@ -1,0 +1,163 @@
+main {
+  width: 100%;
+  background-color: #fff;
+  min-height: 1500px;
+}
+main div.contents_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+main div.contents_title a {
+  margin-right: 15px;
+}
+main .contents_text_title {
+  font-size: 2em;
+  font-weight: bold;
+  display: inline;
+  border-bottom: 5px solid #e03710;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+main a.more_btn {
+  display: block;
+  padding: 12px 28px;
+  border: 1px solid #646464;
+  color: #646464;
+  border-radius: 50px;
+  margin-right: 15px;
+}
+main div.command_box {
+  margin-right: 15px;
+}
+main section.news_wrap {
+  background-color: #fff;
+  min-height: 630px;
+}
+main section.news_wrap div.inner {
+  height: 100%;
+  display: flex;
+  padding-top: 90px;
+  box-sizing: border-box;
+}
+main section.news_wrap div.inner article.new_left_book {
+  width: 50%;
+}
+main section.news_wrap div.inner article.new_left_book div.contents_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+main section.news_wrap div.inner article.new_left_book div.contents_title a {
+  margin-right: 15px;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand {
+  min-height: 400px;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand ul {
+  display: flex;
+  justify-content: space-between;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand ul li {
+  width: 30%;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand ul li a {
+  width: 100%;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand ul li a img {
+  width: 100%;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand ul li a span {
+  display: block;
+  text-align: center;
+  margin: 15px 0px;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand ul li a span b {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+main section.news_wrap div.inner article.new_left_book div.recommand div.swiper-pagination {
+  position: absolute;
+  bottom: 0px;
+}
+main section.news_wrap div.inner article.new_right_thesis {
+  width: 50%;
+  height: 100%;
+}
+main section.news_wrap div.inner article.new_right_thesis div.contents_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+main section.news_wrap div.inner article.new_right_thesis div.contents_title h3 {
+  margin-left: 15px;
+}
+main section.news_wrap div.inner article.new_right_thesis div.thesis_info ul {
+  height: 334px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  margin-left: 15px;
+}
+main section.news_wrap div.inner article.new_right_thesis div.thesis_info ul li {
+  border-bottom: 1px solid #c9c9c9;
+  padding: 11px 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+main section.news_wrap div.inner article.new_right_thesis div.thesis_info ul li:first-child {
+  border-top: solid 1px #c9c9c9;
+}
+main section.news_wrap div.inner article.new_right_thesis div.thesis_info ul li a span {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main section.news_wrap div.inner article.new_right_thesis div.thesis_info ul li a span::before {
+  content: url("../../img/contents/recommand/lineNoticeBg.jpg");
+  margin-right: 5px;
+}
+
+@media screen and (max-width:768px) {
+  main {
+    font-size: 14px;
+  }
+  main section.news_wrap div.inner article.new_left_book div.recommand {
+    min-height: 250px;
+    margin-bottom: 20px;
+  }
+  main section.news_wrap div.inner article.new_left_book div.recommand div.swiper-pagination {
+    bottom: 0px;
+  }
+  main section.news_wrap div.inner article.new_right_thesis div.contents_title h3 {
+    margin-left: 0px;
+  }
+  main section.news_wrap div.inner article.new_right_thesis div.thesis_info ul {
+    margin-left: 0px;
+    padding-bottom: 20px;
+  }
+  main h3.contents_text_title {
+    font-size: 1.3em;
+  }
+  main section.news_wrap div.inner {
+    flex-wrap: wrap;
+    padding-top: 60px;
+  }
+  main section.news_wrap div.inner article.new_left_book {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  main section.news_wrap div.inner article.new_right_thesis {
+    width: 100%;
+  }
+}/*# sourceMappingURL=news.css.map */

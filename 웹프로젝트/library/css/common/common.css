@@ -1,0 +1,13 @@
+body {
+  font-family: "Noto Sans KR", "Roboto", "sans-serif";
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+div.inner {
+  width: min(95%, 1200px);
+  margin: 0 auto;
+}/*# sourceMappingURL=common.css.map */

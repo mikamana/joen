@@ -1,0 +1,33 @@
+@use '../mixin.scss' as m;
+
+.video-modal{
+  position: fixed;
+  width:100vw;
+  height:100vh;
+  background-color: #000;
+  z-index: 101;
+  left:0;
+  top:0;
+  display: none;
+  img.youtube-ratio{ 
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0;
+    @include m.pos-center;
+    //이미지 크기가 유튜브 동영상 크기와 같도록 만들고, 이미지 크기에 비례해서 자동으로 가로세로 변경되게끔 작업해주는 방식
+  }
+  iframe{
+    @include m.pos-center;
+  }// iframe을 youtube 이미지와 동일한 크기비율로 맞춰주는 작업
+  >button.close_btn{
+    position: absolute;
+    top:20px;
+    right:20px;
+    font-size: 2em;
+    opacity: .7;
+    display: block;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

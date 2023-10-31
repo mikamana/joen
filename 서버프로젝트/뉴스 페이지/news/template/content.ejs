@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콘텐츠</title>
+</head>
+<body>
+    <div>
+      <h1><%= newsContent.title %></h1>
+      <img src="<%= newsContent.url %>">
+      <p><%= newsContent.info %></p>
+      <p style="text-align:right">
+        <a href="/news"><button type="button">리스트</button></a>
+        <button type="button" onclick="remove('<%= newsContent.nid %>')">삭제</button>
+      </p>
+    </div>
+    <%-include("reply.ejs") %>
+    <script>
+      function remove(nid){
+        fetch("/news",{
+          method:"DELETE",
+          headers : {'content-type':'application/json'},
+          body : JSON.stringify({nid:nid})
+        })
+        .then((res)=>{
+          if(res.status === 204){
+            alert("삭제 성공")
+            window.location.href='http://localhost:8080/news/';
+          }else{
+            console.error();
+          }
+        }).catch()
+        .finally()
+      }
+    </script>
+    
+
+</body>
+</html>

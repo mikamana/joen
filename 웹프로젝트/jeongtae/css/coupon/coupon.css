@@ -1,0 +1,17 @@
+section.coupon_wrap {
+  height: 50px;
+  background-color: #000;
+}
+section.coupon_wrap div.coupon_box {
+  text-align: center;
+}
+section.coupon_wrap div.coupon_box p {
+  display: inline-block;
+  line-height: 50px;
+  color: #fff;
+  margin-right: 5px;
+}
+section.coupon_wrap div.coupon_box img {
+  vertical-align: middle;
+  width: 20px;
+}/*# sourceMappingURL=coupon.css.map */

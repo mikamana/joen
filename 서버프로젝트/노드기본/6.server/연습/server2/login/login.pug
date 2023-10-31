@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+  </style>
+  <title>로그인페이지</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <section class="login_contents">
+      <h3>로그인</h3>
+      <p>전자도서관 로그인은 KIST 통합정보 계정과 동일하게 연동됩니다.<br>
+        현재 사용하고 있는 아이디/비밀번호를 입력하여 로그인하여 주세요.</p>
+      <form name="loginForm" action="/login" method="post">
+        <ul>
+          <li>
+            <label for="id">Id</label>
+            <input type="text" name="id" id="id">
+          </li>
+          <li>
+            <label for="pass">Password</label>
+            <input type="text" name="pass" id="pass">
+          </li>
+          <li>
+            <button type="submit">login</button>
+            <button type="reset">cancle</button>
+          </li>
+        </ul>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

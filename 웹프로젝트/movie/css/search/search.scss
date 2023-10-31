@@ -1,0 +1,75 @@
+@use "../mixin.scss" as m;
+
+.search-content {
+  margin: 0 auto;
+  margin-top: 15vh;
+  position: relative;
+  width: min(90%, 1400px);
+}
+form.search-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  fieldset.genre-btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: none;
+    margin-top: 30px;
+    button {
+      padding: 10px 25px;
+      background-color: var(--sky);
+      margin-right: 5px;
+      margin-top: 8px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: var(--green);
+      }
+      &.active {
+        background-color: orange;
+      }
+    }
+  }
+  fieldset.search-keyword {
+    border: none;
+    display: flex;
+    align-items: center;
+    > * {
+      height: 55px;
+      border: none;
+      background-color: #fff;
+    }
+    input.search-input {
+      flex: 1;
+      outline: none;
+      color: var(--sky);
+      font-size: 1.7em;
+      &::placeholder {
+        color: #c7c7c7;
+      }
+      &::-webkit-calendar-picker-indicator {
+        display: none !important;
+      }
+    }
+    i {
+      color: var(--sky);
+      font-size: 1.3em;
+    }
+    span.search-icon,
+    button {
+      width: 55px;
+      line-height: 55px;
+      color: var(--sky);
+      text-align: center;
+    }
+    button {
+      display: none;
+    }
+  }
+}
+
+.trigger {
+  border: 5px solid gray;
+  opacity: 0;
+}

@@ -1,0 +1,286 @@
+@use "../mixin.scss" as m;
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  background-color: var(--navy);
+  background-image: url("../../img/line-pattern.png");
+  background-size: 20px;
+  animation: bgmove 100s infinite linear;
+  @include m.scrollbar;
+  @media #{m.$min-lg} {
+    padding-top: 80px;
+  } //1000이상
+  @media #{m.$max-lg} {
+    padding-top: 60px;
+  } //1000이하
+  @keyframes bgmove {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  main {
+    min-height: 50vh;
+    overflow: hidden;
+  }
+}
+
+section.common_section {
+  padding: 30px 0;
+  margin: 0 auto;
+  p.no-data {
+    font-style: italic;
+    margin-left: 20px;
+    color: var(--green);
+  }
+  h2.common_title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    i {
+      color: var(--sky);
+      margin-right: 10px;
+      font-size: 1.5em;
+    }
+    span {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+    &::after {
+      content: "";
+      margin-left: 10px;
+      flex: 1;
+      border-bottom: 1px solid rgba(#fff, 0.3);
+    }
+  }
+}
+
+section.movie-grid-section {
+  div.grid-container {
+    // flex를 지정하면 높이를 지정한 것과 같은 현상
+    // 즉 자식들 높이를 퍼센트로 지정가능
+    // 가상엘리먼트는 자바스크립트로 못찾는 문제때문에 태그를 만들고 디자인
+    figure {
+      padding: 0 10px;
+      height: auto;
+      box-sizing: border-box;
+      a {
+        background-color: var(--sky);
+        display: block;
+        height: 100%;
+        transition: all 0.3s;
+        position: relative;
+        z-index: 11;
+        &:hover {
+          transform: scale(1.1);
+          background-color: var(--green);
+          div.imgbox {
+            img {
+              filter: brightness(100%);
+            }
+          }
+        }
+        div.imgbox {
+          position: relative;
+          overflow: hidden;
+          img {
+            width: 100%;
+            filter: brightness(75%);
+            transition: all 0.3s;
+          } //img
+          span {
+            transform: rotate(45deg);
+            display: block;
+            background-color: blue;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            right: -40px;
+            top: -40px;
+          }
+          small {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            color: #fff;
+          }
+        }
+        figcaption {
+          padding: 10px;
+          h3,
+          p {
+            @include m.ellipsis;
+          }
+          h3 {
+            font-weight: 600;
+          }
+          p {
+            font-size: 0.9em;
+          }
+        } //figcaption
+      } //a
+    } //figure
+  } //div
+}
+
+section.swiper-section {
+  div.carousel {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      z-index: 13;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(2px) brightness(60%); //
+    }
+    &::before {
+      left: 100%;
+    }
+    &::after {
+      right: 100%;
+    }
+    &:hover {
+      @media (hover: hover) {
+        .next,
+        .prev {
+          opacity: 1;
+        }
+      }
+    } //carousel
+    .next,
+    .prev {
+      display: none;
+      @media (hover: hover) {
+        display: block;
+      }
+      position: absolute;
+      z-index: 12;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5em;
+      opacity: 0;
+      transition: opacity 0.3s;
+    } //.next .prev
+    .next {
+      left: 0px;
+    }
+    .prev {
+      right: 0px;
+    }
+  }
+}
+
+section.wrap-section {
+  div.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    figure {
+      margin-bottom: 20px;
+
+      @media #{m.$min-xlg} {
+        width: 20%;
+      } // 1400이상
+      @media #{m.$xlg} {
+        width: 25%;
+      } // 1000 ~1400
+      @media #{m.$md} {
+        width: 33.33%;
+      } // 1000 ~500
+      @media #{m.$max-sm} {
+        width: 50%;
+      } // 500이하
+    }
+  } //grid
+}
+
+section.scroll-section {
+  .grid-container {
+    display: flex;
+    // inline-flex는 자식들 기준으로 부모 컨테이너의 크기가 변한다.
+    overflow-x: auto; // auto로 지정하면 요소의 넓이가 늘어나면 자동으로 스크롤이 생김
+    @include m.scrollbar;
+    padding-bottom: 20px;
+    > * {
+      flex-shrink: 0;
+      margin-right: 15px;
+      border: 5px solid #eee;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          filter: brightness(100%);
+          transform: scale(1.1);
+        }
+      }
+      img {
+        transition: all 0.5s;
+        filter: brightness(60%);
+        width: 100%;
+      }
+    }
+  }
+}
+section.img-section {
+  .grid-container {
+    a {
+      display: block;
+      width: 250px;
+    }
+  }
+}
+section.video-section {
+  .grid-container {
+    button {
+      width: 250px;
+    }
+  }
+}
+
+section.people-section {
+  .grid-container {
+    figure {
+      width: 170px;
+      &:hover figcaption {
+        background-color: var(--sky);
+        em {
+          color: var(--navy);
+        }
+      }
+      img {
+        width: 100%;
+      }
+      figcaption {
+        transition: all 0.5s;
+        background-color: var(--navy);
+        position: relative;
+        padding: 10px;
+        height: 100%;
+
+        em {
+          display: block;
+          color: var(--green);
+          font-size: 1em;
+          @include m.ellipsis;
+        }
+        b {
+          display: block;
+          font-size: 0.8em;
+          @include m.ellipsis;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

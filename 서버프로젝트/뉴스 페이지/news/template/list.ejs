@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뉴스</title>
+</head>
+<body>
+  <section class="headline">
+  <h1><a href="#">헤드라인 뉴스</a></h1>
+  <hr>
+  <div style="text-align:right;">
+    <button type="button" id="btnReg" onclick="fnNews('<%= list.nid %>')">뉴스등록</button>
+    <form name="regForm" action="/news" method="post" style="display: none; border:1px solid gray;" id="news_create_<%= list.nid %>">
+      Title : <input id="content_<%= list.nid %>" type="text" name="title" placeholder="제목"><br>
+      Content :<input type="text" name="info" placeholder="내용"><br>
+      URL :<input type="text" name="url" placeholder="이미지URL"><br>
+      <button type="submit">등록완료</button>
+      <button type="reset">다시쓰기</button>
+    </form>
+    <!-- 뉴스 등록폼 : 토글 처리, 이미지 URL, 제목, 내용 -->
+  </div>
+    <ul>
+        <% for(let i = 0; i<list.length; i++){ %>
+        <li style="list-style: none; border-bottom: 1px solid gray; height:100px" >
+          <span><%= list[i].nid %></span>
+          <img src="<%= list[i].url %>" style="float:left; padding-right:10px; border:1px solid gray"  width= "100px" height="70px" alt="이미지">
+          <p><a href="/news/<%= list[i].nid %>"><%= list[i].title %></a></p>
+          <p><%= list[i].info %></p>
+          <p><%= list[i].date %></p>
+        </li>
+        <% } %>
+    </ul>
+  </section>
+  <script>
+
+    function fnNews(nid){
+
+      const newsForm = document.querySelector("#news_create_"+nid)
+      const newsText = document.querySelector("#content_"+nid)
+      const display = newsForm.style.display
+      if(display==="none"){
+        newsForm.style.display="block";
+        newsText.focus()
+      }else{
+        newsForm.style.display="none";
+        newsText.value = "";
+      }
+      /* 뉴스 등록폼 : 토글 처리, 이미지 URL, 제목, 내용 */
+    }
+  </script>
+    
+</body>
+</html>

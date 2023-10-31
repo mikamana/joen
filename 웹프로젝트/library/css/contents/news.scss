@@ -1,0 +1,192 @@
+@use "../common/mixin.scss" as m;
+main {
+    width: 100%;
+    background-color: #fff;
+    min-height: 1500px;
+    div.contents_title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        a {
+            margin-right: 15px;
+        }
+    } //텍스트 타이틀 박스
+    .contents_text_title {
+        font-size: 2em;
+        font-weight: bold;
+        display: inline;
+        border-bottom: 5px solid #e03710;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    } // 텍스트 타이틀
+    a.more_btn {
+        display: block;
+        padding: 12px 28px;
+        border: 1px solid #646464;
+        color: #646464;
+        border-radius: 50px;
+        margin-right: 15px;
+    } // more버튼
+    div.command_box {
+        margin-right: 15px;
+    }
+    section.news_wrap {
+        background-color: #fff;
+        min-height: 630px;
+        div.inner {
+            height: 100%;
+            display: flex;
+            padding-top: 90px;
+            box-sizing: border-box;
+            article.new_left_book {
+                width: 50%;
+                // height: 100%;
+                div.contents_title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    a {
+                        margin-right: 15px;
+                    }
+                }
+                .swiper {
+                    // overflow: auto;
+                    // overflow: clip !important;
+                }
+                div.recommand {
+                    min-height: 400px;
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        // overflow: hidden;
+                        li {
+                            width: 30%;
+                            a {
+                                width: 100%;
+                                img {
+                                    width: 100%;
+                                }
+                                span {
+                                    display: block;
+                                    text-align: center;
+                                    margin: 15px 0px;
+                                    b {
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        display: block;
+                                        font-weight: bold;
+                                        margin: 10px 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    div.swiper-pagination {
+                        position: absolute;
+                        bottom: 0px;
+                    }
+                }
+            }
+            article.new_right_thesis {
+                width: 50%;
+                height: 100%;
+                div.contents_title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    h3 {
+                        margin-left: 15px;
+                    }
+                }
+                div.thesis_info {
+                    ul {
+                        height: 334px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: stretch;
+                        justify-content: space-evenly;
+                        margin-left: 15px;
+                        li {
+                            border-bottom: 1px solid #c9c9c9;
+                            padding: 11px 10px;
+                            flex: 1;
+                            display: flex;
+                            align-items: center;
+                            overflow: hidden;
+                            &:first-child {
+                                border-top: solid 1px #c9c9c9;
+                            }
+                            a {
+                                span {
+                                    display: block;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    &::before {
+                                        content: url("../../img/contents/recommand/lineNoticeBg.jpg");
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{m.$tablet} {
+    main {
+        font-size: 14px;
+        section.news_wrap {
+            div.inner {
+                article.new_left_book {
+                    div.recommand {
+                        // height: auto;
+                        min-height: 250px;
+                        margin-bottom: 20px;
+
+                        div.swiper-pagination {
+                            bottom: 0px;
+                        }
+                    }
+                }
+                article.new_right_thesis {
+                    div.contents_title {
+                        h3 {
+                            margin-left: 0px;
+                        }
+                    }
+                }
+                article.new_right_thesis {
+                    div.thesis_info {
+                        ul {
+                            margin-left: 0px;
+                            padding-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        h3.contents_text_title {
+            font-size: 1.3em;
+        }
+        section.news_wrap {
+            div.inner {
+                flex-wrap: wrap;
+                padding-top: 60px;
+                article.new_left_book {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+                article.new_right_thesis {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

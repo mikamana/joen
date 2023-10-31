@@ -1,0 +1,143 @@
+button.modal-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  opacity: 0.7;
+  display: block;
+}
+button.modal-close-btn:hover {
+  opacity: 1;
+}
+
+section.video-modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 101;
+  left: 0;
+  top: 0;
+  display: none;
+}
+section.video-modal img.youtube-ratio {
+  max-width: 90%;
+  max-height: 90%;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+section.video-modal iframe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.person-modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 101;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+}
+@media (hover: hover) {
+  section.person-modal::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #000;
+  }
+  section.person-modal::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+  }
+  section.person-modal::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--sky);
+  }
+}
+section.person-modal .center {
+  width: min(90%, 600px);
+  min-height: 1000px;
+  margin: 10vh auto;
+  text-align: center;
+}
+section.person-modal .center img.person-photo {
+  width: min(60%, 400px);
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border: 5px solid #eee;
+}
+section.person-modal .center h4 {
+  text-align: left;
+  color: var(--green);
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--green);
+}
+section.person-modal .center ul {
+  overflow: hidden;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 200px;
+}
+section.person-modal .center ul li {
+  padding: 5px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+}
+section.person-modal .center ul.profile li:not(:last-child) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.person-modal .center ul.profile li small {
+  opacity: 0.7;
+  margin-right: 6px;
+}
+section.person-modal .center ul.profile li em {
+  font-style: italic;
+}
+section.person-modal .center ul.filmography li time {
+  opacity: 0.7;
+  margin-right: 10px;
+  font-style: italic;
+}
+section.person-modal .center ul.filmography li a em {
+  font-style: 1.1em;
+}
+section.person-modal .center ul.filmography li a small {
+  font-style: italic;
+}
+section.person-modal .center ul.filmography li a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+section.person-modal .more-btn {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.5s;
+}
+section.person-modal .more-btn .close {
+  display: none;
+}
+section.person-modal .more-btn.active .close {
+  display: block;
+}
+section.person-modal .more-btn.active .open {
+  display: none;
+}/*# sourceMappingURL=modal.css.map */

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dwitter</title>
+</head>
+<body>
+  <h1>Dwitter</h1>
+    <nav class="gnb">
+      <ul>
+        <li>
+          <a href="/dwitter">ALL Tweets</a>
+        </li>
+        <li>
+          <a href="#">My Tweets</a>
+        </li>
+        <li>
+          <button type="button" onclick="toggleLogin()">Login</button>
+          <a href="#" onclick="signUpToggle()">회원가입</a>
+        </li>
+      </ul>
+    </nav>
+  <form style="display:none; " class="login_form" name="loginForm" action="/login" method="post">
+    <input id="id"style="width:500px;" type="text" name="id" placeholder="아이디입력창">
+    <input id="password" style="width:500px;" type="password" name="password" placeholder="비밀번호입력창">
+    <button type="submit">로그인</button>
+    <button type="reset">리셋</button>
+  </form>
+  <form name="contentForm" action="/dwitter" method="post" style="border:2px solid gray">
+    <input type="text" name="id" placeholder="id">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="content" style="width:70%" placeholder="contents">
+    <button type="submit">Post</button>
+  </form>
+  <form style="display:none;" action="/signup" method="post" class="signup_form">
+    <input id="sid" name="id" type="text" placeholder="아이디를 입력하세요">
+    <input id="pwd" name="password" type="password" placeholder="패스워드를 입력하세요">
+    <input id="sname" name="name" type="text" placeholder="이름을 입력하세요">
+    <input id="scontent" name="content" type="text" placeholder="내용을 입력하세요">
+    <button type="submit">회원가입완료</button>
+  </form>
+  <main>
+        <!-- pid 값을 pk값이라고함 모든 게시판은 pk값 (중복되지않는 키)을 가지고 넘어감 -->
+        <!-- a태그로 들어가는 모든 방식은get 방식이다  -->
+    <section class="contents_wrap">
+      <% for(let i = 0; i<list.length; i++){ %>
+      <div style="border:1px solid gray">
+        <span style="float:right; cursor:pointer" onclick="remove('<%= list[i].id %>')">삭제</span>
+        <span style="float:right; cursor:pointer" onclick="updateToggle('<%= list[i].id %>')">편집&nbsp;&nbsp;</span>
+        <img style="clear:both;" src="https://lh3.googleusercontent.com/ogw/AKPQZvw0kgz5cj9ivXSxGY2hHYWZVwUjynneEU_ThU7i=s32-c-mo" alt="dsa">
+        <span>[<%= list[i].name %>]</span>
+        <span><a href="/dwitter/<%= list[i].id %>" onclick="myTweet('<%= list[i].id %>')"><%= list[i].id %></a></span>
+        <span><%= list[i].date %></span>
+        <div>
+          <%= list[i].content %>
+        </div>
+        <div id="updateForm_<%= list[i].id %>" style="display: none;">
+          <input type="text" id="content_<%= list[i].id %>" style="width:80%">
+          <button type="button" onclick="update('<%= list[i].id %>')">Update</button>
+        </div>
+      </div>
+      <% } %>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script>
+        function updateToggle(id){
+
+          const updateForm = document.querySelector("#updateForm_"+id)
+          const contentText = document.querySelector("#content_"+id)
+          const display = updateForm.style.display;
+
+          if(display==="none"){
+            updateForm.style.display="block";
+            contentText.focus()
+          }else{
+            updateForm.style.display="none";
+            contentText.value = "";
+          }
+        }
+
+        function update(id){
+
+          const updateText = document.querySelector("#content_"+id).value
+          fetch('/dwitter',
+          {
+            method:'put',
+            headers : {'content-type':'application/json'},
+            body : JSON.stringify({id:id, content : updateText})
+          })
+          .then((result)=>{
+
+            if(result.status === 204){
+              alert("업데이트 성공");
+              window.location.reload();
+            }else if(result.status === 400){
+              alert("로그인 후 수정이 가능합니다.");
+              window.location.reload();
+            }
+
+
+
+          })
+          .catch()
+          .finally()
+
+        }
+
+        function remove(id){
+
+          fetch('/dwitter',
+          {
+            method:'delete',
+            headers : {'content-type':'application/json'},
+            body : JSON.stringify({id:id})
+          })
+          .then((result)=>{
+            if(result.status === 204){
+              alert("삭제 성공");
+              window.location.reload();
+            }
+          })
+          .catch()
+          .finally()
+
+        }
+
+        function toggleLogin(){
+          const form = document.querySelector(".login_form")
+          const display = document.querySelector(".login_form").style.display
+          const id = document.querySelector("#id")
+          const password = document.querySelector("#password")
+          if(display==="none"){
+            form.style.display = "block";
+            id.focus();
+
+          }else{
+            form.style.display = "none";
+            id.value = "";
+            password.value = "";
+          }
+
+        }
+
+        function signUpToggle(){
+          
+          const signupForm = document.querySelector(".signup_form")
+          const display = signupForm.style.display
+          const id = document.querySelector("#sid")
+          const password = document.querySelector("#pwd")
+
+          if(display==="none"){
+            signupForm.style.display = "block";
+            id.focus();
+          }else{
+            signupForm.style.display = "none";
+            id.value = "";
+            password.value = "";
+          }
+
+        }
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/join.css">
+  <title>회원가입</title>
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <h1>회원가입</h1>
+    </div>
+  </header>
+  <main>
+    <div class="inner">
+      <form class="join_form" action="/join" method="post">
+        <dl class="dl_name">
+          <dt><label for="name">이름</label></dt>
+          <dd class="dd_focus"><input class="name" type="text" name="name"></dd>
+          <p class="dd_name">이름을 입력하세요</p>
+        </dl>
+        <dl class="dl_id">
+          <dt><label for="id">아이디</label></dt>
+          <dd><input class="id" type="text" name="id"></dd>
+        </dl>
+        <dl class="dl_password">
+          <dt><label for="password">비밀번호</label></dt>
+          <dd><input class="password" type="text" name="password"></dd>
+        </dl>
+        <dl class="dl_password_check">
+          <dt><label for="password_check">비밀번호 체크</label></dt>
+          <dd><input class="password_check" type="text" name="password_check"></dd>
+        </dl>
+        <dl class="dl_gender">
+          <dt><label for="gender">성별</label></dt>
+          <dd><input type="radio" name="gender" value="male"> 남성<input type="radio" name="gender" value="female"> 여성
+          </dd>
+        </dl>
+        <dl class="dl_phone">
+          <dt><label for="phone">핸드폰번호</label></dt>
+          <dd><input class="phone" name="phone" type="text"></dd>
+        </dl>
+        <dl class="dl_email">
+          <dt><label for="email">이메일</label></dt>
+          <dd><input class="email" name="email" type="text"></dd>
+        </dl>
+        <dl class="dl_city">
+          <dt><label for="city">지역</label></dt>
+          <dd><input class="city" name="city" type="text"></dd>
+        </dl>
+        <dl class="dl_birthday">
+          <dt><label for="birthday">생년월일</label></dt>
+          <dd><input class="birthday" name="birthday" type="text"></dd>
+        </dl>
+        <dl class="dl_register">
+          <dt><label for="register_date">가입날짜</label></dt>
+          <dd><input class="register_date" name="register_date" type="text"></dd>
+        </dl>
+        <dl class="dl_point">
+          <dt><label for="point">포인트</label></dt>
+          <dd><input class="point" name="point" type="text"></dd>
+        </dl>
+        <button type="submit">회원가입</button>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

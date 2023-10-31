@@ -1,0 +1,47 @@
+@use "../common/mixin.scss" as m;
+
+main {
+    section.site_wrap {
+        min-height: 420px;
+        div.inner {
+            padding-top: 60px;
+            box-sizing: border-box;
+            div.contents_title {
+                margin-bottom: 30px;
+                h3.contents_text_title {
+                    display: inline;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                li {
+                    width: 18%;
+                    border: 1px solid #c9c9c9;
+                    margin-bottom: 20px;
+                    a {
+                        display: block;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{m.$tablet} {
+    main {
+        section.site_wrap {
+            min-height: 260px;
+            div.inner {
+                padding-top: 30px;
+            }
+        }
+    }
+}

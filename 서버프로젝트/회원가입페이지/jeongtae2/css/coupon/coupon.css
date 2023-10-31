@@ -1,0 +1,23 @@
+section.coupon_wrap {
+  height: 50px;
+  background-color: #000;
+  text-align: center;
+}
+section.coupon_wrap div.coupon_box {
+  display: inline-block;
+  margin-right: 5px;
+}
+section.coupon_wrap div.coupon_box p {
+  display: inline-block;
+  line-height: 50px;
+  color: #fff;
+  margin-right: 5px;
+}
+section.coupon_wrap div.coupon_box img {
+  vertical-align: middle;
+  width: 20px;
+}
+section.coupon_wrap span.today_off {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8em;
+}/*# sourceMappingURL=coupon.css.map */
