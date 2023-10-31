@@ -1,0 +1,16 @@
+main section.all_wrap {
+  height: 700px;
+}
+main section.all_wrap div.inner {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+main section.all_wrap div.inner h2.title_style {
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 20px;
+}
+main section.all_wrap div.inner p.info_style {
+  padding: 20px;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,18 @@
+main {
+  section.contents_wrap {
+    height: 700px;
+    div.inner {
+      width: min(95%, 1200px);
+      height: inherit;
+      margin: 0 auto;
+      border: 1px solid #c9c9c9;
+      div.content1 {
+        h2.content_title {
+          padding: 20px;
+          font-size: 2em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

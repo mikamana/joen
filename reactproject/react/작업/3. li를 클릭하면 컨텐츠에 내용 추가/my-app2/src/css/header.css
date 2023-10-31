@@ -1,0 +1,24 @@
+header.header_wrap {
+  height: 100px;
+}
+header.header_wrap div.logo_wrap {
+  width: min(95%, 1200px);
+  height: inherit;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+header.header_wrap div.logo_wrap h1.logo {
+  font-size: 3em;
+  font-weight: bold;
+}
+header.header_wrap div.logo_wrap nav.gnb ul {
+  display: flex;
+}
+header.header_wrap div.logo_wrap nav.gnb ul li {
+  padding: 15px;
+  border: 1px solid gray;
+}/*# sourceMappingURL=header.css.map */
