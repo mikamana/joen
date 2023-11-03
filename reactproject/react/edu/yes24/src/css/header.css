@@ -1,0 +1,27 @@
+header {
+  height: 100px;
+  border: 1px solid gray;
+}
+header nav.gnb {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav.gnb div {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 1px solid gray;
+}
+header nav.gnb div:hover {
+  background-color: aquamarine;
+}
+
+div.inner {
+  width: min(95%, 1200px);
+  height: 100%;
+  margin: 0 auto;
+}/*# sourceMappingURL=header.css.map */

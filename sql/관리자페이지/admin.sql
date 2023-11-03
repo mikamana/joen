@@ -44,6 +44,7 @@ select * from order_detail;
 select * from sub_category;
 delete from product where product_id = "AD001";
 
+select cg.category_name,count(*) as count, sum(line_total) as line_total from category cg inner join sub_category scg on cg.category_id = scg.category_id inner join product pd on scg.sub_category_id = pd.sub_category_id inner join order_detail od on od.product_id = pd.product_id group by cg.category_name;
 
 
 

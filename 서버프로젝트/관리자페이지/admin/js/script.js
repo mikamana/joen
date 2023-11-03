@@ -1,12 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
+// import { go } from "../js/module.js";
 
+document.addEventListener("DOMContentLoaded", () => {
+    // go()
     adminButton('customerDate')
     // 시작하자마자 호출
+
     document.querySelector(".admin_btn").addEventListener("click", e => {
 
         adminButton('customerDate')
 
     })// 고객관리
+
     function adminButton(customer) {
 
         const url = "/" + customer
@@ -18,8 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const createOutput = `
                 <p class="count_all"></p>
                 <a class="member_create" href="./template/cjoin.html">회원추가</a>
-                <a class="delete_btn customer_delete_btn" href="#">회원탈퇴</a>
+                <span id ="delete_id" class="delete_btn customer_delete_btn" href="#">회원탈퇴</span>
                 `
+                // 자바스크립트 셀렉팅 = id
+                // a태그는 default href = 무조건 먼저 실행됌
+
                 const headTable = `
                 <tr>
                     <th>아이디</th>
@@ -53,26 +60,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.querySelector(".count_all").innerHTML = countAll
                 document.querySelector(".body_table").innerHTML = output;
                 document.querySelector(".head_table").innerHTML = headTable;
-
-                document.querySelector(".customer_delete_btn").addEventListener("click", e => {
+                
+                
+                document.querySelector("#delete_id").addEventListener("click", e => {
 
                     deleteToggle()
-
+            
                 })//회원탈퇴토글클릭
 
-                function deleteToggle() {
+                function deleteToggle() { // 일반function은 밖에서 사용 가능
 
                     const unregisterForm = document.querySelector(".unregister_form");
                     const display = unregisterForm.style.display
-
+            
                     if (display === "none") {
+            
                         unregisterForm.style.display = "block";
+            
                     } else {
+            
                         unregisterForm.style.display = "none";
+            
                     }
-
+            
                 }// 회원탈퇴토글
-
+            
                 document.querySelector(".unregister_form").addEventListener("submit", e => {
 
                     const id = document.querySelector("#id").value
@@ -105,17 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
     })// 사원관리
     function employeeButton(employee) {
 
+        const createOutput = `
+        <p class="count_all"></p>
+        <a class="employee_create" href="./template/ejoin.html">사원추가</a>
+        <a class="delete_btn employee_delete_btn" href="#" onclick="deleteToggle()">사원탈퇴</a>
+        <a class="update_btn employee_update_btn" href="#">사원업데이트</a>
+        `
+        document.querySelector(".function_wrap").innerHTML = createOutput
+
         const url = "/" + employee
         fetch(url)
             .then((response) => response.json())
             .then((employeeList) => {
                 const countAll = "총 회원수 = " + employeeList.length
-                const createOutput = `
-                <p class="count_all"></p>
-                <a class="employee_create" href="./template/ejoin.html">사원추가</a>
-                <a class="delete_btn employee_delete_btn" href="#">사원탈퇴</a>
-                <a class="update_btn employee_update_btn" href="#">사원업데이트</a>
-                `
+
                 const headTable = `
                 <tr>
                     <th>아이디</th>
@@ -141,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
             `).join('\n')}
             `;
 
-                document.querySelector(".function_wrap").innerHTML = createOutput
                 document.querySelector(".count_all").innerHTML = countAll
                 document.querySelector(".body_table").innerHTML = output;
                 document.querySelector(".head_table").innerHTML = headTable;
@@ -151,13 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     deleteToggle()
 
-                })//회원탈퇴토글클릭
-
-                document.querySelector(".update_btn").addEventListener("click", e => {
-
-                    updateToggle()
-
-                })//업데이트토글클릭
+                })//사원탈퇴토글클릭
 
                 function deleteToggle() {
 
@@ -165,35 +173,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     const display = retireForm.style.display
 
                     if (display === "none") {
+
                         retireForm.style.display = "block";
+
                     } else {
+
                         retireForm.style.display = "none";
+
                     }
 
-                }//회원탈퇴토글
-
-                document.querySelector(".retire_form").addEventListener("submit", e => {
-
-                    const id = document.querySelector("#id").value
-
-                    fetch(this.action, {
-                        method: 'delete',
-                        headers: { 'Content-type': 'application/json' },
-                        body: { id: id }
-                    }).then((result) => {
-
-                        if (result === 204) {
-
-                            alert("삭제성공")
-
-                            window.location.reload()
-
-                        }
-
-                    })//회원탈퇴기능
+                }// 회원탈퇴토글
 
 
-                })//회원탈퇴기능
+
+                document.querySelector(".update_btn").addEventListener("click", e => {
+
+                    updateToggle()
+
+                })//업데이트토글클릭
 
                 function updateToggle() {
 
@@ -237,6 +234,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }).catch(console.error())
     }// 사원관리기능 employee C(Create),R(Reading),U(Update),D(Delete)
+    document.querySelector(".retire_form").addEventListener("submit", e => {
+
+        const id = document.querySelector("#id").value
+
+        fetch(this.action, {
+            method: 'delete',
+            headers: { 'Content-type': 'application/json' },
+            body: { id: id }
+        }).then((result) => {
+
+            if (result === 204) {
+
+                alert("삭제성공")
+
+                window.location.reload()
+
+            }
+
+        })//회원탈퇴기능
+
+
+    })//회원탈퇴기능
 
     document.querySelector(".product_btn").addEventListener("click", e => {
 
@@ -439,6 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `).join("\n")}
 
                 `
+                
                 document.querySelector(".function_wrap").innerHTML = createOutput
                 document.querySelector(".count_all").innerHTML = `총 주문 수 = ${orderList.length}`
                 document.querySelector(".head_table").innerHTML = headerOutput
@@ -545,14 +565,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             <tr>
                                 <td>${category.category_name}</td>
                                 <td>${category.count}</td>
-                                <td>${category.line_total}</td>
+                                <td>${category.line}</td>
                             </tr>
                         `).join("\n")}
                     `
 
                     document.querySelector(".head_table").innerHTML = headerOutput
                     document.querySelector(".body_table").innerHTML = output
-
 
                     })
 
@@ -718,5 +737,5 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
     }//매출관리기능
-
+    
 })

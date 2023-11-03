@@ -18,6 +18,9 @@ function App() {
   const sortAscending = () => {
     // 배열 복사 후 오름차순 정렬
     let copy = [...list];
+    // [...]은 copy가 가지고있던 주소를 변경하는 역할을 함
+    // 즉 [...]는 괄호를 벗기고 다시 씌우는 작업이 진행 돼 주소가 변경이 된다.
+
     copy.sort((a, b) => a.localeCompare(b)); // 오름차순 정렬
 
     // 상태 업데이트

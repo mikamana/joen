@@ -32,7 +32,7 @@ export async function empUpdate(name, phone, email, id) {
 
   return db.execute("update employee set employee_name = ?, phone = ?, email = ? where employee_id = ? ", [name, phone, email, id])
     .then((result) => "success")
-    
+
 }
 export async function unregister(id) {
 
@@ -98,7 +98,7 @@ export async function getPrd() {
 
 export async function getCategory() {
 
-  return db.execute("select cg.category_name,count(*) as count, sum(total_due) as line_total from category cg inner join sub_category scg on cg.category_id = scg.category_id inner join product pd on scg.sub_category_id = pd.sub_category_id inner join order_detail od on od.product_id = pd.product_id group by cg.category_name")
+  return db.execute("select cg.category_name,count(*) as count, sum(line_total) as line from category cg inner join sub_category scg on cg.category_id = scg.category_id inner join product pd on scg.sub_category_id = pd.sub_category_id inner join order_detail od on od.product_id = pd.product_id group by cg.category_name")
   .then((result) => result[0])
 
 }

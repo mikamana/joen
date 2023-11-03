@@ -35,7 +35,7 @@ export async function getCategory(req, res) {
 
 export async function getCustomer(req,res){
 
-    const rows = await adminRepository.getCategory()
+    const rows = await adminRepository.getCustomer()
 
     res.json(rows);
 

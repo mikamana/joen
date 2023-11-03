@@ -1,0 +1,67 @@
+main section.contents_wrap {
+  min-height: 700px;
+}
+main section.contents_wrap div.inner {
+  width: min(95%, 1020px);
+  margin: 0 auto;
+}
+main section.contents_wrap div.inner div.div_wrap {
+  width: 50%;
+  float: left;
+  padding-top: 50px;
+  border-right: 1px solid gray;
+}
+main section.contents_wrap div.inner div.div_wrap div.text_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main section.contents_wrap div.inner div.div_wrap h2.content_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+main section.contents_wrap div.inner div.div_wrap span.more_add {
+  text-align: center;
+  font-size: 0.9em;
+  margin-right: 40px;
+  color: #4b4b4b;
+}
+main section.contents_wrap div.inner div.div_wrap ul {
+  display: flex;
+  justify-content: flex-start;
+}
+main section.contents_wrap div.inner div.div_wrap ul li {
+  margin-right: 50px;
+}
+main section.contents_wrap div.inner div.div_wrap ul li fieldset {
+  width: 215px;
+  height: 215px;
+  margin-bottom: 20px;
+}
+main section.contents_wrap div.inner div.div_wrap ul li fieldset img {
+  width: 100%;
+}
+main section.contents_wrap div.inner div.div_wrap ul li p.p_info {
+  width: 200px;
+  font-size: 0.85em;
+  color: #232323;
+}
+main section.contents_wrap div.inner div.div_wrap ul li span {
+  text-decoration: line-through;
+  font-size: 0.8em;
+  color: #505050;
+}
+main section.contents_wrap div.inner div.div_wrap ul li em {
+  font-size: 0.9em;
+  color: rgb(206, 67, 67);
+  margin-bottom: 5px;
+}
+main section.contents_wrap div.inner div.div_wrap ul li p.p_icon {
+  margin-top: 10px;
+}
+main section.contents_wrap div.inner div.div_wrap ul li p.p_icon > * {
+  background-color: rgb(194, 85, 85);
+  border-radius: 5px;
+  font-size: 0.85em;
+}/*# sourceMappingURL=Main.css.map */

@@ -1,0 +1,19 @@
+div.content_wrap {
+  border: 1px solid gray;
+  padding: 20px;
+  > *:not(:first-child) {
+    padding: 20px;
+  }
+  button {
+    float: right;
+  }
+}
+div.login_form {
+  border: 1px solid gray;
+  padding: 30px;
+}
+div.update_div {
+  input {
+    width: 1500px;
+  }
+}

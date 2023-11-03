@@ -1,0 +1,21 @@
+header {
+  height: 120px;
+  div.inner {
+    width: min(90%, 1020px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    img.h_img {
+      width: 250px;
+      height: 43px;
+    }
+    input.h_search {
+      border: 1px solid rgb(136, 136, 136);
+      width: 340px;
+      margin-left: 75px;
+      border-radius: 15px;
+      padding: 15px;
+    }
+  }
+}

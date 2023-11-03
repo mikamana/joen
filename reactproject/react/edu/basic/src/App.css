@@ -1,13 +1,61 @@
+.container{
+  width:500px;
+  margin:auto;
+}
+.banner{
+  background-color: orange;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.number{
+
+  display: block;
+  font-size: 30pt;
+  padding-left: 10px;
+
+}
+
+span.sa{
+  color: red;
+}
+span.total{
+
+  font-size: 2rem;
+
+}
+
+.button{
+
+  display: block;
+  background-color: tomato;
+  color: white;
+  border:1px solid lightgray;
+  border-radius: 0.4rem;
+  padding:10px 20px; 
+}
+
 .profile {
   width: 300px;
   text-align: center;
+  margin: 10px;
   padding: 1rem;
   background-color: #ebebeb;
   box-shadow: 7px 10px 12px -6px rgba(0,0,0,0.75);
   -webkit-box-shadow: 7px 10px 12px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: 7px 10px 12px -6px rgba(0,0,0,0.75);
+  position: relative;
+  float:left;
 }
 
+span.new{
+
+  position: absolute;
+  left:70%;
+  top:10%;
+  background-color: aquamarine;
+  padding:  0.5rem;
+}
 .img{
   width:200px;
   height:200px;

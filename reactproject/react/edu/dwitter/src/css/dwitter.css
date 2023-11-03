@@ -1,0 +1,19 @@
+div.content_wrap {
+  border: 1px solid gray;
+  padding: 20px;
+}
+div.content_wrap > *:not(:first-child) {
+  padding: 20px;
+}
+div.content_wrap button {
+  float: right;
+}
+
+div.login_form {
+  border: 1px solid gray;
+  padding: 30px;
+}
+
+div.update_div input {
+  width: 1500px;
+}/*# sourceMappingURL=dwitter.css.map */
