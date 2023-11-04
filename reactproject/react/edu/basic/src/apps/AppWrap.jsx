@@ -9,10 +9,10 @@ import "../css/olivecss/reset.css";
 import Footer from "../oliveyoung/Footer";
 
 
-export default function AppWrap(){
+export default function AppWrap() {
   // 
   const rename = <span>유사한 고객님이 <br></br>많이 주문했어요</span>
-  return(
+  return (
 
     <>
       <div>
@@ -22,7 +22,7 @@ export default function AppWrap(){
         </Navbar>
         <Content>
           <BoxList name={rename}></BoxList>
-        </Content> 
+        </Content>
         <Footer>
         </Footer>
       </div>

@@ -1,0 +1,7 @@
+@use "../Mixin/mixin.scss" as m;
+
+header.header_wrap {
+    border: 1px solid gray;
+    background-color: red;
+    height: 278px;
+}

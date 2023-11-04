@@ -1,0 +1,9 @@
+@use "../Mixin/mixin.scss" as m;
+
+aside {
+    position: fixed;
+    width: 100px;
+    height: 200px;
+    right: 0px;
+    background-color: aquamarine;
+}

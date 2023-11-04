@@ -1,13 +1,13 @@
 import React from "react";
 
 
-export default function PriceInfo(){
+export default function PriceInfo(props) {
 
-  return(
+  return (
 
     <>
-      <span>124,000 </span>
-      <em> 35,910원</em>
+      <span>{props.price}</span>
+      <em>{props.totalPrice}</em>
     </>
 
   );

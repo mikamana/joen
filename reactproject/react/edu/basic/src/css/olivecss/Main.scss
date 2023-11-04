@@ -56,9 +56,8 @@ main {
             p.p_icon {
               margin-top: 10px;
               > * {
-                background-color: rgb(194, 85, 85);
-                border-radius: 5px;
-                font-size: 0.85em;
+                margin-right: 2px;
+                padding: 2px;
               }
             }
           }
@@ -66,4 +65,19 @@ main {
       }
     }
   }
+}
+
+i.icon_flag {
+  border-radius: 10px;
+  font-size: 0.7em;
+}
+
+i.sale {
+  background-color: red;
+}
+i.coupon {
+  background-color: blue;
+}
+i.delivery {
+  background-color: gray;
 }

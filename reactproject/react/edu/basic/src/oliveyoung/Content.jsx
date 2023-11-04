@@ -1,10 +1,9 @@
-import React , {Children} from "react";
-// import "../css/olivecss/Header.css";
+import React, { Children } from "react";
 import "../css/olivecss/Main.css";
 
-export default function Content({children}){
+export default function Content({ children }) {
 
-  return(
+  return (
 
     <>
       <main>
