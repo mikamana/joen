@@ -2,19 +2,33 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     text-decoration: none;
     font-weight: normal;
 }
 
+/* 
+
+    font-family: Montserrat,-apple-system,
+    NotoSansCJKkr,AppleSDGothicNeo,Roboto,dotum,
+    "돋움",sans-serif;
+
+*/
 .serif {
-    font-family: "Nanum Myeongjo", serif;
+    font-family: "Montserrat", "NotoSansCJKkr", serif;
 }
 
 :root {
-    --sky: #03b3e4;
-    --green: #8ccda2;
-    --navy: #091a38;
+    --green: #9bce26;
+}
+
+.inner {
+    width: min(95%, 1200px);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }

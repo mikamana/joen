@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from 'url';
+import dotenv from "dotenv";
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -12,7 +13,12 @@ const client = path.join(dirname, 'client/bulid');
 //최종적으로 build폴더에 있는 html을 불러와야함
 const indexHtml = path.join(client, 'index.html');
 
-console.log(indexHtml);
+dotenv.config();
+// console.log(process.env.DB_HOST);
+// console.log(process.env.DB_USER);
+// console.log(process.env.DB_PASS);
+//환경변수 호출
+
 
 app.use(express.static(client));
 // 경로안에있는 파일을 정적파일로 저장하고 사용해야함
@@ -43,3 +49,5 @@ app.listen(3000, () => {
 //보통 React 앱을 빌드하려면 명령어를 실행해야 합니다. 기본적으로 React의 빌드 명령어는 다음과 같습니다:
 
 //API 엔드포인트 설정 알아야함
+
+//MySQL 의 DB는 실서버나 작업용 공용서버에 두고서 작업을 주로 합니다.

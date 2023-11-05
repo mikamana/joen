@@ -6,7 +6,6 @@ import DetailContents from "../../pages/Jeongtae/Detail/components/DetailContent
 
 export default function Detail() {
 
-
     return (
 
         <>

@@ -1,6 +1,101 @@
-@use "./mixin.scss" as m;
+@use "../../Common/Mixin/mixin.scss" as m;
 
-main.detail_contents_wrap {
-    min-height: 600px;
+main#detail {
+    min-height: 1500px;
     border: 1px solid gray;
+    section.detail-product {
+        div.detail-product__container {
+            nav.detail-product__location--nav {
+                height: 45px;
+                border-bottom: 1px solid #c9c9c9;
+                ul.detail-product__location--ul {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    li.detail-product__location--li {
+                        padding: 8px;
+                        a {
+                            font-size: 12px;
+                            color: #888;
+                            &.detail-product__location--a {
+                                &::after {
+                                    content: "";
+                                    display: inline-block;
+                                    background-image: url("https://static.oliveyoung.co.kr/pc-static-root/image/comm/ico_arrow_down7x5.png");
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    border: 1px solid #c9c9c9;
+                                    box-sizing: border-box;
+                                    margin-left: 5px;
+                                    width: 15px;
+                                    height: 15px;
+                                    vertical-align: bottom;
+                                }
+                            }
+                        }
+                        &:not(:last-child)::after {
+                            content: ">";
+                            color: #888;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            } //nav
+            div.detail-product__box {
+                min-height: 500px;
+                width: 100%;
+                padding-top: 35px;
+                div.detail-product__title--div {
+                    text-align: center;
+                    h2.detail-product__title--h2 {
+                        span.detail-product__label--span {
+                            color: #595959;
+                            font-size: 28px;
+                            display: inline-block;
+                        }
+                        span.detail-product__content--span {
+                            display: inline-block;
+                            margin-left: 15px;
+                            font-size: 28px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                div.detail-product__boxlist--div {
+                    border: 1px solid gray;
+                    min-height: 800px;
+                    margin-top: 30px;
+                    display: flex;
+                    div.detail-product__leftbox--div {
+                        width: 25%;
+                        border: 1px solid gray;
+                        box-sizing: border-box;
+                    }
+                    div.detail-product__centerbox--div {
+                        width: 40%;
+                        border: 1px solid gray;
+                        box-sizing: border-box;
+                    }
+                    div.detail-product__rightbox--div {
+                        width: 35%;
+                        border: 1px solid gray;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+            div.detail-product__review_wrap--div {
+                border: 1px solid gray;
+                p.detail-product__review_title--p {
+                    color: #767676;
+                    a {
+                        display: block;
+                        padding: 30px;
+                        span.detail-product__review_count--span {
+                        }
+                    }
+                }
+            }
+        } //container
+    }
 }
