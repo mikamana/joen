@@ -1,19 +1,12 @@
-@charset "UTF-8";
-body {
-  font-family: "Noto Sans KR", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&family=Roboto:wght@300;400;500;700;900&display=swap");
+#root {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
   font-style: normal;
   text-decoration: none;
   font-weight: normal;
 }
 
-/* 
-
-    font-family: Montserrat,-apple-system,
-    NotoSansCJKkr,AppleSDGothicNeo,Roboto,dotum,
-    "돋움",sans-serif;
-
-*/
 .serif {
   font-family: "Montserrat", "NotoSansCJKkr", serif;
 }

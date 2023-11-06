@@ -2,6 +2,156 @@
 
 header.header_wrap {
     border: 1px solid gray;
-    background-color: red;
+    // background-color: red;
     height: 278px;
+}
+
+section.search__wrap--section {
+    div.search_wrap--box {
+        display: flex;
+        align-items: center;
+        // justify-content: flex-start;
+        h1.search__wrap--logo {
+            width: 174px;
+            height: 92px;
+            margin-right: 50px;
+            padding-top: 20px;
+            a {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        div.search_wrap--gnb {
+            width: 560px;
+            height: 48px;
+            border-radius: 25px;
+            border: 1px solid #5055b1;
+            background-color: #fff;
+            margin-right: 280px;
+            div.search_wrap--form_sel {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                // padding-left: 20px;
+                // padding-top: 15px;
+                // select::-ms-expand {
+                //     // display: none;
+                // }
+                select#gbcode {
+                    height: 100%;
+                    // -o-appearance: none;
+                    // -webkit-appearance: none;
+                    // -moz-appearance: none;
+                    // appearance: none;
+                    // padding: 10px;
+                    border: none;
+                    margin-left: 30px;
+                    // position: absolute;
+                    // left: 20px;
+                    // top: 7px;
+                }
+                div.search_wrap--input {
+                    height: 100%;
+                    margin-left: 30px;
+                    input {
+                        width: 350px;
+                        height: 45px;
+                        border: none;
+                    }
+                }
+                a {
+                }
+            }
+        }
+        ul.search_wrap__user_menu--input {
+            display: flex;
+            align-items: center;
+            li.search_wrap__user_menu_li {
+                &:first-child {
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 25px;
+                }
+                &:last-child {
+                    width: 48px;
+                    height: 48px;
+                }
+                a {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+} //search_wrap
+
+section.header__gnb_wrap--section {
+    height: 50px;
+    div.gnb_wrap--innerbox {
+        // border: 1px solid gray;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        button.gnb_wrap__button--menu {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #c9c9c9;
+            background-color: #fff;
+        }
+        nav.gnb_wrap__mainmenu--nav {
+            height: 100%;
+            box-sizing: border-box;
+            ul.gnb_wrap__menulist--ul {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                li.gnb_wrap__menulist_li {
+                    height: 100%;
+                    position: relative;
+                    &:first-child > a::after {
+                        content: "";
+                        width: 0px;
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        padding: 20px;
+                        box-sizing: border-box;
+                        position: relative;
+                        em {
+                            font-weight: bold;
+                            color: #4dac27;
+                        }
+                        span {
+                            font-weight: bold;
+                        }
+                        span.ico_new {
+                            margin-left: 2px;
+                            width: 4px;
+                            height: 4px;
+                            background: #4dac27;
+                            border-radius: 2px;
+                            position: absolute;
+                            right: 10px;
+                            top: 17px;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0px;
+                            width: 2px;
+                            height: 2px;
+                            background-color: #000;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

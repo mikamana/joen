@@ -1,0 +1,149 @@
+section.top_banner {
+  height: 70px;
+  background-color: #f4f4f4;
+}
+section.top_banner div.top_banner--div {
+  height: 100%;
+}
+section.top_banner div.top_banner--div p.top_banner--text-p {
+  height: 100%;
+}
+section.top_banner div.top_banner--div p.top_banner--text-p a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.top_banner div.top_banner--div p.top_banner--text-p a span.top_banner--text-span {
+  font-size: 0.8em;
+  color: #343434;
+  margin-right: 5px;
+}
+section.top_banner div.top_banner--div p.top_banner--text-p a em.top_banner--text-em {
+  color: #3c43b5;
+  font-weight: bold;
+}
+
+section.service_banner {
+  height: 42px;
+  position: relative;
+}
+section.service_banner::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 70vw;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+section.service_banner div.service_banner--div {
+  height: 100%;
+  position: relative;
+  padding-left: 170px;
+  box-sizing: border-box;
+}
+section.service_banner div.service_banner--div::before {
+  content: "";
+  display: block;
+  rotate: 45deg;
+  width: 70px;
+  height: 40px;
+  left: 142px;
+  top: -30px;
+  background-color: #f4f4f4;
+  position: absolute;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox {
+  padding-top: 9px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: -30px;
+  top: 12px;
+  z-index: 5;
+  border-radius: 50%;
+  background-color: #3243a4;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul {
+  display: flex;
+  height: 100%;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li {
+  height: 100%;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:not(:nth-child(1)) {
+  margin-left: -48px;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:nth-child(1) a {
+  background-color: #156cdd;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:nth-child(2) a {
+  background-color: #06bbc0;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:nth-child(3) a {
+  background-color: #e8422f;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:nth-child(4) a {
+  background-color: #8f603d;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:nth-child(5) a {
+  background-color: #fb6f46;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:nth-child(6) a {
+  background-color: #fff;
+  color: #505050 !important;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:last-child {
+  margin-left: 0px;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li:last-child a {
+  color: #505050 !important;
+  -webkit-clip-path: none !important;
+          clip-path: none !important;
+}
+section.service_banner div.service_banner--div nav.service_banner--morebox ul.service_banner--list--ul li.service_banner--list--li a.service_banner--list--a {
+  display: flex;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  padding: 0px 15px;
+  -webkit-clip-path: polygon(100% 100%, 34% 100%, 0 0, 67% 0);
+          clip-path: polygon(100% 100%, 34% 100%, 0 0, 67% 0);
+}
+section.service_banner div.service_banner--div nav.service_banner--loginmenu--nav {
+  float: right;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+  height: 100%;
+}
+section.service_banner div.service_banner--div nav.service_banner--loginmenu--nav ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+section.service_banner div.service_banner--div nav.service_banner--loginmenu--nav ul li:last-child > a::after {
+  content: "";
+}
+section.service_banner div.service_banner--div nav.service_banner--loginmenu--nav ul li a {
+  font-size: 0.8em;
+  padding: 8px;
+}
+section.service_banner div.service_banner--div nav.service_banner--loginmenu--nav ul li a::after {
+  content: "|";
+  margin-left: 8px;
+}/*# sourceMappingURL=banner.css.map */
