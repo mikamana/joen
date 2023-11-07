@@ -1,13 +1,15 @@
-import React from "react";
+import React, { Children } from "react";
 import "../../../css/Common/Footer/footer.css";
 
-export default function Footer() {
+export default function Footer({ children }) {
 
     return (
 
         <>
             <footer className="footer_wrap">
-                푸터
+                <div className="footer_wrap--inner inner">
+                    {children}
+                </div>
             </footer>
         </>
 

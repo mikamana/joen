@@ -1,6 +1,5 @@
 import React from "react";
-
-
+import SearchLogo from "./SearchLogo";
 
 export default function SearchWrap() {
 
@@ -10,9 +9,7 @@ export default function SearchWrap() {
             <section className="search__wrap--section">
                 <div className="search_wrap--box inner">
                     <h1 className="search__wrap--logo">
-                        <a href="#">
-                            <img src="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png" alt="로고" />
-                        </a>
+                        <SearchLogo />
                     </h1>
                     <div className="search_wrap--gnb">
                         <div className="search_wrap--form_sel">
@@ -26,7 +23,7 @@ export default function SearchWrap() {
                             <div className="search_wrap--input">
                                 <input type="text" placeholder="'휴남동 서점' 황보름 신작" />
                             </div>
-                            <a href="#">검색</a>
+                            <a href="#"><img src="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/btn_header_search@2x.png" alt="검색아이콘" /></a>
                         </div>
                     </div>
                     <ul className="search_wrap__user_menu--input">

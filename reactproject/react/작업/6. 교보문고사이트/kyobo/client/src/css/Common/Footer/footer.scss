@@ -2,5 +2,153 @@
 
 footer.footer_wrap {
     height: 300px;
-    background-color: #c9c9c9;
+    border: 1px solid gray;
+    // background-color: #c9c9c9;
+    div.footer_wrap--inner {
+        height: 100%;
+        div.footer_logo_box {
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2.footer--logo {
+                width: 168px;
+                height: 48px;
+                .search__wrap--logo--link {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 168px;
+                    }
+                }
+            }
+            div.footer__sns-right_box {
+                display: flex;
+                align-items: center;
+                select#fmsite {
+                    width: 200px;
+                    height: 45px;
+                    border-radius: 20px;
+                    padding-left: 20px;
+                    background-color: #f4f4f4;
+                    &:focus {
+                        border: none;
+                    }
+                    border: none;
+                }
+                div.footer_sns_list_box {
+                    .footer_sns__link-ytb {
+                        margin: 0px 4px;
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
+            }
+        } //logo_box
+        div.footer_company_box {
+            display: flex;
+            margin-top: 35px;
+            div.footer_company_left_box {
+                width: 70%;
+                ul.footer_company_list--ul {
+                    display: flex;
+                    justify-content: flex-start;
+                    li.footer_company_list--li {
+                        margin-right: 10px;
+                        &:not(:last-child)::after {
+                            content: "";
+                            width: 1px;
+                            height: 10px;
+                            display: inline-block;
+                            margin-left: 8px;
+                            background-color: #333;
+                        }
+                        .footer_company_list--a {
+                            font-size: 0.9em;
+                            color: #333;
+                        }
+                    }
+                }
+                address.footer_company_address_box {
+                    margin-top: 20px;
+                    p.footer_company_address--p {
+                        font-size: 0.85em;
+                        color: #333;
+                        button {
+                            margin-left: 5px;
+                            border: 1px solid #c9c9c9;
+                            font-weight: bold;
+                            font-size: 0.85em;
+                            color: #333;
+                            border-radius: 5px;
+                        }
+                        span:not(:nth-child(3n + 3)) {
+                            &::after {
+                                content: "";
+                                width: 1px;
+                                height: 10px;
+                                display: inline-block;
+                                background-color: #000;
+                                margin: 0px 5px;
+                            }
+                        }
+                    }
+                } //address_company
+                div.footer_company_copyright {
+                    margin-top: 20px;
+                    span.copyright {
+                        font-size: 0.75em;
+                        color: #666;
+                    }
+                }
+            }
+            div.footer_company_right_box {
+                width: 30%;
+                div.footer_company_service_box {
+                    span.footer_company_tosspay {
+                        font-size: 0.85em;
+                        color: #666666;
+                    }
+                    button.footer_company_check_btn {
+                        border: 1px solid #c9c9c9;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        margin-left: 5px;
+                        color: #333;
+                        font-weight: bold;
+                        font-size: 0.75em;
+                    }
+                    p.footer_company_tosspay_info {
+                        font-size: 0.8em;
+                        word-break: keep-all;
+                        color: #666666;
+                    }
+                }
+                div.footer_company_mark_box {
+                    display: flex;
+                    margin-top: 20px;
+                    .footer_company_mark_img {
+                        margin-right: 5px;
+                        img {
+                            width: 48px;
+                            height: 48px;
+                        }
+                    }
+                    span.footer_company_isms_text {
+                        font-size: 0.8em;
+                        letter-spacing: -0.001em;
+                        margin-right: 5px;
+                        color: #666666;
+                    }
+                    span.footer_company_mark_text {
+                        font-size: 0.8em;
+                        color: #666666;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,9 +1,9 @@
 import React, { Children } from "react"; //Children --> children 
 import "../css/olivecss/Footer.css";
 
-export default function Navbar({children}){
+export default function Navbar({ children }) {
 
-  return(
+  return (
 
     <>
       <footer className="footer">
@@ -12,7 +12,7 @@ export default function Navbar({children}){
         </div>
       </footer>
     </>
-    
+
 
   );
 

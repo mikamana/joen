@@ -8,12 +8,13 @@ import TopBanner from "../Common/Banner/TopBanner/TopBanner";
 import ServiceBanner from "../Common/Banner/ServiceBanner/ServiceBanner"
 import SearchWrap from "../Common/Header/Search/SearchWrap";
 import GnbWrap from "../Common/Header/Gnb/GnbWrap";
+import FooterLogoBox from "../Common/Footer/FooterLogoBox";
+import FooterCompanyBox from "../Common/Footer/FooterCompanyBox";
 export default function Home() {
 
     return (
 
         <>
-
             <Header>
                 <TopBanner />
                 <ServiceBanner />
@@ -21,7 +22,10 @@ export default function Home() {
                 <GnbWrap />
             </Header>
             <Aside />
-            <Footer />
+            <Footer>
+                <FooterLogoBox />
+                <FooterCompanyBox />
+            </Footer>
         </>
 
     );

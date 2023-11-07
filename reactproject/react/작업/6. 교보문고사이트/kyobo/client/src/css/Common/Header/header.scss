@@ -47,6 +47,9 @@ section.search__wrap--section {
                     // padding: 10px;
                     border: none;
                     margin-left: 30px;
+                    &:focus {
+                        outline: none;
+                    }
                     // position: absolute;
                     // left: 20px;
                     // top: 7px;
@@ -58,9 +61,17 @@ section.search__wrap--section {
                         width: 350px;
                         height: 45px;
                         border: none;
+                        &:focus {
+                            outline: none;
+                        }
                     }
                 }
                 a {
+                    width: 20px;
+                    height: 20px;
+                    img {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -152,6 +163,37 @@ section.header__gnb_wrap--section {
                     }
                 }
             }
-        }
+        } //gnb_mainmenu
+        nav.gnb_wrap__submenu--nav {
+            margin-left: 130px;
+            height: 100%;
+            ul.gnb_wrap__submenu--ul {
+                display: flex;
+                height: 100%;
+                li.gnb_wrap__submenu--li {
+                    height: 100%;
+                    &:first-child .gnb_wrap__submenu--link::after {
+                        content: "";
+                        width: 2px;
+                        height: 2px;
+                        display: block;
+                        margin-left: 10px;
+                        background-color: #333;
+                    }
+                    .gnb_wrap__submenu--link {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        margin-right: 10px;
+                        font-size: 0.8em;
+                    }
+                    button {
+                        margin-top: 15px;
+                        border-radius: 50%;
+                        border: none;
+                    }
+                }
+            }
+        } //gnb_submenu
     }
-}
+} //gnb_wrap
