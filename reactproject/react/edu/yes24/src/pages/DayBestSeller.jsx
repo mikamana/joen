@@ -4,7 +4,7 @@ export default function DayBestSeller(){
   return(
 
     <>
-      <div>DayBestSeller</div>
+      <div className="contents">DayBestSeller</div>
     </>
 
   );

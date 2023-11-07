@@ -4,7 +4,7 @@ export default function HotPriceBestSeller(){
   return(
 
     <>
-      <div>HotPriceBestSeller</div>
+      <div className="contents">HotPriceBestSeller</div>
     </>
 
   );

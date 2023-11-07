@@ -6,7 +6,7 @@ export default function NotFound(){
   return(
 
     <>
-      <div>NotFonud</div>
+      <div className="contents">NotFonud</div>
     
     </>
 

@@ -11,7 +11,7 @@ import SteadySeller from "./pages/SteadySeller";
 // path경로와 element 컴포넌트의 네이밍을 다르게 주어 보안상 어떤 컴포넌트를 사용하는지 알 수 없게한다.
 
 const router = createBrowserRouter([
-
+  
   {
     path: "/",
     element:<Root />,

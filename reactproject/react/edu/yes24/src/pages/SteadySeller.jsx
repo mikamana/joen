@@ -4,7 +4,7 @@ export default function SteadySeller(){
   return(
 
     <>
-      <div>BestSeller</div>
+      <div className="contents">BestSeller</div>
     </>
 
   );

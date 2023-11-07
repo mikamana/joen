@@ -4,7 +4,7 @@ export default function MonthWeekBestSeller(){
   return(
 
     <>
-      <div>MonthWeekBestSeller</div>
+      <div className="contents">MonthWeekBestSeller</div>
     </>
 
   );
