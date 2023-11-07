@@ -1,0 +1,10 @@
+.navbar{
+  background-color: yellow;
+}
+
+.menu{
+  padding: 0px 10px;
+  border: 1px solid gray;
+  background-color: tomato;
+  color: white;
+}

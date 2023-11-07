@@ -2,16 +2,18 @@ import React from "react";
 import "../../../../css/Jeongtae/Detail/detail.css";
 import "../../../../css/Common/Mixin/common.css";
 import "../../../../css/Common/Mixin/mixin.css";
-import DetailProduct from "./DetailProduct";
+import DetailLocationLi from "./DetailLocationLi";
 
 export default function DetailContents() {
 
     return (
 
         <>
-            <main className="detail" id="detail">
-                <DetailProduct />
-            </main>
+            <nav className="detail-product__location--nav">
+                <ul className="detail-product__location--ul">
+                    <DetailLocationLi />
+                </ul>
+            </nav>
         </>
 
     );
