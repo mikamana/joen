@@ -1,7 +1,52 @@
-aside {
+aside.aside_box {
   position: fixed;
   width: 100px;
-  height: 200px;
-  right: 0px;
-  background-color: aquamarine;
+  right: 30px;
+  border: 1px solid #c9c9c9;
+  border-radius: 10px;
+  padding: 5px 3px;
+  z-index: 15;
+  background-color: #fff;
+}
+aside.aside_box div.aside_fly_menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+aside.aside_box div.aside_fly_menu img {
+  width: 85px;
+}
+aside.aside_box div.aside_fly_event {
+  margin-left: 7px;
+  padding: 8px 0px;
+}
+aside.aside_box div.aside_fly_event .aside_fly_event_link {
+  font-size: 0.8em;
+}
+aside.aside_box div.aside_fly_event .aside_fly_event_link::after {
+  content: "+";
+  float: right;
+  margin-right: 10px;
+  color: #c9c9c9;
+}
+aside.aside_box div.aside_swiper--box div.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+aside.aside_box p.aside_coupon_text {
+  font-size: 0.8em;
+  margin-left: 7px;
+  padding: 8px 0px;
+}
+aside.aside_box p.aside_coupon_text::after {
+  content: "+";
+  float: right;
+  margin-right: 10px;
+  color: #c9c9c9;
+}
+
+.aside_img {
+  width: 84px;
+  border-radius: 5px;
 }/*# sourceMappingURL=aside.css.map */

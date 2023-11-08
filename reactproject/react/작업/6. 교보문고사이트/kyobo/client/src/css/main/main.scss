@@ -1,0 +1,151 @@
+main.main_contents {
+    min-height: 1700px;
+    section.main_visual_wrap {
+        height: 450px;
+        padding-top: 60px;
+        div.main_visual_box {
+            // width: 100%;
+            border-bottom: 1px solid gray;
+            height: 100%;
+            position: relative;
+            margin-left: calc((100% - 1200px) / 2 - 64px);
+            p.main_banner_title {
+                font-weight: bold;
+                font-size: 2em;
+                line-height: 55px;
+            }
+            div.swiper {
+                height: 100%;
+                position: relative;
+                width: 100%;
+                z-index: 10;
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 70px;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0px;
+                    background-color: rgba(255, 255, 255, 0.9);
+                    z-index: 11;
+                    margin-left: 180px;
+                }
+                img {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0px;
+                }
+                div.swiper-button-prev {
+                    position: absolute;
+                    left: 1080px;
+                    margin-top: 170px;
+                    z-index: 45;
+                }
+                div.swiper-button-next {
+                    position: absolute;
+                    right: 430px;
+                    margin-top: 170px;
+                    z-index: 44;
+                }
+                div.swiper-button-next::after {
+                    content: ">";
+                    color: #000;
+                }
+                div.swiper-button-prev::after {
+                    content: "<";
+                    color: #000;
+                }
+                div.swiper-pagination {
+                    width: 890px;
+                    position: absolute;
+                    left: 180px;
+                    bottom: 0px;
+                    z-index: 15;
+                    height: 70px;
+                    text-align: left;
+                    span.swiper-pagination-bullet {
+                        padding: 30px 45px;
+                        border-radius: 0;
+                        margin: 0px 4px;
+                        background-color: rgba(255, 255, 255, 0);
+                        // opacity: 0;
+                        &.swiper-pagination-bullet-active {
+                            border-bottom: 1px solid #000;
+                        }
+                    }
+                }
+            }
+            ul.swiper_text_ul {
+                position: absolute;
+                bottom: -130px;
+                height: 70px;
+                width: 890px;
+                padding: 20px;
+                left: 160px;
+                display: flex;
+                z-index: 18;
+                pointer-events: none;
+                li.swiper_text_li {
+                    font-size: 0.9em;
+                    color: #333;
+                    box-sizing: border-box;
+                    height: 100%;
+                    width: 98px;
+                    margin: 0px 4px;
+                    button {
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        opacity: 1;
+                        border: none;
+                        background: rgba(255, 255, 255, 0);
+                        font-weight: bold;
+                        font-family: "Noto Sans KR";
+                        color: #666;
+                    }
+                    &:nth-child(2) {
+                        // margin-right: 27px;
+                    }
+                }
+            }
+            div.banner_floating_box {
+                width: 300px;
+                height: 350px;
+                background-color: #fff;
+                position: absolute;
+                right: 370px;
+                top: 0px;
+                z-index: 10;
+                border-radius: 20px 0px 20px 20px;
+                overflow: hidden;
+                fieldset.banner_floating_info_box {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                    }
+                    div.banner_floating_text_box {
+                        > * {
+                            padding: 10px 20px;
+                        }
+                        p.writer_mitting {
+                            color: #474c98;
+                            font-size: 0.8em;
+                        }
+                        p.writer_writer_title {
+                            font-size: 0.8em;
+                            color: #303030;
+                        }
+                        p.writer_info {
+                            font-size: 0.8em;
+                            color: #949494;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// position: relative;
