@@ -12,6 +12,7 @@ import FooterLogoBox from "../Common/Footer/FooterLogoBox";
 import FooterCompanyBox from "../Common/Footer/FooterCompanyBox";
 import MainVisual from "../../pages/home/components/MainVisaul";
 import Contents from "../../pages/home/components/Contents";
+
 export default function Home() {
 
     return (
