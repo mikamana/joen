@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자페이지</title>
+</head>
+
+<body>
+    <h1>
+        사용자페이지입니다.
+    </h1>
+    <!-- <form action="/:id" method="get">
+        <label for="id">아이디 입력</label>
+        <input name="id" type="text">
+        <label for="pass">패스워드 입력</label>
+        <input name="pass" type="text">
+        <button type="submit">서브밋버튼</button>
+    </form> -->
+    <div>
+        <label for="id">아이디 입력</label>
+        <input class="input_id" name="id" type="text">
+        <label for="pass">패스워드 입력</label>
+        <input name="pass" type="text">
+        <button type="button" onclick="fnSubmit()">버튼</button>
+    </div>
+    <script>
+
+
+
+        function fnSubmit() {
+
+            const id = document.querySelector(".input_id").value
+
+            // console.log(idValue);
+            // fetch(`/${idValue}`)
+            //     .then((response) => response.json())
+            //     .then((data) => {
+
+            //         console.log(data);
+            //         // window.location.reload()
+
+            //     })
+
+
+            fetch(`/try226`, {
+
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({ id: id })
+
+            }).then((result) => {
+
+                alert("삭제성공")
+
+                window.location.reload()
+
+            })
+
+
+        }
+    </script>
+</body>
+
+</html>

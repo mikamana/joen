@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.get('/', (req,res,next)=>{
+app.get('/', (req, res, next) => {
 
   //next는 라우팅이 필요할 경우 사용
   // 메소드를 묶고있는 하나의 단위를 (미들웨어)의 특징 : 체이닝이 가능하다.
@@ -12,22 +12,22 @@ app.get('/', (req,res,next)=>{
 
 app.use(express.json()); // JSON 객체로 생성
 
-app.post('/join',()=>{
+app.post('/join', () => {
 
-  const {a,b,c} = req.body;
+  const { a, b, c } = req.body;
 
 })  //post 방식은 body를 통해 데이터 전달, JSON 객체로 생성
 
 //put 방식은 데이터 replace
 
-app.put('/:id',()=>{
+app.put('/:id', () => {
 
   const id = req.params.id;
 
 })
 
 //delete 방식은 데이터 delete
-app.delete('/:id',()=>{
+app.delete('/:id', () => {
 
   const id = req.params.id;
 

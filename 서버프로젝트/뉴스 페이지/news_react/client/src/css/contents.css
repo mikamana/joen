@@ -1,0 +1,44 @@
+section.contents_wrap {
+  border: 1px solid gray;
+  box-sizing: border-box;
+  min-height: 800px;
+}
+section.contents_wrap div.create_news_btn {
+  border: 1px solid gray;
+  padding: 20px;
+}
+section.contents_wrap form.login_form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.contents_wrap form.login_form input {
+  flex-grow: 1;
+  padding: 20px;
+}
+section.contents_wrap form.login_form select {
+  flex-grow: 1;
+  padding: 20px;
+}
+section.contents_wrap form.login_form button {
+  padding: 18px;
+  display: inline-block;
+}
+section.contents_wrap div.news__list_wrap {
+  border: 1px solid gray;
+}
+section.contents_wrap div.news__list_wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+section.contents_wrap div.news__list_wrap fieldset {
+  float: left;
+  clear: both;
+}
+section.contents_wrap div.news__list_wrap div.contents_info {
+  margin-bottom: 5px;
+}
+section.contents_wrap div.news__list_wrap button {
+  float: right;
+}/*# sourceMappingURL=contents.css.map */

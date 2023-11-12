@@ -1,0 +1,39 @@
+section.detail_wrap {
+  border: 1px solid gray;
+  min-height: 600px;
+}
+section.detail_wrap div.detail_inner {
+  border: 1px solid gray;
+  min-height: 600px;
+}
+section.detail_wrap div.create_review_wrap {
+  border: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.detail_wrap div.create_review_wrap h3 {
+  border: 1px solid gray;
+  padding: 20px;
+}
+section.detail_wrap div.create_review_wrap form {
+  flex-grow: 1;
+}
+section.detail_wrap div.create_review_wrap form input {
+  width: 87%;
+  padding: 20px;
+}
+section.detail_wrap div.create_review_wrap form button {
+  padding: 20px;
+}
+section.detail_wrap div.review_list {
+  min-height: 500px;
+  border: 1px solid gray;
+}
+section.detail_wrap div.review_list ul li {
+  padding: 20px;
+  border: 1px solid gray;
+}
+section.detail_wrap div.review_list ul li h4 {
+  margin-bottom: 5px;
+}/*# sourceMappingURL=detail.css.map */

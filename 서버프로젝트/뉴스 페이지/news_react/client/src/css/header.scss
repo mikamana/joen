@@ -1,0 +1,27 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.inner {
+    width: 1256px;
+    margin: 0 auto;
+}
+header {
+    // border: 1px solid gray;
+    div.logo_wrap {
+        border: 1px solid gray;
+    }
+    div.gnb_wrap {
+        border-bottom: 1px solid gray;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+                padding: 20px;
+                border-left: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+        }
+    }
+}
