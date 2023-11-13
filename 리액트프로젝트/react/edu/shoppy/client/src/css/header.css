@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+header.main_header {
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header.main_header h1 {
+  color: #ca8a8e;
+}
+header.main_header nav .nav_link {
+  margin: 0px 20px;
+}/*# sourceMappingURL=header.css.map */

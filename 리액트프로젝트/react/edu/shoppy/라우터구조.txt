@@ -1,0 +1,5 @@
+/      -->Home
+/products --> AllProducts
+/products/:id --> ProductDetail
+/products/new --> NewProduct
+/carts --> MyCart
