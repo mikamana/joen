@@ -78,7 +78,6 @@ export async function getDwitter(req, res){
 
       if(id===verify.id){
         //null값이 생기지않을 가능성이 높은 값을 앞에 둔다.
-
         const result = await dwitterRepository.update(id,content);
   
         if(result==='success'){

@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header {
+  border: 1px solid gray;
+  div.inner {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  nav.gnb_wrap {
+    float: right;
+    width: 100px;
+    height: 50px;
+    border: 1px soli gray;
+    line-height: 50px;
+    // overflow: hidden;
+    ul.gnb_list {
+      position: relative;
+      // transition: all 0.5s;
+      height: 50px;
+      overflow: hidden;
+      background-color: #fff;
+      // background-color: red;
+      li {
+        transition: all 0.5s;
+        position: relative;
+      }
+    }
+  }
+}

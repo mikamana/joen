@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header {
+  border: 1px solid gray;
+}
+header div.inner {
+  width: 1200px;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
+header div.inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+header nav.gnb_wrap {
+  float: right;
+  width: 100px;
+  height: 50px;
+  border: 1px soli gray;
+  line-height: 50px;
+}
+header nav.gnb_wrap ul.gnb_list {
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  background-color: #fff;
+}
+header nav.gnb_wrap ul.gnb_list li {
+  transition: all 0.5s;
+  position: relative;
+}/*# sourceMappingURL=App.css.map */

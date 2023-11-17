@@ -34,7 +34,6 @@ export async function realTimeLogin(req,res){
 
     console.log(token);
     // res.cookie('토큰명',토큰,{유효기간, httponly:true} )
-    // 
     // httponly:true 브라우저에서만 실행할것인지, 디폴트는 false이다.
     res.cookie("x_auth", token, {maxAge:60*60*1000, httponly:true})
     // 60 : ms    

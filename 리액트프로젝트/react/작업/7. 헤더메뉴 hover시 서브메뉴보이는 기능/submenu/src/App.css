@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header.header_wrap {
+  border: 1px solid gray;
+}
+header.header_wrap nav.header_gnb {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+header.header_wrap nav.header_gnb ul.header_gnb_list {
+  display: flex;
+}
+header.header_wrap nav.header_gnb ul.header_gnb_list li.header_gnb_list_li {
+  border: 1px solid gray;
+  box-sizing: border-box;
+  padding: 20px;
+}
+header.header_wrap nav.header_gnb ul.header_gnb_list li.header_gnb_list_li ul.header_gnb_list_li_submenu {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 45px;
+}
+header.header_wrap nav.header_gnb ul.header_gnb_list li.header_gnb_list_li ul.header_gnb_list_li_submenu li.header_gnb_list_li_submenu_li {
+  padding: 20px;
+}/*# sourceMappingURL=App.css.map */
