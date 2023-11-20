@@ -6,7 +6,6 @@ import { jwtDecode } from "jwt-decode";
 // import getCookie from "../util/cookie.js";
 // import removeCookie from "../util/cookie.js";
 
-
 export default function Login() {
 
   const [inputChange, setInputChange] = useState({ id: "", pass: "" })

@@ -25,3 +25,5 @@ export async function insertProduct(name,image,price,info) {
   .then((result)=>"ok");
 
 }
+
+

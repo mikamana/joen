@@ -23,9 +23,6 @@ export async function getDetailProducts(req,res){
 
 }
 
-
-
-
 export async function insertProduct(req, res) {
 
   const { image, name, price, info } = req.body;
@@ -41,3 +38,4 @@ export async function insertProduct(req, res) {
   }
 
 }
+

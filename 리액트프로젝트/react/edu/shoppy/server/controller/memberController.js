@@ -60,3 +60,18 @@ export async function loginCheck(req,res){
   // mysql의 sql모드가 변경이 된 오류이다.
 
 }
+
+/* 회원 아이디 중복체크 */
+export async function getIdCheck(req,res){
+
+
+  const id = req.params.id
+  console.log(id);
+  const rows = await memberRepository.getIdCheck(id)
+
+  res.json(rows)
+
+}
+
+
+

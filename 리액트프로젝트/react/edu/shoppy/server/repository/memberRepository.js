@@ -16,3 +16,9 @@ export async function loginCheck(id){
 
 }// 회원 로그인
 
+export async function getIdCheck(id){
+
+  return db.execute("select count(pass) as cnt from shoppy_member where id= ?",[id])
+  .then((rows)=>rows[0][0])
+}
+

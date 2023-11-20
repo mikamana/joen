@@ -17,10 +17,6 @@ export default function Navbar() {
 
   }
 
-
-
-
-
   return (
     <header>
       <Link to="/" className="header_left">
@@ -40,6 +36,7 @@ export default function Navbar() {
           <>
             <Link to="/products">Products</Link>
             <Link to="/login"><button>Login</button></Link>
+            <Link to="/signup"><button>SignUp</button></Link>
           </>
 
         )

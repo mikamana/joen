@@ -6,8 +6,56 @@ export default function MyCart() {
 
   return (
     <>
-      {userInfo ? (<div>myCart!!</div>) : (<div>잘못된 경로로 접속하셨습니다.</div>)}
-      {/* 컴포넌트 자체에서 체크를 진행 */}
+      {userInfo ? (
+
+
+        <>
+
+
+
+          <div>myCart!!</div>
+
+
+
+        </>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ) :
+
+        <>
+          (<div>잘못된 경로로 접속하셨습니다.</div>)
+
+        </>
+
+      }
+
+
+
+
     </>
   );
 

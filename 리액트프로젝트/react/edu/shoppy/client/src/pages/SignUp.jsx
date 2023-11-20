@@ -9,6 +9,8 @@ export default function SignUp() {
   const inputId = useRef(null);
   const inputPass = useRef(null);
   const inputPhone = useRef(null);
+  const [checkError, setCheckError] = useState("")
+
 
   const joinSubmit = (e) => {
 
@@ -29,6 +31,8 @@ export default function SignUp() {
       //이러한 사용은 특히 함수가 특정 조건을 만족할 때만 계속해서 실행되어야 하는 경우에 유용합니다.
 
     }
+
+
 
     if (inputChange.id === "") {
 
@@ -79,12 +83,34 @@ export default function SignUp() {
 
     setInputChange({ ...inputChange, [name]: value })
 
-    console.log("name:" + inputChange.name);
-    console.log("id:" + inputChange.id);
-    console.log("pass:" + inputChange.pass);
-    console.log("phone:" + inputChange.phone);
+    // console.log("name:" + inputChange.name);
+    // console.log("id:" + inputChange.id);
+    // console.log("pass:" + inputChange.pass);
+    // console.log("phone:" + inputChange.phone);
 
-  }
+    if (name === "id" && value !== "") {
+
+      axios({
+        method: "GET",
+        url: `http://127.0.0.1:8000/signup/${value}`,
+
+      }).then((result) => {
+
+        // alert(JSON.stringify(result));
+
+        if (result.data.cnt === 1) {
+          setCheckError('이미 사용중인 아이디 입니다.')
+
+        } else {
+
+          setCheckError('사용이 가능합니다.')
+
+        }
+
+      })
+    }
+
+  };
 
   const handleReset = (e) => {
 
@@ -120,6 +146,7 @@ export default function SignUp() {
               onChange={fnChange}
               ref={inputId}
             />
+            {checkError}
           </li>
           <li>
             <label htmlFor="pass">패스워드</label>
