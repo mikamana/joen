@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import { CookiesProvider } from 'react-cookie';
+import Order from './pages/Order';
 const router = createBrowserRouter([
   {
       path : '/',
@@ -22,9 +23,10 @@ const router = createBrowserRouter([
         { path : '/products', element : <AllProducts />  },
         { path : '/products/:pid', element : <ProductDetail />  },
         { path : '/products/new', element : <NewProducts />  },
-        { path : '/carts', element : <MyCart />  },
+        { path : '/carts/:id', element : <MyCart />  },
         { path : '/login', element : <Login />  },
         { path : '/signup', element : <SignUp />  },
+        { path : '/order/:id', element : <Order />}
       ]
   }
 ]);

@@ -6,6 +6,7 @@ const cookies = new Cookies();
 export const setCookie = (name,value,option) =>{
   // 쿠키이름, 쿠키값, 쿠키옵션
   console.log(cookies);
+  
   return cookies.set(name,value,option)
   
 }

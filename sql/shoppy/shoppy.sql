@@ -11,6 +11,7 @@ create table shoppy_products(
     name varchar(50) not null,
     image varchar(300),
     price long,
+    deli_price varchar(20),
     info varchar(300),
     pdate date
 
@@ -37,7 +38,13 @@ select count(pass) as cnt, ANY_VALUE(pass) as pass from shoppy_member where id='
 
 select * from shoppy_products;
 
-insert into shoppy_products(name,image,price,info,pdate) value("꽈배기니트","url주소","1000","포근한 느낌의 디자인",curdate());
+drop table shoppy_products;
+
+insert into shoppy_products(name,image,price,deli_price,info,pdate) value("꽈배기니트","8.webp","28000","2500","포근한 느낌의 디자인",curdate());
+
+delete from shoppy_cart where cid = 4;
+
+select * from shoppy_cart;
 
 insert into shoppy_member(name,id,pass,phone,mdate) value("3","4","5","6",sysdate());
 
@@ -53,19 +60,45 @@ select * from information_schema.tables ;
 
 
 create table shoppy_cart(
+
 			cid int auto_increment primary key,
             qty int,
             size varChar(10),
 			id varchar(20) not null,
             pid int not null,
             cdate datetime
+            
 );
 
+drop table shoppy_cart;
 select * from shoppy_cart;
+select * from shoppy_member;
+select * from shoppy_products;
+select cid,qty,size,substring(cdate,1,10) as cdate, price, deli_price as deli,image,sc.id,sp.name,sp.info from shoppy_cart sc inner join shoppy_products sp, shoppy_member sm where sc.pid = sp.pid and sm.id = sc.id and sc.id="try226";
 
-select row_number() over (order by qty)sp.image,sp.name,sp.price,sc.qty,sc.size,sp.price*sc.qty as tprice from shoppy_cart sc inner join shoppy_products sp inner join shoppy_member sm on sc.pid = sp.pid and sm.id = sc.id;
+select row_number() over (order by qty) as rno, sp.image,sp.name,sp.price,sc.qty,sc.size,sp.price*sc.qty as tprice from shoppy_cart sc inner join shoppy_products sp inner join shoppy_member sm on sc.pid = sp.pid and sm.id = sc.id;
 
 -- 상품명,상품가격,수량,사이즈,총 가격
+delete from shoppy_products where pid=6;
 
+select * from shoppy_cart where id="try226" and cid="";
 
+-- 주문테이블 : 주문id(pk), 회원아이디, 상품아이디, 주문날짜,옵션(사이즈등), 수량,총 주문금액  *장바구니 내역 삭제* 
+
+create table shoppy_order(
+		
+        oid int auto_increment primary key,
+        id varchar(50) not null,
+        pid int not null,
+        size varchar(10) not null,
+        qty int not null,
+        totprice double not null,
+        odate datetime
+        
+        
+);
+
+select * from shoppy_order so inner join shoppy_products sp where so.pid = sp.pid ;
+
+insert into shoppy_order(id,pid,size,qty,totprice,odate) value('try226','6','M','3','30000',curdate());
 

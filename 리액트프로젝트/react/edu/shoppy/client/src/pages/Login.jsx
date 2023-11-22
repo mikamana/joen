@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { setCookie } from "../util/cookie";
+import { Link, useNavigate } from "react-router-dom";
+import { getCookie, setCookie } from "../util/cookie";
 import { jwtDecode } from "jwt-decode";
 // import getCookie from "../util/cookie.js";
 // import removeCookie from "../util/cookie.js";
@@ -41,7 +41,14 @@ export default function Login() {
           // console.log(userInfo);
           // alert(result.data.token);
           localStorage.setItem("userInfo", JSON.stringify(userInfo));
-          navigate("/");
+          const getCook = getCookie("sproduct")
+
+          if (getCook) {
+            navigate(getCook)
+          } else {
+            navigate("/");
+          }
+
         } else {
           if (result.data.cnt === 1) {
 
@@ -109,6 +116,7 @@ export default function Login() {
             <button type="button" onClick={handleReset}>
               리셋
             </button>
+            <Link to="/signup"> 회원가입</Link>
           </li>
         </ul>
       </form>

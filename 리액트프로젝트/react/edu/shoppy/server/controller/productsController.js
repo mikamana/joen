@@ -25,15 +25,15 @@ export async function getDetailProducts(req,res){
 
 export async function insertProduct(req, res) {
 
-  const { image, name, price, info } = req.body;
+  const { image, name, price, deliprice, info } = req.body;
 
-  console.log({ image, name, price, info });
+  console.log(req.body);
 
-  const result = await productsRepository.insertProduct(name,image,price,info)
+  const result = await productsRepository.insertProduct(name,image,price,deliprice,info)
 
   if(result==="ok"){
 
-    res.redirect("/");
+    res.json(result)
 
   }
 

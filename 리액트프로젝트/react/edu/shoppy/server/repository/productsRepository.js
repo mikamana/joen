@@ -17,11 +17,11 @@ export async function getDetailProducts(pid){
 
 }
 
-export async function insertProduct(name,image,price,info) {
+export async function insertProduct(name,image,price,deliprice,info) {
 
-  const sql = "insert into shoppy_products(name,image,price,info,pdate) value(?,?,?,?,curdate())";
+  const sql = `insert into shoppy_products(name,image,price,deli_price,info,pdate) value(?,?,?,?,?,curdate())`;
 
-  return db.execute(sql,[name,image,price,info])
+  return db.execute(sql,[name,image,price,deliprice,info])
   .then((result)=>"ok");
 
 }
