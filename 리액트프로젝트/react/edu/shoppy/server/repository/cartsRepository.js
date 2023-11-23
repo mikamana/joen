@@ -25,3 +25,30 @@ import {db} from "../db/database.js";
     .then((result)=>"success")
 
   }
+
+/*   export async function updateCart(qty,cid){
+    const sql = `update shoppy_cart set qty = ? where cid = ?`
+
+    return db.execute(sql,[qty,cid])
+    .then((result)=>"success")
+  } */
+
+  /*
+    updateCart 장바구니 수량 업데이트
+  */
+  export async function updateCart(id,cid,flag){
+    let sql = ``;
+
+    if(flag==="minus"){
+
+      sql = 'update shoppy_cart set qty = qty-1 where id = ? and cid = ?'
+
+    }else if(flag==="plus"){
+
+      sql = 'update shoppy_cart set qty = qty+1 where id = ? and cid = ?'
+
+    }
+
+    return db.execute(sql,[id,cid])
+    .then((result)=>"success")
+  }

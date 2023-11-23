@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import { CookiesProvider } from 'react-cookie';
 import Order from './pages/Order';
+
 const router = createBrowserRouter([
   {
       path : '/',

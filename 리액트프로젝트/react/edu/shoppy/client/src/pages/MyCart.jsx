@@ -18,7 +18,34 @@ export default function MyCart() {
   let [totPrice, setTotPrice] = useState(0);
   let [totDeliPirce, setTotDeliPirce] = useState(0);
   let [totOrderPrice, setTotOrderPrice] = useState(0);
+  // let [check, setCheck] = useState({ "q": false, "w": false, "e": false, "r": false, "t": false })
+  // let [check, setCheck] = useState([{ "q": false }, { "w": false }, { "e": false }, { "r": false }, { "t": false }])
+  let [allCheck, setAllCheck] = useState(false)
   const navigate = useNavigate();
+
+  function updateData(cid, flg, qty) {
+
+    // axios({
+
+    //   method: "put",
+    //   url: `http://127.0.0.1:8000/carts/${userInfo.id}/${cid}/${flg}`,
+    //   data: { qty: qty, cid: cid, flag: flg }
+    // }).then((result) => {
+    //   if (result === "ok") {
+    //     window.location.reload()
+    //   }
+
+    // })
+
+    axios({
+
+      method: "get",
+      url: `http://127.0.0.1:8000/carts/${userInfo.id}/${cid}/${flg}`
+    }).then((result) => window.location.reload())
+
+  }
+
+
 
   const getQty = (e) => {
 
@@ -27,21 +54,16 @@ export default function MyCart() {
     // setFlag(e.flag)// +-
     // setDei(e.deli)//배송비
 
+
     // alert(JSON.stringify(e))
 
     if (e.flag === "minus") {
 
-      if (e.qty >= 1) {
-
+      if (e.qtyFlag === true) {
+        updateData(e.cid, e.flag, e.qty)
         setTotPrice(totPrice - parseInt(e.price))
         setTotDeliPirce(totDeliPirce - parseInt(e.deli))
-        setTotOrderPrice(totOrderPrice)
-
-      } else if (e.qty < 1) {
-
-        setTotPrice(totPrice - parseInt(e.price))
-        setTotDeliPirce(totDeliPirce)
-        setTotOrderPrice(totOrderPrice)
+        setTotOrderPrice(totOrderPrice - (parseInt(e.price) + parseInt(e.deli)))
 
       }
 
@@ -49,16 +71,17 @@ export default function MyCart() {
 
     } else if (e.flag === "plus") {
 
-      if (e.qty < 20) {
-
+      if (e.qtyFlag === true) {
+        updateData(e.cid, e.flag, e.qty)
         setTotPrice(totPrice + parseInt(e.price))
         setTotDeliPirce(totDeliPirce + parseInt(e.deli))
-        setTotOrderPrice(totOrderPrice)
+        setTotOrderPrice(totOrderPrice + (parseInt(e.price) + parseInt(e.deli)))
 
       }
 
-
     }
+
+
 
   }
 
@@ -129,16 +152,14 @@ export default function MyCart() {
         }
       }).catch(console.log("error"));
 
-
-
-
   }
 
   const handlerOrder = (e) => {
-
+    // 실행하려는 기능에 관련된 데이터는 어디에 있는가? --> list: 정확한 데이터 추가
+    // 회원 id,pid,size,qty,totPrice ==> JSON 객체로 생성 --> orderArr에 푸쉬
     const orderArr = []
 
-    const filterId = list.map((lst) => {
+    list.map((lst) => {
 
       return orderArr.push({ id: lst.id, pid: lst.pid, size: lst.size, qty: lst.qty, totPrice: totPrice })
 
@@ -147,7 +168,6 @@ export default function MyCart() {
     })
 
     navigate(`/order/${userInfo.id}`)
-
 
     axios({
 
@@ -166,9 +186,76 @@ export default function MyCart() {
 
     }).catch(console.log("error"));
 
-
   }
 
+
+
+  // const handleAllCheck = (e) => {
+
+  //   const { checked } = e.target
+  //   //Object.keys() 메서드는 주어진 객체의 속성 이름들을 일반적인 반복문과 동일한 순서로 순회되는 열거할 수 있는 배열로 반환합니다.
+
+  //   setAllCheck((allCheck) => !allCheck);
+
+  //   if (allCheck === false) {
+
+  //     setCheck([{ "q": true }, { "w": true }, { "e": true }, { "r": true }, { "t": true }])
+
+  //   } else if (allCheck === true) {
+
+  //     setCheck([{ "q": false }, { "w": false }, { "e": false }, { "r": false }, { "t": false }])
+
+  //   }
+
+
+  //   console.log(check);
+
+  //   // setCheck((checks) => Object.keys(checks).reduce(
+  //   //   (newCheck, checkKey) => ({
+  //   //     ...newCheck,
+  //   //     [checkKey]: checked,
+  //   //   }),
+  //   //   {}
+  //   // )
+  //   // );
+
+  //   //reduce() 함수는 배열의 각 요소에 대해 주어진 함수를 실행하고, 하나의 결과값을 반환하는 함수입니다.
+  //   //reduce() 함수가 호출되면 첫 번째 순회 단계에서 accumulator 값은 initialValue로 설정되거나 배열의 첫 번째 요소로 설정된다. 
+  //   //위 코드에서는 초기 값이 0이 주어졌으므로 처음 누적된 accumulator의 값은 0부터 시작한다.
+  //   //newCheck 객체에 checkKey를 추가합니다.
+  //   //checkKey 속성의 값을 checked로 설정합니다.
+  //   //따라서 위 코드는 checks 객체의 각 속성 이름에 대해 checked 속성 값을 true로 설정합니다.
+  //   // setAllCheck(checked);
+
+  // }
+
+  // useEffect(() => {
+
+  //   checkFunction()
+
+  // }, [allCheck])
+
+  // const checkFunction = (e) => {
+
+  //   if (allCheck === false) {
+
+  //     setCheck([{ "q": true }, { "w": true }, { "e": true }, { "r": true }, { "t": true }])
+
+  //   } else if (allCheck === true) {
+
+  //     setCheck([{ "q": false }, { "w": false }, { "e": false }, { "r": false }, { "t": false }])
+
+  //   }
+
+  // }
+
+  // const handleChange = (e) => {
+
+  //   const { checked } = e.target
+
+  //   console.log(checked);
+
+  // }
 
   return (
     <>
@@ -176,6 +263,7 @@ export default function MyCart() {
         <>
           <section className="cart_section_wrap">
             <h2>장바구니 리스트</h2>
+            <p className="cart_section_all_select_checkbox"><label>전체동의 선택항목에 대한 동의 포함</label><input type="checkbox" name="all" /></p>
             <ul className="cart_list">
               {list.map((lst) =>
                 <li className="cart_list_li">
@@ -218,15 +306,21 @@ export default function MyCart() {
                       <span className="cart_list_text_list_span">배송비 : </span>{lst.deli}
                     </li>
                   </ul>
-                  <BookCheckBox price={lst.price} deli={lst.deli} getQty={getQty} qty={lst.qty} />
-                  {/* 함수를 넘기면 값을 받아와서 사용할 수 있음 */}
-                  <button
-                    variant="danger"
-                    type="button"
-                    className="cart_list_delete_btn"
-                    data-id={lst.cid}
-                    onClick={handleDelete}> {/* 이벤트.target.dataset.id */}
-                    삭제</button>
+                  <div className="cart_list_button_wrap">
+                    <BookCheckBox price={lst.price} deli={lst.deli} getQty={getQty} qty={lst.qty} cid={lst.cid} />
+                    {/* 함수를 넘기면 값을 받아와서 사용할 수 있음 */}
+                    <button
+                      variant="danger"
+                      type="button"
+                      className="cart_list_delete_btn"
+                      data-id={lst.cid}
+                      onClick={handleDelete}> {/* 이벤트.target.dataset.id */}
+                      삭제</button>
+                    <p>
+                      <label>선택하여삭제</label>
+                      <input type="checkbox" />
+                    </p>
+                  </div>
                 </li>
               )}
             </ul>

@@ -8,7 +8,7 @@ export default function BookCheckBox(props) {
 
     <>
       <div className="book--content--checkbox--div">
-        <BookCheckCount price={props.price} deli={props.deli} getQty={props.getQty} qty={props.qty} />
+        <BookCheckCount price={props.price} deli={props.deli} getQty={props.getQty} qty={props.qty} cid={props.cid} />
       </div>
     </>
 

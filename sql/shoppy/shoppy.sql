@@ -71,9 +71,13 @@ create table shoppy_cart(
 );
 
 drop table shoppy_cart;
+drop table shoppy_order;
 select * from shoppy_cart;
 select * from shoppy_member;
 select * from shoppy_products;
+select * from shoppy_order;
+
+
 select cid,qty,size,substring(cdate,1,10) as cdate, price, deli_price as deli,image,sc.id,sp.name,sp.info from shoppy_cart sc inner join shoppy_products sp, shoppy_member sm where sc.pid = sp.pid and sm.id = sc.id and sc.id="try226";
 
 select row_number() over (order by qty) as rno, sp.image,sp.name,sp.price,sc.qty,sc.size,sp.price*sc.qty as tprice from shoppy_cart sc inner join shoppy_products sp inner join shoppy_member sm on sc.pid = sp.pid and sm.id = sc.id;
@@ -97,8 +101,14 @@ create table shoppy_order(
         
         
 );
-
-select * from shoppy_order so inner join shoppy_products sp where so.pid = sp.pid ;
+select so.id, so.oid, so.pid, so.size, so.qty, so.totprice, so.odate, sp.name, sp.image, sp.deli_price from shoppy_order so inner join shoppy_products sp where so.pid = sp.pid and id='try226';
+select so.id,oid, so.pid, so.size, so.qty, so.totprice, so.odate, sp.name, sp.image, sp.deli_price from shoppy_order so inner join shoppy_products sp where so.pid = sp.pid and id='try226';
 
 insert into shoppy_order(id,pid,size,qty,totprice,odate) value('try226','6','M','3','30000',curdate());
 
+-- test/1/1 : 20 
+-- cid만 알면 id,pid,qty를 다 사용할 수 있다. flag값만 추가해서 사용
+-- 데이터의 방식에 따라(상품개수의 차이 등) 데이터를 가져오는 방법이 달라짐
+
+update shoppy_cart 
+  

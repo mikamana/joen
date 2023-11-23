@@ -4,10 +4,7 @@ export async function insertCart(req,res){
 
   const {qty,size,id,pid} = req.body;
 
-  console.log({qty,size,pid,id});
   let qtyLength = qty.qty;
-
-  console.log(qtyLength);
 
   const result = await cartsRepository.insertCart({qty,size,id,pid});
 
@@ -22,8 +19,6 @@ export async function insertCart(req,res){
 export async function getCart(req,res){
 
   const {id} = req.params
-
-  console.log(id);
 
   const result = await cartsRepository.getCart(id)
 
@@ -45,3 +40,47 @@ export async function removeCart(req,res){
   }
 
 }
+
+// export async function updateCart(req,res){
+
+//   const {qty, cid,flag} = req.body
+//   // shopyy_cart의 id,pid, qty, 상태(증가,감소)
+  
+//   console.log({qty,cid,flag});  
+
+//   // if(flag==="minus"){
+
+//   // }else if(flag==="plus"){
+
+//   // }
+
+//   const result = await cartsRepository.updateCart(qty,cid)
+
+//   if(result==="success"){
+
+//     res.status(204)
+
+//   }
+
+
+// }
+
+export async function updateCart(req,res){
+
+  // const {qty, cid,flag} = req.body
+  // shopyy_cart의 id,pid, qty, 상태(증가,감소)
+  
+  const {id,cid,flag} = req.params
+  console.log({id,cid,flag});
+
+  const result = await cartsRepository.updateCart(id,cid,flag)
+
+  if(result==="success"){
+
+    res.status(204).send("success")
+
+  }
+
+
+}
+

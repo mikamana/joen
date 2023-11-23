@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getUser } from "../util/localStorage";
 import axios from "axios";
 
-
 export default function Order() {
 
   const userInfo = getUser();

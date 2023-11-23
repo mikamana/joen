@@ -163,6 +163,8 @@ ul.cart_list_text_list{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  border:  1px solid gray;
+
 }
 li.cart_list_text_list_li{
   /* margin: 10px 0px; */
@@ -198,10 +200,15 @@ span.total_price_span{
   margin: 0px 10px;
 }
 
-
+p.cart_section_all_select_checkbox{
+  border: 1px solid gray;
+  height: 30px;
+  padding: 20px;
+}
 
 div.order_wrap{
   border:  1px solid gray;
+
 }
 
 div.order_list_wrap{
@@ -232,4 +239,13 @@ ul.order_list_sub>li{
 img.order_list_img{
   width:300px;
   height:350px;
+}
+
+div.cart_list_button_wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid gray;
+
 }
