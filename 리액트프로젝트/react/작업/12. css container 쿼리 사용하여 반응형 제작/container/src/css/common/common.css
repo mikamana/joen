@@ -1,0 +1,14 @@
+.serif {
+  font-family: "Nanum Myeongjo", serif;
+}
+
+:root {
+  --color1: #054324;
+  --color2: #332352;
+  --color3: #a13551;
+}
+
+.inner {
+  width: min(95%, 1500px);
+  margin: 0 auto;
+}/*# sourceMappingURL=common.css.map */
