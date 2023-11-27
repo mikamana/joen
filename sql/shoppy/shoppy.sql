@@ -5,17 +5,6 @@ select * from information_schema.tables where table_name like "shoppy%";
 -- pid(제품아이디),name(상품명),image,price,info,pdate(등록날짜)
 
 drop table shoppy_products;
-create table shoppy_products(
-
-	pid int auto_increment primary key,
-    name varchar(50) not null,
-    image varchar(300),
-    price long,
-    deli_price varchar(20),
-    info varchar(300),
-    pdate date
-
-);
 
 create table shoppy_member(
 	id varchar(20) primary key,
@@ -156,3 +145,46 @@ update shoppy_cart set qty = 2 where cid = 20;
 select * from shoppy_cart;
 select * from shoppy_order;
 drop table shoppy_order;
+
+
+create table shoppy_products(
+
+	pid int auto_increment primary key,
+    name varchar(50) not null,
+    image varchar(300),
+    price long,
+    deli_price varchar(20),
+    info varchar(300),
+    pdate date
+
+);
+
+create table shoppy_products(
+
+	pid int auto_increment primary key,
+    name varchar(50) not null,
+    image varchar(300),
+    price long,
+    info varchar(300),
+    pdate date
+
+);
+
+drop table shoppy_products;
+
+insert into shoppy_products(name,image,price,deli_price,info,pdate)  
+                  values(?,?,?,?,curdate());
+                  
+select * from shoppy_cart;
+select * from shoppy_member;
+select * from shoppy_products;
+
+
+
+
+
+insert into shoppy_cart(qty, size, id, pid, cdate)  
+                  values(?,?,?,?,sysdate());
+
+
+		

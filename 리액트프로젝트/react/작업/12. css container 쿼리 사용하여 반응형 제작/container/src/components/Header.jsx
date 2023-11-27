@@ -7,8 +7,7 @@ import Menu from "./Menu";
 export default function Header() {
 
     const cx = classNames.bind(styles)
-    const [,] = useState('')
-    
+
     return (
 
         <>
