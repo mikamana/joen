@@ -3,6 +3,12 @@ import { getUser } from "../util/localStorage";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import BookCheckBox from "./components/BookCheckBox";
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+//페이징 처리
+import Pagination from 'rc-pagination';
+import 'rc-pagination/assets/index.css';
+
 export default function MyCart() {
 
   const userInfo = getUser();
@@ -18,10 +24,18 @@ export default function MyCart() {
   let [totPrice, setTotPrice] = useState(0);
   let [totDeliPirce, setTotDeliPirce] = useState(0);
   let [totOrderPrice, setTotOrderPrice] = useState(0);
+  const [cartList, setCartList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0); // db에서 가져오는 값이여야함
+  const [pageSize, setPageSize] = useState(2);
+  // const [startIndex, setStartIndex] = useState(0);
+  // const [endIndex, setEndIndex] = useState(3);
   // let [check, setCheck] = useState({ "q": false, "w": false, "e": false, "r": false, "t": false })
   // let [check, setCheck] = useState([{ "q": false }, { "w": false }, { "e": false }, { "r": false }, { "t": false }])
-  let [allCheck, setAllCheck] = useState(false)
+  // let [allCheck, setAllCheck] = useState(false)
   const navigate = useNavigate();
+
+
 
   function updateData(cid, flg, qty) {
 
@@ -45,17 +59,7 @@ export default function MyCart() {
 
   }
 
-
-
   const getQty = (e) => {
-
-    // setQty(e.qty) //수량
-    // setPric(e.price)//가격
-    // setFlag(e.flag)// +-
-    // setDei(e.deli)//배송비
-
-
-    // alert(JSON.stringify(e))
 
     if (e.flag === "minus") {
 
@@ -81,19 +85,35 @@ export default function MyCart() {
 
     }
 
-
-
   }
 
+  /* 
+  
+  회원의 장바구니 리스트 가져오기
 
-
+  */
   useEffect(() => {
+
+    //startIndex, endIndex
+
+    let startIndex = 0;
+    let endIndex = 0;
+
+    startIndex = (currentPage - 1) * pageSize + 1; // 1-1*3+1 : 1
+    endIndex = currentPage * pageSize; //1*3 : 3
+
+    // alert(`startIndex--> ${startIndex}, endIndex --> ${endIndex}`)
 
     axios({
       method: "get",
-      url: `http://127.0.0.1:8000/carts/${userInfo.id}`
+      url: `http://127.0.0.1:8000/carts/${userInfo.id}/${startIndex}/${endIndex}`
+      // url: `http://127.0.0.1:8000/carts/${userInfo.id}`
     }).then((result) => {
       setList(result.data)
+      // setCartList()
+      setTotalCount(result.data[0].cnt)
+
+
       console.log(result);
       const newTotPrice = setNewTotPrice(result.data);
       setTotPrice(newTotPrice)
@@ -101,13 +121,6 @@ export default function MyCart() {
       setTotDeliPirce(newDeliPrice)
       const newTotOrderPrice = setNewOrderPrice(result.data);
       setTotOrderPrice(newTotOrderPrice)
-      // const priceList = list.map((lst) => {
-
-      //   return lst.price
-
-      // })
-
-      // console.log(priceList);
 
     })
 
@@ -117,11 +130,6 @@ export default function MyCart() {
 
     const setNewTotPrice = (cartList) => {
       return cartList.reduce((total, item) => total + (item.price * item.qty), 0);
-      // const prc = data.map((list) => {
-
-      //   return list.price
-
-      // })
 
     }
 
@@ -137,7 +145,7 @@ export default function MyCart() {
 
     }
 
-  }, [])
+  }, [currentPage])
 
 
   const handleDelete = (e) => {
@@ -162,12 +170,9 @@ export default function MyCart() {
     list.map((lst) => {
 
       return orderArr.push({ id: lst.id, pid: lst.pid, size: lst.size, qty: lst.qty, totPrice: totPrice })
-
       // 주문id(pk), 회원아이디, 상품아이디, 주문날짜,옵션(사이즈등), 수량,총 주문금액
 
     })
-
-    navigate(`/order/${userInfo.id}`)
 
     axios({
 
@@ -185,6 +190,9 @@ export default function MyCart() {
 
 
     }).catch(console.log("error"));
+
+    navigate(`/order/${userInfo.id}`)
+    window.location.reload()
 
   }
 
@@ -324,6 +332,12 @@ export default function MyCart() {
                 </li>
               )}
             </ul>
+            <Pagination className="d-flex justify-content-center"
+              current={currentPage}
+              total={totalCount}
+              pageSize={pageSize}
+              onChange={(page) => setCurrentPage(page)}
+            />
             <div className="total_price_wrap">
               <label>총 상품가격</label><span className="total_price_span">{totPrice.toLocaleString()}</span>
               <label>+ 총 배송비</label><span className="total_price_span">{totDeliPirce.toLocaleString()}</span>

@@ -4,7 +4,7 @@ export async function insertCart(req,res){
 
   const {qty,size,id,pid} = req.body;
 
-  let qtyLength = qty.qty;
+  // let qtyLength = qty.qty;
 
   const result = await cartsRepository.insertCart({qty,size,id,pid});
 
@@ -25,6 +25,24 @@ export async function getCart(req,res){
   res.json(result)
   
 }
+
+/* 
+  회원 장바구니 리스트 - 페이징 처리 추가
+*/
+
+export async function getPageCart(req,res){
+
+  const {id,start,end} = req.params
+
+  console.log(req.params);
+
+  const result = await cartsRepository.getPageCart({id,start,end})
+
+  res.json(result)
+  
+}
+
+
 
 
 export async function removeCart(req,res){

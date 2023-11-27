@@ -40,7 +40,7 @@ select * from shoppy_products;
 
 drop table shoppy_products;
 
-insert into shoppy_products(name,image,price,deli_price,info,pdate) value("꽈배기니트","8.webp","28000","2500","포근한 느낌의 디자인",curdate());
+insert into shoppy_products(name,image,price,deli_price,info,pdate) value("꽈배기니트","7.webp","28000","2500","포근한 느낌의 디자인",curdate());
 
 delete from shoppy_cart where cid = 4;
 
@@ -78,7 +78,48 @@ select * from shoppy_products;
 select * from shoppy_order;
 
 
-select cid,qty,size,substring(cdate,1,10) as cdate, price, deli_price as deli,image,sc.id,sp.name,sp.info from shoppy_cart sc inner join shoppy_products sp, shoppy_member sm where sc.pid = sp.pid and sm.id = sc.id and sc.id="try226";
+select rno,image,name,price,qty,size,cnt,id
+from 
+(select 
+	row_number() over (order by sc.cdate) as rno,
+    cid,
+    qty,
+    size,
+    substring(cdate,1,10) as cdate,
+    price,
+    deli_price as deli,
+    image,
+    sc.id,
+    sp.name,
+    sp.info,
+    (select count(*) as cnt from shoppy_cart where id="try226") cnt
+from shoppy_cart sc 
+inner join shoppy_products sp, shoppy_member sm 
+where sc.pid = sp.pid
+and sm.id = sc.id and sc.id="try226") cartList
+where rno between 1 and 3;
+
+select 
+	row_number() over (order by sc.cdate) as rno,
+    cid,
+    qty,
+    size,
+    substring(cdate,1,10) as cdate,
+    price,
+    deli_price as deli,
+    image,
+    sc.id,
+    sp.name,
+    sp.info
+from shoppy_cart sc   
+inner join shoppy_products sp, shoppy_member sm 
+where sc.pid = sp.pid and sm.id = sc.id and sc.id="try226";
+
+select * from shoppy_cart;
+select * from shoppy_products;
+
+
+
 
 select row_number() over (order by qty) as rno, sp.image,sp.name,sp.price,sc.qty,sc.size,sp.price*sc.qty as tprice from shoppy_cart sc inner join shoppy_products sp inner join shoppy_member sm on sc.pid = sp.pid and sm.id = sc.id;
 
@@ -110,5 +151,8 @@ insert into shoppy_order(id,pid,size,qty,totprice,odate) value('try226','6','M',
 -- cid만 알면 id,pid,qty를 다 사용할 수 있다. flag값만 추가해서 사용
 -- 데이터의 방식에 따라(상품개수의 차이 등) 데이터를 가져오는 방법이 달라짐
 
-update shoppy_cart 
-  
+update shoppy_cart set qty = 2 where cid = 20;
+
+select * from shoppy_cart;
+select * from shoppy_order;
+drop table shoppy_order;

@@ -15,7 +15,7 @@ router.post("/login", memberController.loginCheck);
 router.post("/signup", memberController.signUpMember);
 router.get("/signup/:id", memberController.getIdCheck);
 router.post("/carts/new", cartsController.insertCart);
-router.get("/carts/:id", cartsController.getCart);
+router.get("/carts/:id/:start/:end", cartsController.getPageCart);
 // router.put("/carts/:id/:cid/:flag", cartsController.updateCart);
 router.get("/carts/:id/:cid/:flag", cartsController.updateCart);
 router.get("/carts/:id/:cid", cartsController.removeCart);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getUser } from "../util/localStorage";
+import Table from 'react-bootstrap/Table';
 import axios from "axios";
 
 export default function Order() {
@@ -23,8 +24,6 @@ export default function Order() {
   }, [])
 
   console.log(orderList);
-
-
 
   return (
 
@@ -72,9 +71,6 @@ export default function Order() {
                     <li>
                       <p><span>가격 : </span> {lst.price}</p>
                     </li>
-                    <li>
-                      <p><span>총 주문가격 : </span>{lst.totprice}</p>
-                    </li>
                   </ul>
                 </li>
               </>
@@ -83,6 +79,45 @@ export default function Order() {
 
           </ul>
         </div>
+        <div className="tot_wrap">
+          <p></p>
+        </div>
+        <Table striped bordered hover >
+          <thead>
+            <tr>
+              <td>주문고객</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <td>고객정보</td>
+            </tr>
+          </thead>
+        </Table>
+        <Table striped bordered hover >
+          <thead>
+            <tr>
+              <td>주문상품</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <td>주문리스트</td>
+            </tr>
+          </thead>
+        </Table>
+        <Table striped bordered hover >
+          <thead>
+            <tr>
+              <td>결제방식</td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <td>결제방식 선택정보</td>
+            </tr>
+          </thead>
+        </Table>
       </div>
     </>
 

@@ -11,11 +11,48 @@ import {db} from "../db/database.js";
   
   }
 
+  /* 
+    getCartList : 회원 장바구니 리스트
+  */
+
   export async function getCart(id){
-    const sql = `select sc.pid,cid,qty,size,substring(cdate,1,10) as cdate,price,deli_price as deli,image,sc.id,sp.name,sp.info from shoppy_cart sc inner join shoppy_products sp, shoppy_member sm where sc.pid = sp.pid and sm.id = sc.id and sc.id = ?
+
+    const sql = `select row_number() over (order by sc.cdate) as rno, sc.pid,cid,qty,size,substring(cdate,1,10) as cdate,price,deli_price as deli,image,sc.id,sp.name,sp.info from shoppy_cart sc inner join shoppy_products sp, shoppy_member sm where sc.pid = sp.pid and sm.id = sc.id and sc.id = ?
     `
     return db.execute(sql ,[id])
     .then((rows)=>rows[0])
+
+  }
+
+  /* 
+    getPageCart : 회원 장바구니 리스트 - 페이징 처리 추가
+  */
+
+  export async function getPageCart({id,start,end}){
+    // 
+    const sql = `select rno,image,name,price,qty,size,cnt,deli,cdate,cid,info,id
+    from 
+    (select 
+      row_number() over (order by sc.cdate) as rno,
+        cid,
+        qty,
+        size,
+        substring(cdate,1,10) as cdate,
+        price,
+        deli_price as deli,
+        image,
+        sc.id,
+        sp.name,
+        sp.info,
+        (select count(*) as cnt from shoppy_cart where id=?) cnt
+    from shoppy_cart sc 
+    inner join shoppy_products sp, shoppy_member sm 
+    where sc.pid = sp.pid
+    and sm.id = sc.id and sc.id=?) cartList
+    where rno between ? and ?;`
+    return db.execute(sql ,[id,id,start,end])
+    .then((rows)=>rows[0])
+
   }
 
   export async function removeCart(cid){
