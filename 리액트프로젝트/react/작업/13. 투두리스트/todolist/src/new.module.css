@@ -1,0 +1,33 @@
+li {
+  margin: 0px 10px;
+  color: #cc784d;
+  position: relative;
+  display: inline-block;
+}
+li.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: -4px;
+  height: 2px;
+  background-color: #4f59c0;
+}
+
+ul.new_list li {
+  margin: 0px 10px;
+  color: #2e0de6;
+  position: relative;
+  display: inline-block;
+}
+ul.new_list li.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: -4px;
+  height: 2px;
+  background-color: #4f59c0;
+}/*# sourceMappingURL=new.module.css.map */

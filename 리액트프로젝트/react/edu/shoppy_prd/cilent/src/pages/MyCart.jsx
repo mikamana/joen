@@ -67,7 +67,7 @@ export default function MyCart() {
     let startIndex = 0;
     let endIndex = 0;
 
-    startIndex = (currentPage - 1) * pageSize + 1; //1-1*3+1 : 1, 4 ..
+    startIndex = (currentPage - 1) * pageSize + 1; //1-1*3+1 : 1, 4 .. 몇번째 데이터부터 몇개를 보여줄 것인지(데이터기준)
     endIndex = currentPage * pageSize; //1*3 : 3, 6 ..
 
     // alert(`startIndex--> ${startIndex}, endIndx --> ${endIndex}`);
@@ -80,7 +80,7 @@ export default function MyCart() {
       .then((result) => {
         // alert(JSON.stringify(result.data));
         setCartList(result.data);
-        setTotalCount(result.data[0].cnt);
+        setTotalCount(result.data[0].cnt);//총 데이터 개수가져와서 pagenation 속성에 기입
 
         //총 상품가격 구하기
         const newTotPrice = setNewTotPrice(result.data);

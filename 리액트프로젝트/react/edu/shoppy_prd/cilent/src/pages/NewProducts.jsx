@@ -7,21 +7,21 @@ import ImageUpload from "../components/ImageUpload";
 
 export default function NewProducts() {
   const userInfo = getUser();
-  const [form, setForm] = useState({ image: '', name: '', price: '', info: '' });
   const [image, setImage] = useState(null);
+  // const [form, setForm] = useState({ image: '', name: '', price: '', info: '' });
 
   //ImageUpload 선택 이미지 경로 가져오기
   const getImage = (e, d) => {
     alert(`new file ==>> ${JSON.stringify(e)}`);
     setImage(e);
-    console.log(d);
+    // console.log(d);
     // ImageUpload파일에서 데이터 받아옴
   }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  }
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setForm({ ...form, [name]: value });
+  // }
 
 
   /* useEffect(() => {
@@ -71,7 +71,7 @@ export default function NewProducts() {
 
     /* 
       formData.append(name, value)
-      - form의 name 과 value 를 필드의 추가
+      - form의 name 과 value 를 필드에 추가
       - input의 name 속성과 value 입력값 역할을 한다고 생각 하면 된다.
    */
 
@@ -82,6 +82,7 @@ export default function NewProducts() {
       formDataObject[key] = value;
 
     });
+
     console.log(formDataObject);
 
     //post --> axios

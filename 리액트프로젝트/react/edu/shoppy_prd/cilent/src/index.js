@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import  { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import AllProducts from './pages/AllProducts';
 import ProductDetail from './pages/ProductDetail';
@@ -17,19 +17,19 @@ import { CookiesProvider } from 'react-cookie';
 
 const router = createBrowserRouter([
   {
-      path : '/',
-      element : <App />,
-      errorElement : <NotFound />,
-      children : [
-        { index : true, path : '/', element : <Home />   },
-        { path : '/products', element : <AllProducts />  },
-        { path : '/products/:pid', element : <ProductDetail />  },
-        { path : '/products/new', element : <NewProducts />  },
-        { path : '/carts', element : <MyCart />  },
-        { path : '/login', element : <Login />  },
-        { path : '/signup', element : <Signup />  },
-        { path : '/order', element : <MyOrder />  },
-      ]
+    path: '/',
+    element: <App />,
+    errorElement: <NotFound />,
+    children: [
+      { index: true, path: '/', element: <Home /> },
+      { path: '/products', element: <AllProducts /> },
+      { path: '/products/:pid', element: <ProductDetail /> },
+      { path: '/products/new', element: <NewProducts /> },
+      { path: '/carts', element: <MyCart /> },
+      { path: '/login', element: <Login /> },
+      { path: '/signup', element: <Signup /> },
+      { path: '/order', element: <MyOrder /> },
+    ]
   }
 ]);
 

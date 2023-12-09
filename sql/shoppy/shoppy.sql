@@ -5,7 +5,7 @@ select * from information_schema.tables where table_name like "shoppy%";
 -- pid(제품아이디),name(상품명),image,price,info,pdate(등록날짜)
 
 drop table shoppy_products;
-
+select * from oh_review;
 create table shoppy_member(
 	id varchar(20) primary key,
 	name varchar(30) not null,
@@ -47,7 +47,6 @@ insert into shoppy_member(name,id,pass,phone,mdate) value("3","4","5","6",sysdat
 -- cdate  : 장바구니 등록날짜
 select * from information_schema.tables ;
 
-
 create table shoppy_cart(
 
 			cid int auto_increment primary key,
@@ -65,7 +64,6 @@ select * from shoppy_cart;
 select * from shoppy_member;
 select * from shoppy_products;
 select * from shoppy_order;
-
 
 select rno,image,name,price,qty,size,cnt,id
 from 

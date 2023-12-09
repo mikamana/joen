@@ -7,7 +7,6 @@ export default function ImageUpload({ getImage }) {
     // FormData 객체를 생성하고 변수에 데이터를 저장한다.
     const FileUpload = (e) => {
 
-
         formData.append("file", e.target.files[0])
         // 콜백함수 첫번째 인자는 'file'이다.
         for (const key of formData) console.log(`key---->>> ${JSON.stringify(key)}`);

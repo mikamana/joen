@@ -1,7 +1,7 @@
 import multer from 'multer';
 
 //multer 라이브러리를 이용한 파일업로드
-const storage = multer.diskStorage({
+const storage = multer.diskStorage({  
   // uploads 폴더에 이미지 저장
 
   destination: function (req, file, cb) {

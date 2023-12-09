@@ -1,4 +1,4 @@
-import express  from 'express';
+import express from 'express';
 import newProductsRouter from './router/newProductsRouter.js';
 import allProductsRouter from './router/allProductsRouter.js';
 import signupRouter from './router/signupRouter.js';
@@ -26,6 +26,6 @@ server.use('/carts', cartsRouter);
 server.use('/order/new', orderRouter);
 server.use('/upload', uploadRouter);
 
-server.listen(PORT, ()=>{
+server.listen(PORT, () => {
   console.log(`server running --->> ${PORT}`);
 });

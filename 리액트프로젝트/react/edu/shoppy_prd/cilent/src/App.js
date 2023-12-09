@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-   <>
-    <Navbar />
-    <Outlet />
-   </>
+    <>
+      <Navbar />
+      <Outlet />
+    </>
   );
 }
 
