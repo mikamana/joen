@@ -1,10 +1,10 @@
-li {
+li.li_list {
   margin: 0px 10px;
   color: #cc784d;
   position: relative;
   display: inline-block;
 }
-li.active::after {
+li.li_list.active::after {
   content: "";
   display: block;
   width: 100%;
