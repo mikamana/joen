@@ -1,22 +1,29 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import ModalContents from "./components/modal/ModalContents";
+import GameContents from "./components/game/GameContents";
+import WebContents from "./components/web/WebContents";
 import Modal from "./pages/Modal";
-import Game from "./pages/Game";
-import Web from "./pages/Web";
 
 const router = createBrowserRouter([
 
   {
     path: "/",
-    element: <Modal />
-  },
-  {
-    path: "/game",
-    element: <Game />
-  },
-  {
-    path: "/web",
-    element: <Web />
+    element: <Modal />,
+    children:[
+      {
+        path:"/modal",
+        element:<ModalContents />
+      },
+      {
+        path:"/game",
+        element:<GameContents />
+      },
+      {
+        path:"/web",
+        element:<WebContents />
+      }
+    ]
   }
 
 ])

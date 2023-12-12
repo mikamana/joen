@@ -1,0 +1,21 @@
+/*Header*/
+ul.gnb_list {
+  display: flex;
+  justify-content: space-around;
+  li.gnb_li {
+    line-height: 80px;
+    // color: var(--navColor);
+  }
+  li.active a {
+    color: var(--orange);
+  }
+} //gnb_wrap > gnb_list
+
+/* ul.nav_list {
+  li.gnb_li {
+    a.gnb_link {
+    }
+  }
+} // 만약 nav_list가 생겼을 때 이런식으로 사용하면 됌 */
+
+/*Modal*/

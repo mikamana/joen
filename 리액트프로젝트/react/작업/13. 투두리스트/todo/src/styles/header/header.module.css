@@ -1,1 +1,17 @@
-/*# sourceMappingURL=header.module.css.map */
+header.header_wrap {
+  border: 1px solid #000;
+  height: 80px;
+  display: flex;
+}
+
+h1.logo {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  line-height: 80px;
+}
+
+nav.gnb_wrap {
+  flex-grow: 1;
+  height: 100%;
+}/*# sourceMappingURL=header.module.css.map */

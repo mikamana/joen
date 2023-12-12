@@ -1,14 +1,15 @@
 import React from 'react';
-import classNames from "classnames/bind";
-import styles from "../styles/modal/modal.module.css";
+import { Outlet } from 'react-router-dom';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 export default function Modal() {
-
-  const cx = classNames(styles);
 
   return (
     <>
       <Header />
+      <Outlet />
+      <Footer />
     </>
   )
 }

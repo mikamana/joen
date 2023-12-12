@@ -1,3 +1,75 @@
-div.dd {
+section.modal_section {
   border: 1px solid #000;
+  min-height: 500px;
+}
+
+div.modal_wrap {
+  width: 500px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  background-color: var(--bgColor);
+  position: relative;
+  header.modal_header {
+    nav.modal_nav {
+      padding: 20px;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: space-between;
+      span.dark_icon {
+        width: 20px;
+        aspect-ratio: 1;
+        background-color: var(--iconColor);
+        display: block;
+      }
+      ul.modal_list {
+        li.modal_li {
+          margin: 0px 20px;
+          display: inline-block;
+          color: var(--navColor);
+          position: relative;
+          &.active::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -8px;
+            width: 100%;
+            height: 3px;
+            background-color: #5de750;
+          }
+        }
+      }
+    }
+  } //header
+  main.main_wrap {
+    ul.main_list {
+      li.main_li {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        span.span_list {
+          color: #fff;
+          margin-left: 5px;
+        }
+      }
+    }
+  } //main
+  footer.footer_wrap {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    input.footer_input {
+      width: 80%;
+      height: inherit;
+      padding: 0;
+      margin: 0;
+      background-color: #421125;
+    }
+    button.add_btn {
+      width: 20%;
+      height: inherit;
+      padding: 0;
+      margin: 0;
+    }
+  } //footer
 }
