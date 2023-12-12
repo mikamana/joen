@@ -1,0 +1,19 @@
+:root {
+  --bgColor: #424242;
+  --fontColor: #878787;
+  --pointColor: rgb(106, 149, 40);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}/*# sourceMappingURL=common.css.map */

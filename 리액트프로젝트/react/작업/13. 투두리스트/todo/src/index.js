@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App2 from "./App2";
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {DarkModeProvider} from "./context/DarkModeContext";
+import "./styles/reset.css";
+import "./styles/common/common.css";
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DarkModeProvider>
-      <App2 />
-    </DarkModeProvider>
+    <App />
   </React.StrictMode>
 );
 

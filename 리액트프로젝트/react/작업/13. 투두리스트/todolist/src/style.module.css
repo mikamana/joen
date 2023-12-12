@@ -1,6 +1,15 @@
 @charset "UTF-8";
+:root {
+  --bg1: #43434f;
+  --bg2: #22243a;
+}
+
+html.dark {
+  --bg1: #fff;
+}
+
 body {
-  background-color: #43434f;
+  background-color: var(--bg1);
 }
 
 * {
@@ -12,7 +21,19 @@ body {
 div.modal {
   width: 500px;
   aspect-ratio: 1;
-  background-color: #22243a;
+  background-color: var(--bg2);
+  border-radius: 10px;
+  position: relative;
+  margin: 200px auto;
+  box-shadow: 6px 3px 16px -2px rgba(42, 42, 42, 0.75);
+  -webkit-box-shadow: 6px 3px 16px -2px rgba(42, 42, 42, 0.75);
+  -moz-box-shadow: 6px 3px 16px -2px rgba(42, 42, 42, 0.75);
+  overflow: hidden;
+}
+div.modal.active {
+  width: 500px;
+  aspect-ratio: 1;
+  background-color: #ffffff;
   border-radius: 10px;
   position: relative;
   margin: 200px auto;
@@ -32,6 +53,11 @@ nav.nav div.mode_icon {
   width: 20px;
   height: 20px;
   background-color: red;
+}
+nav.nav div.dark_icon {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
 }
 
 /* */

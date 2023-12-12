@@ -13,7 +13,7 @@
 -- Q09) 여자 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
 -- Q10) '울산' 지역 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
 -- Q11) 포인트가 500,000 이상인 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
--- Q12) 이름에 공백이 들어간 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
+-- Q12) 이름에 공백이 들어간 고객의 이름, 아이디, 성별, 지역, order_detailorder_headerorder_headerorder_header전화번호, 포인트를 조회하세요.
 -- Q13) 전화번호가 010으로 시작하지 않는 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
 -- Q14) 포인트가 500,000 이상 '서울' 지역 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
 -- Q15) 포인트가 500,000 이상인 '서울' 이외 지역 고객의 이름, 아이디, 성별, 지역, 전화번호, 포인트를 조회하세요.
@@ -193,11 +193,16 @@
 
 
 
+select * from order_detail2016;
+select * from order_header2016;
+select * from product;
 
+select * from information_schema.table_constraints where table_schema = 'myshop2019';
+show create table order_detail2016;
 
-
-
-
+select * from information_schema.table_constraint;
+desc order_detail;
+desc order_header;
 
 
 
