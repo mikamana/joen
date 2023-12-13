@@ -195,8 +195,7 @@ SELECT DATABASE();
     - 쿼리 실행시에만 하나의 테이블로 출력됨 (물리적인 테이블 생성x)
     - 하나로 합쳐지는 컬럼명과 타입이 동일해야 함
 */
--- 2018년에 입사한 영업부, 2015년에 입사한 정보시스템 부서, 2014년에 입사한 사원들의 사원아이디, 사원명, 부서아이디, 입사일을 출력하고 
--- union을 사용하여 출력해주세요
+-- 2018년에 입사한 영업부, 2015년에 입사한 정보시스템 부서, 2014년에 입사한 사원들의 사원아이디, 사원명, 부서아이디, 입사일을 union을 사용하여 출력해주세요
 	select  substring(hire_date,1,4) as 입사일, dept_id,emp_name,emp_id from employee where substring(hire_date,1,4) = '2018' and dept_id = 'mkt'
     union
     select  substring(hire_date,1,4) as 입사일, dept_id,emp_name,emp_id from employee where substring(hire_date,1,4) = '2015' and dept_id = 'sys'

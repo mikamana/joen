@@ -135,7 +135,7 @@ select sum(salary) sum, avg(salary) avg, max(salary) max , min(salary) min from 
 
 -- 가장 빠른 입사일
 select min(hire_date),max(hire_date) from employee;
-SELECT CAST(TO_CHAR(NOW(), 'YYYYMMDD') AS INTEGER) AS numeric_date;
+-- SELECT CAST(TO_CHAR(NOW(), 'YYYYMMDD') AS INTEGER) AS numeric_date;
 
 -- 부서별 총연봉, 평균연봉, 최대연봉, 최저연봉
 select dept_id, sum(salary) sum, avg(salary) avg, max(salary) max , min(salary) min from employee Group by dept_id having dept_id = 'sys' order by dept_id ;
