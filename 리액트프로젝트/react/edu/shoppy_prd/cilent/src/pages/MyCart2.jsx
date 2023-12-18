@@ -11,35 +11,61 @@ import Pagination from 'rc-pagination';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'rc-pagination/assets/index.css';
 import useCart from "../hooks/useCart";
-import useQty from "../hooks/useQty";
 
 
 export default function MyCart() {
   const navigate = useNavigate();
   const userInfo = getUser();
+  const [qty, setQty] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [cartList, totalCount, pageSize, tot, totOrder] = useCart(currentPage, userInfo);
-
-  //getQty
-  const [qty, setQty] = useState(1);
-  const [flag, setFlag] = useState(0);
-  const [cd, setCd] = useState("");
-  // const [] = useQty(qty, flag, cd);
-
 
   //데이터를 연동하여 price를 바꾸는 작업
   const [totPrice, setTotPrice] = useState(totOrder);
   const [totDeliprice, setTotDeliprice] = useState(0);
   const [totOrderPrice, setTotOrderPrice] = useState(tot);
 
-  // Quantity 수량 이벤트
-  const getQty = (e) => {
 
-    setQty(e.qty);
-    setFlag(e.qtyFlag);
-    setCd(e.cid);
+  console.log(tot);
+  console.log(totOrder);
+
+  //수량 업데이트
+  function updateQty(cid, checkFlag) {
+    //http://127.0.0.1:8000/carts/:고객아이디/:장바구니아이디/:상태값
+    axios({
+      method: "get",
+      url: `http://127.0.0.1:8000/carts/${userInfo.id}/${cid}/${checkFlag}`
+    })
+      .then((result) => alert(result.data))
+      .catch();
 
   }
+
+  // Quantity 수량 이벤트
+  const getQty = (e) => {
+    // alert(JSON.stringify(e)); //수량, 상품가격, flag    
+    setQty(e.qty);
+
+    if (e.flag === 'plus') {
+      if (e.qtyFlag) {
+        updateQty(e.cid, e.flag); //DB에서 수량 변경 ++
+        setTotPrice(totPrice + parseInt(e.price));
+        setTotOrderPrice(totPrice + parseInt(e.price));
+      }
+    } else {
+      if (e.qtyFlag) {
+        updateQty(e.cid, e.flag); //DB에서 수량 변경 --
+        setTotPrice(totPrice - parseInt(e.price));
+        setTotOrderPrice(totPrice - parseInt(e.price));
+      }
+    }
+  }
+
+  //총 상품가격 계산함수
+  // const setNewTotPrice = (cartList) => {
+  //   return cartList.reduce((total, cart) => total + (cart.price * cart.qty), 0);
+  // }
+
 
   //삭제버튼 이벤트
   const handleDelete = async (e) => {
