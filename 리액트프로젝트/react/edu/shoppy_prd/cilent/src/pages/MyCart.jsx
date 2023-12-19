@@ -13,7 +13,6 @@ import 'rc-pagination/assets/index.css';
 import useCart from "../hooks/useCart";
 import useQty from "../hooks/useQty";
 
-
 export default function MyCart() {
   const navigate = useNavigate();
   const userInfo = getUser();
@@ -25,7 +24,6 @@ export default function MyCart() {
   const [flag, setFlag] = useState(0);
   const [cd, setCd] = useState("");
   // const [] = useQty(qty, flag, cd);
-
 
   //데이터를 연동하여 price를 바꾸는 작업
   const [totPrice, setTotPrice] = useState(totOrder);
