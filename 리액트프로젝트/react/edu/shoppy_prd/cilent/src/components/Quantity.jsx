@@ -25,6 +25,7 @@ export default function Quantity(props) {
         alert("최대 수량은 10개 입니다.");
       }
     }
+
     props.getQty({
       qty: number, price: props.price, flag: checkFlag,
       qtyFlag: qtyCheckFlag, cid: props.cid

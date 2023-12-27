@@ -1,27 +1,22 @@
-import useCart from "./useCart";
+import axios from "axios"
 
-// 데이터에서 받아온 totPrice와 qty를 계산하여 곱한 값을 MyCart 컴포넌트에 뿌려야함
+export default function useQty2(){
 
+  const updateCartQty = async (cid,userInfo,type) => {
 
-export default function useQty(qty){
+    // 커스텀훅안에서 변수형 함수를 통해 커스텀훅을 호출할 수는 있지만 커스텀훅은 다른 커스텀훅에서 호출 X    
+    // 순수 자바스크립트 함수에서는 커스텀훅을 호출 X
 
-  // const [] = useCart(qty);  
+    axios({
+      method: "put",
+      url: `http://127.0.0.1:8000/carts/${userInfo.id}/${cid}/${type}`
+    })
+    // .then((result) => window.location.reload())
+    // .catch();
+    window.location.reload();
 
-  if (e.flag === 'plus') {
-    if (e.qtyFlag) {
-      updateQty(e.cid, e.flag); //DB에서 수량 변경 ++
-      setTotPrice(totPrice + parseInt(e.price));
-      setTotOrderPrice(totPrice + parseInt(e.price));
-    }
-  } else {
-    if (e.qtyFlag) {
-      updateQty(e.cid, e.flag); //DB에서 수량 변경 --
-      setTotPrice(totPrice - parseInt(e.price));
-      setTotOrderPrice(totPrice - parseInt(e.price));
-    }
   }
 
-
-  return  [] 
+  return  {updateCartQty} 
 
 }
