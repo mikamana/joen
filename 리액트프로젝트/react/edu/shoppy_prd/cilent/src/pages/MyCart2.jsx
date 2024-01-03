@@ -60,6 +60,8 @@ export default function MyCart() {
       }
     }
   }
+  //useCart
+  // const [cartList, totalCount, pageSize, totPrice, totDeliprice, totOrderPrice] = useCart(currentPage, userInfo);
 
   //총 상품가격 계산함수
   // const setNewTotPrice = (cartList) => {

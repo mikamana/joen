@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CartDeleteItem from './CartDeleteItem';
 import useQty2 from '../hooks/useQty2';
-export default function CartItem({ cart, key, userInfo }) {
+import { cartQtyUpdate } from '../modules_redux/reduxQty';
+import { useDispatch } from 'react-redux';
+export default function CartItem2({ cart, key, userInfo }) {
 
   let [number, setNumber] = useState(cart.qty);
 
@@ -31,6 +33,12 @@ export default function CartItem({ cart, key, userInfo }) {
     }
 
   }
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch((cartQtyUpdate({ userInfo, cid, checkFlag, price })))
+  }, [])
 
   let style = { width: "20px", display: "inline-block" }
   let style_minus = { width: "30px", display: "inline-block", backgroundColor: "lightGray", cursor: "pointer" }

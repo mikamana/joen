@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getUser } from '../util/localStorage';
-import NotFound from '../pages/NotFound';
+import NotFound from './NotFound';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import Quantity from './../components/Quantity';
+import Quantity from '../components/Quantity';
 import { useNavigate } from "react-router-dom";
 //페이징 처리
 import Pagination from 'rc-pagination';

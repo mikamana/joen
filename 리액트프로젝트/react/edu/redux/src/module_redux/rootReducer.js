@@ -2,6 +2,7 @@ import React from 'react';
 import { combineReducers } from 'redux';
 import reducer from './reducer';
 import reducer2 from "./reducer2";
+import reducer3 from "./reducer3";
 import countReducer from './countReducer';
 
 
@@ -15,6 +16,7 @@ import countReducer from './countReducer';
 const rootReducer = combineReducers({
   reducer,
   reducer2,
+  reducer3,
   countReducer
   // 여러개 reducer 추가.. 
 }); 

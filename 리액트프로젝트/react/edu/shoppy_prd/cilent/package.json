@@ -21,7 +21,12 @@
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^3.1.0",
+    "reselect": "^5.0.1",
+    "reselector": "^0.23.0",
     "swiper": "^11.0.4",
+    "thunk": "^0.0.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

@@ -1,15 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getPersonData } from '../module_redux/reduxReselector';
+import { getInputName } from '../module_redux/reduxReselector';
+import Child3 from './Child3';
 
 export default function Child2() {
 
-  const rname = useSelector(getPersonData);
+  const rname = useSelector(getInputName);
+
+
 
   return (
     <>
-      <h1>[Child2]name : {rname.name}</h1>
-      <h1>[Child2]age : {rname.age}</h1>
+      <h1>[Child2]name : {rname.inputName}</h1>
+      <Child3 />
     </>
   );
 }

@@ -20,14 +20,14 @@ import MyCountRedux from './pages/MyCountRedux';
 // import {createStore} from 'redux';
 // deprecated(취소선) > 리덕스라는 라이브러리에는 있지만, 앞으로 지원하지않으려는 상태(다음번 버전에는 추가되지않음)
 // 하지만 createStore은 무늬만 deprecated > 그대로 사용해도된다.
-import { legacy_createStore as createStore } from 'redux';
+import { applyMiddleware, legacy_createStore as createStore } from 'redux';
 import { Provider } from "react-redux";
 import rootReducer from './modules_redux/rootReducer';
+import {thunk} from "redux-thunk";
+import logger from "redux-logger";
+
 /* 스토어 생성 */
-const store = createStore(rootReducer);
-// 1. 스토어 호출하여 생성 > 인자로 사용할 리듀서
-// 2. 스코프 정하기
-// 3. 여러개의 reducer를 합치는 파일 생성하여 사용
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const router = createBrowserRouter([
   {

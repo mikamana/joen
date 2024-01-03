@@ -4,9 +4,9 @@ import * as repository from '../repository/cartsRepository.js';
  * 장바구니 수량 업데이트
  */
 export async function updateQty(req, res){
-  const {id, cid, checkFlag} = req.params;
+  const {id, cid, check} = req.params;
   // console.log(`------->> ${JSON.stringify({id, cid, checkFlag})}`);  
-  const result = await repository.updateQty({id, cid, checkFlag});
+  const result = await repository.updateQty({id, cid, check});
   res.json(result); 
 }
 

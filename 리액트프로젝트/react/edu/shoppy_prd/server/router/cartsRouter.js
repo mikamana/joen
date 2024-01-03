@@ -6,6 +6,6 @@ const router = express.Router();
 // router.get('/:id', controller.getList);
 router.get('/:id/:startIndex/:endIndex', controller.getPageList);
 router.get('/:id/:cid', controller.removeCart);
-router.get('/:id/:cid/:checkFlag', controller.updateQty);
+router.put('/:id/:cid/:check', controller.updateQty);
 
 export default router;

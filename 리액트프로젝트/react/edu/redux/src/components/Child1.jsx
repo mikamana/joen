@@ -10,12 +10,13 @@ export default function Child1() {
 
   const dispatch = useDispatch();
 
-  console.log(rname);
+
 
   return (
     <>
       <h1>[Child1]name : {rname.name}</h1>
       <h1>[Child1]age : {rname.age}</h1>
+      <h1>[Child1]nickname : {rname.nickname}</h1>
       <hr />
       <div>
         <button onClick={() => {

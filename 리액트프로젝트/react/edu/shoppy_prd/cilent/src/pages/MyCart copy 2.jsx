@@ -8,29 +8,41 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'rc-pagination/assets/index.css';
 import useCart from "../hooks/useCart";
 // import CartItem from "../components/CartItem";
-import CartItem from "../components/CartItem";
+import CartItem2 from "../components/CartItem";
 import useOrder from "../hooks/useOrder";
 import { useNavigate } from "react-router-dom";
 import { cartListFetchData } from "../API/cartAPI.js";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartListData } from "../modules_redux/reduxSelector.js";
 
 export default function MyCart() {
   const userInfo = getUser();
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  //useCart
+  // const [cartList, totalCount, pageSize, totPrice, totDeliprice, totOrderPrice] = useCart(currentPage, userInfo);
+
+  //useOrder
+  // const orderRef = useRef(null);
+  // useOrder(currentPage, userInfo, orderRef);
+  // return 값이 정의되지않으면 undefined is not iterable 오류, 즉 반환하는 값이 없어 오류가 생김
 
   // 1. dispatch => API :: Axios 액션 함수 -> cartsAPI (여기서 만들어진 함수를 호출하여 사용)
-  const { cartList, totalCount, totalPrice, pageSize, price } = useSelector(getCartListData);
-
   useEffect(() => {
 
     dispatch(cartListFetchData(currentPage, userInfo));
 
-  }, [currentPage, price]);
+  }, []);
 
-  const { handleOrder } = useOrder(cartList);
+  const state = useSelector(state => state);
+
+  console.log(state);
+
+  // const { handleOrder } = useOrder(cartList);
+
+  // const state = useSelector((state) => state)
+
+  // console.log(state);
 
   return (
     <>
@@ -48,25 +60,27 @@ export default function MyCart() {
               </tr>
             </thead>
             <tbody>
-              {cartList && cartList.map((cart) =>
-                <CartItem cart={cart} key={cart.cid} userInfo={userInfo} />
-              )}
+              {/* {cartList.map((cart) =>
+                <CartItem2 cart={cart} key={cart.cid} userInfo={userInfo} />
+              )} */}
             </tbody>
           </Table>
-          <Pagination
+
+          {/* <Pagination
             className="d-flex justify-content-center"
             current={currentPage}
             total={totalCount}
             pageSize={pageSize}
-            onChange={(page) => setCurrentPage(page)} />
+            onChange={(page) => setCurrentPage(page)} /> */}
+
           <div className="tot_div_style">
-            <label>총 상품가격 </label><span className="tot_font_style">{totalPrice.toLocaleString()} 원</span>
-            <label>+ 총 배송비 </label><span className="tot_font_style">0원</span>
-            <label>= 총 주문금액 </label><span className="tot_order_font_style">{totalPrice.toLocaleString()} 원</span>
+            {/* <label>총 상품가격 </label><span className="tot_font_style">{totPrice.toLocaleString()} 원</span>
+            <label>+ 총 배송비 </label><span className="tot_font_style">{totDeliprice.toLocaleString()} 원</span>
+            <label>= 총 주문금액 </label><span className="tot_order_font_style">{totOrderPrice.toLocaleString()} 원</span> */}
           </div>
           <div className="order">
             <button type="button" onClick={() => navigate('/products')}>계속쇼핑</button>
-            <button type="button" onClick={() => { handleOrder() }}>주문하기</button>
+            {/* <button type="button" onClick={() => { handleOrder() }}>주문하기</button> */}
           </div>
         </div >
       ) : (

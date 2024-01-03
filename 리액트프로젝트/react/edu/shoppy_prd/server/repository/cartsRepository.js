@@ -3,17 +3,17 @@ import {db} from '../db/database.js';
 /**
  * updateQty : 장바구니 수량 업데이트
  */
-export async function updateQty({id, cid, checkFlag}){
+export async function updateQty({id, cid, check}){
       let sql = ``;
 
-      if(checkFlag === 'plus'){
-            sql = 'update shoppy_cart set qty = qty +1 where cid=?';
+      if(check === 'plus'){
+            sql = 'update shoppy_cart set qty = qty +1 where id=? and cid=?';
       }else{
-            sql = 'update shoppy_cart set qty = qty -1 where cid=?';
+            sql = 'update shoppy_cart set qty = qty -1 where id=? and cid=?';
       }
 
       return db
-            .execute(sql, [cid])
+            .execute(sql, [id,cid])
             .then((result) => 'ok');
 }
 
