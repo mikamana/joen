@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CartDeleteItem from './CartDeleteItem';
 import { useDispatch } from 'react-redux';
 import { cartQtyFetchData } from '../API/cartQtyAPI';
@@ -6,7 +6,6 @@ export default function CartItem({ cart, key, userInfo }) {
 
   let [number, setNumber] = useState(cart.qty);
   const [check, setCheck] = useState(null);
-  const numRef = useRef(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,35 +14,30 @@ export default function CartItem({ cart, key, userInfo }) {
 
   }, [number]);
 
-
   const quantityCheck = (checkFlag) => {
-
-    let qtyCheckFlag = false;
-
     if (checkFlag === "minus") {
-      setCheck('minus')
+      setCheck('minus');
       if (number > 1) {
         setNumber(--number);
-        qtyCheckFlag = true;
       } else {
         alert("최소 수량은 1개 입니다.");
       }
     } else {
       if (number < 10) {
-        setCheck('plus')
+        setCheck('plus');
         setNumber(++number);
-        qtyCheckFlag = true;
       } else {
         alert("최대 수량은 10개 입니다.");
       }
     }
   }
 
-
   let style = { width: "20px", display: "inline-block" }
   let style_minus = { width: "30px", display: "inline-block", backgroundColor: "lightGray", cursor: "pointer" }
   let style_plus = { width: "30px", display: "inline-block", backgroundColor: "lightGray", cursor: "pointer" }
   let p_style = { margin: "20px 0 20px 0 " }
+
+
 
   return (
     <>
@@ -58,7 +52,7 @@ export default function CartItem({ cart, key, userInfo }) {
         <td className="align_style">
           <p style={p_style}>
             <span style={style_minus} onClick={(e) => { quantityCheck("minus") }}> - </span>
-            <span style={style} ref={numRef}>{number}</span>
+            <span style={style}>{number}</span>
             <span style={style_plus} onClick={(e) => { quantityCheck("plus") }}> + </span>
           </p>
           <CartDeleteItem cid={cart.cid} userInfo={userInfo} />
