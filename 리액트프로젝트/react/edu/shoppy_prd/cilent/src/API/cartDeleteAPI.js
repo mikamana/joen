@@ -1,4 +1,5 @@
 import axios from "axios";
+import { fnDelete } from "../modules_redux/reduxDelete";
 
 
 export const cartDeleteBtn = (userInfo,cid) =>{
@@ -9,12 +10,7 @@ export const cartDeleteBtn = (userInfo,cid) =>{
       await axios.get(`http://127.0.0.1:8000/carts/${userInfo.id}/${cid}`)
         .then((result) => {
 
-          dispatch({
-
-            type:"FETCH_DELETE_SUCCESS",
-            success:true
-    
-          });
+          dispatch(fnDelete(true));
 
         }).catch();
 
@@ -22,4 +18,3 @@ export const cartDeleteBtn = (userInfo,cid) =>{
 
 
   }
-

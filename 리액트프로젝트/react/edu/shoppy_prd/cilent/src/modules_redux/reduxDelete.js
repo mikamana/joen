@@ -1,16 +1,18 @@
+import {createSlice} from "@reduxjs/toolkit";
 
-
-const init = {
+const initialState = {
 
   success:false
-
+  
 }
 
 
-export const reduxDelete = (state=init,action) =>{
+/* export const reduxDelete = (state=init,action) =>{
+
+  name:'cartDelete', */
 
 
-  switch (action.type) {
+  /* switch (action.type) {
     case "FETCH_DELETE_SUCCESS" : 
     return {
       success:action.success
@@ -19,8 +21,22 @@ export const reduxDelete = (state=init,action) =>{
     return {
       success:false
     }
+  } */
+  
+/* } */
+
+export const cartListDelete = createSlice({
+
+  name:'cartDelete',
+  initialState,
+  reducers:{
+    fnDelete(state,action){
+        state.success = action.payload
+    }
   }
+  
 
+});
 
-
-}
+export const {fnDelete} = cartListDelete.actions;
+export default cartListDelete.reducer;

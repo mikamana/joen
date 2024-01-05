@@ -15,6 +15,8 @@ export default function CartDeleteItem({ userInfo, cid }) {
 
     if (check) {
       dispatch(cartDeleteBtn(userInfo, cid));
+      // dispatch가 호출하는 형태가 함수이면 스토어에 보내지않는다.
+      // dispatch가 호출하는 형태가 객체이면 store에 데이터를 보낸다.
     } else {
       alert("삭제를 취소하였습니다.")
     }

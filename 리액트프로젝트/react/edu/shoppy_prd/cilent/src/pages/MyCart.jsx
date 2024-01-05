@@ -24,9 +24,21 @@ export default function MyCart() {
 
   useEffect(() => {
 
+    if (remove && totalCount % 3 === 0 && totalCount !== 0 && currentPage !== 1) {
 
+      setCurrentPage(currentPage - 1);
 
-    dispatch(cartListFetchData(currentPage, userInfo, totalCount, remove));
+      /*  console.log('current' + currentPage);
+          console.log('totalCount' + totalCount);
+          console.log('remove' + remove); */
+
+    }
+
+  }, [remove]);
+
+  useEffect(() => {
+
+    dispatch(cartListFetchData({ currentPage, userInfo, totalCount, remove }));
 
     // total 개수 -1
     // total을 3나눈 배수값이면 page를 하나 뺀다.
@@ -41,7 +53,7 @@ export default function MyCart() {
       {userInfo ? (
         <div className="style">
           <h3><img src="/images/cart_img.gif" />My Cart!!</h3>
-          <h4>{`${qtyUpdateFlag}`}</h4>
+          <h4>{`${qtyUpdateFlag} ${remove}`}</h4>
           <Table striped bordered hover >
             <thead>
               <tr className="align_style">

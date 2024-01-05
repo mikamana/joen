@@ -37,8 +37,6 @@ export default function CartItem({ cart, key, userInfo }) {
   let style_plus = { width: "30px", display: "inline-block", backgroundColor: "lightGray", cursor: "pointer" }
   let p_style = { margin: "20px 0 20px 0 " }
 
-
-
   return (
     <>
       <tr key={key}>
