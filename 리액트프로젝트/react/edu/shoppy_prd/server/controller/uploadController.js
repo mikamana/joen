@@ -1,7 +1,7 @@
 import multer from 'multer';
 
 //multer 라이브러리를 이용한 파일업로드
-const storage = multer.diskStorage({  
+const storage = multer.diskStorage({
   // uploads 폴더에 이미지 저장
 
   destination: function (req, file, cb) {
@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
     cb(null, uniqueSuffix + '_' + file.originalname)
     //cb의 인자로 1번째는 초기값, 두번째는 파일명이다.
   }
-  
+
 })
 
 const fupload = multer({ storage: storage }).single('file');
@@ -35,21 +35,20 @@ const fupload = multer({ storage: storage }).single('file');
 /**
  * 파일 업로드 : 파일을 /uploads 폴더에 저장하는 작업
  */
-export function upload(req, res){
+export function upload(req, res) {
 
   fupload(req, res, err => {
     //upload에서 image파일 받아서 fupload의 첫번째 매개변수로 전달하여 사용한다.
     //multer에서 만든 데이터를 fupload로 정의
     //fupload는 3개의 매개변수를 가지고 있고, req는 req.file.path등 파일의 정보가 담겨져있다.
-    console.log("파일경로" + req.file.path);
-    if(err){
+    if (err) {
       console.log(err);
-    }else{
+    } else {
       // console.log(`${JSON.stringify(res.req.file.path)}`);
       // res.json(res.req.file.path);
       res.json(res.req.file.path);
     }
   })
-  
+
 }
 
