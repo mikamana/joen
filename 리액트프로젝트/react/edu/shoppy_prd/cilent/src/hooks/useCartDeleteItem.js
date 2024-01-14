@@ -1,13 +1,11 @@
 import React from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function useCartDeleteItem(buttonRef,userInfo,cid){
 
 
   useEffect(()=>{
-
-
   
           //삭제버튼 이벤트
   const handleDelete = async (e) => {
@@ -17,7 +15,6 @@ export default function useCartDeleteItem(buttonRef,userInfo,cid){
       try {
         await axios.get(`http://127.0.0.1:8000/carts/${userInfo.id}/${cid}`)
           .then((result) => {
-            // alert(JSON.stringify(result.data));
   
             if(check){
               window.location.reload();

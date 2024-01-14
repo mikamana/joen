@@ -1,8 +1,6 @@
-
-
 const init = {
 
-  price:0
+  qtyUpdateFlag:false
 
 }
 
@@ -14,13 +12,14 @@ export default function reduxQtyList(state=init, action){
 
     case 'FETCH_QTY_SUCCESS' :
       return {
-        price:action.price
+        qtyUpdateFlag:action.qtyUpdateFlag
       }
       default : 
         return{
-          price:0
+          qtyUpdateFlag:false
         }
 
   }  
 
 }
+

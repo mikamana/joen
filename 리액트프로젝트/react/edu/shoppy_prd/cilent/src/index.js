@@ -25,9 +25,22 @@ import { Provider } from "react-redux";
 import rootReducer from './modules_redux/rootReducer';
 import {thunk} from "redux-thunk";
 import logger from "redux-logger";
-
+import {configureStore} from "@reduxjs/toolkit";
+import reduxCount from './modules_redux/reduxCount';
+import  { cartListSlice } from './modules_redux/reduxCartList';
+import reduxQtyList from './modules_redux/reduxQtyList';
+import { cartListDelete } from './modules_redux/reduxDelete';
 /* 스토어 생성 */
-const store = createStore(rootReducer, applyMiddleware(thunk));
+
+const store = configureStore(
+  {
+  reducer : {
+    reduxCount,
+    reduxCartList : cartListSlice.reducer,
+    reduxQtyList,
+    reduxDelete : cartListDelete.reducer
+  }
+});
 
 const router = createBrowserRouter([
   {
