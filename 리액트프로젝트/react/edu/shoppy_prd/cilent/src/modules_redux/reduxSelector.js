@@ -1,5 +1,4 @@
-import {createSelector} from "reselect";
-
+import {createSelector} from "@reduxjs/toolkit";
 
 const getCartList = (state) => state.reduxCartList.list.cartList;
 const getTotalCount = (state) => state.reduxCartList.list.totalCount;

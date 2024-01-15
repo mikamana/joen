@@ -8,9 +8,8 @@ import { fnDelete } from "../modules_redux/reduxDelete";
 export const cartListFetchData = ({currentPage,userInfo,totalCount,remove}) =>{
 
 
-
   let startIndex = 0;
-  let endIndex = 0
+  let endIndex = 0;
   const pageSize = 3;
 
   if(remove && (totalCount % 3 )=== 0 && currentPage !== 1){
@@ -67,11 +66,6 @@ export const cartListFetchData = ({currentPage,userInfo,totalCount,remove}) =>{
       dispatch(fnDelete(remove));
 
     }
-
-
-
-
-
 
   } 
 

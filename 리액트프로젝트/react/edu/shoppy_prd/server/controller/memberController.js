@@ -27,7 +27,7 @@ export async function getLogin(req, res){
       const token = jwt.sign({id : id}, '58Ua|!{@>3{*');
       result.token = token;
       // console.log(`result---> ${JSON.stringify(result)}`);
-     }
+    }
   }
   // console.log(result);
   res.json(result); //토큰 전송
