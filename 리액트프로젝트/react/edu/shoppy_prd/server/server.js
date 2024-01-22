@@ -7,6 +7,7 @@ import newCartsRouter from './router/newCartsRouter.js';
 import cartsRouter from './router/cartsRouter.js';
 import orderRouter from './router/orderRouter.js';
 import uploadRouter from './router/uploadRouter.js';
+import todoRouter from "./router/todoRouter.js";
 import cors from 'cors';
 import path from 'path';
 
@@ -25,6 +26,7 @@ server.use('/carts/new', newCartsRouter);
 server.use('/carts', cartsRouter);
 server.use('/order/new', orderRouter);
 server.use('/upload', uploadRouter);
+server.use('/todo', todoRouter)
 
 server.listen(PORT, () => {
   console.log(`server running --->> ${PORT}`);
